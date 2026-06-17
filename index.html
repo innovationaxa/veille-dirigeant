@@ -1,0 +1,176 @@
+<!doctype html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Veille Dirigeant",
+  "schemaVersion": 1,
+  "description": "Briefing matinal du dirigeant : synthèse structurée (assurance/insurtech, tech & IA, économie/finance, réglementaire/risques, capital humain, souveraineté) avec focus France. Inspirée de Tech Trash et Time To Sign Off. Recompilée chaque matin par une tâche planifiée."
+}
+</script>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Veille du Dirigeant</title>
+<style>
+:root{
+  color-scheme: light;
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
+  --line:#e7e4dd; --accent:#0b3d2e; --link:#1d6b4f;
+  --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:30px 22px 72px}
+
+/* Masthead */
+.mast{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.brandline{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:6px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.02em}
+.date{font-size:13px;color:var(--muted);font-weight:600}
+
+/* Edition title + hook */
+.edtitle{font-family:var(--serif);font-size:36px;line-height:1.04;margin:22px 0 10px;font-weight:700;letter-spacing:-.4px}
+.readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
+.hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--accent);padding:4px 0 4px 15px;margin:0 0 26px}
+.hook .go{font-weight:700;color:var(--accent)}
+
+/* En bref */
+.brief{background:var(--accent);color:#eef2ee;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bfe0cf;font-weight:700}
+.brief ul{margin:0;padding:0;list-style:none}
+.brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#7fd1a6}
+
+/* Numbered items — generous vertical rhythm */
+.item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
+.item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;min-width:16px}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
+.item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
+.item p{margin:0;font-size:15px;color:#262626}
+.item p strong{font-weight:700;color:#111}
+
+/* Inline links — the heart of the format */
+a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #aed4c4;font-weight:600;transition:border-color .15s,background .15s}
+a.lk:hover{border-bottom-color:var(--link);background:#eaf4ef}
+
+/* Bonus */
+.bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--accent)}
+
+/* Sources */
+.sources{margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
+.sources h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 11px;color:#444}
+.note{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.55}
+.foot{margin-top:22px;text-align:center;font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">Briefing matinal · Assurance · Tech &amp; IA · Éco · Risques</div>
+    <div class="brandline">
+      <span class="brand">LA VEILLE DU DIRIGEANT</span>
+      <span class="date">Mercredi 17 juin 2026 · focus France</span>
+    </div>
+  </header>
+
+  <div class="edtitle">La troisième voie ou rien</div>
+  <div class="readtime">5 min de lecture · édition recompilée automatiquement chaque matin (jours ouvrés)</div>
+
+  <p class="hook">
+    VivaTech ouvre ses portes ce matin avec <strong>Bezos</strong> en vedette – la France découvre ses <strong>900 communes</strong> sous tension assurantielle – le CAC 40 enchaîne sa <strong>4ᵉ séance</strong> dans le vert – et les juniors paient l'addition de l'IA. Le tour d'horizon du mercredi, sans détour. <span class="go">C'est parti.</span>
+  </p>
+
+  <section class="brief">
+    <h2>En 30 secondes</h2>
+    <ul>
+      <li><strong>Tech &amp; IA :</strong> VivaTech s'ouvre Porte de Versailles (180 000 visiteurs attendus), Bezos jour 1, Macron-Modi demain, l'Inde partenaire IA officiel.</li>
+      <li><strong>Assurance :</strong> l'Observatoire de l'assurabilité remis à l'État pointe 900 communes sous tension ; l'IA agentique s'industrialise (Allianz Partners à 90 % d'automatisation).</li>
+      <li><strong>Économie :</strong> CAC 40 à 8 447 pts (+0,75 %, 4ᵉ hausse d'affilée), détente au Moyen-Orient, BCE à 2,25 % de dépôt.</li>
+      <li><strong>Risques :</strong> la Cour des comptes réclame plus de transparence sur le Cat-Nat ; AI Act applicable le 2 août, DORA sous contrôle renforcé.</li>
+    </ul>
+  </section>
+
+  <!-- 1 -->
+  <article class="item">
+    <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
+    <h3>L'assurabilité passe au scanner : 900 communes dans le rouge clair</h3>
+    <p>Le premier rapport de l'<a class="lk" href="https://www.ccr.fr/premier-rapport-2025-observatoire-de-lassurabilite-des-risques-naturels/" target="_blank" rel="noopener">Observatoire de l'assurabilité</a> de CCR a été remis au gouvernement le <strong>15 juin</strong>, et il décortique 19 millions de contrats — soit la moitié du marché dommages. Verdict officiellement « rassurant », mais nuancé : dans environ <a class="lk" href="https://www.aefinfo.fr/depeche/752477-assurabilite-face-au-changement-climatique-900-communes-sous-tension-selon-lobservatoire-de-lassurabilite" target="_blank" rel="noopener">900 communes</a>, l'offre d'assurance habitation est plus rare qu'ailleurs, et <strong>3 millions de Français</strong> vivent en <a class="lk" href="https://www.argusdelassurance.com/reassureurs/ccr/risques-climatiques-3-millions-de-francais-vivent-dans-des-zones-de-tensions-sur-lassurance-legeres-a-moderees-la-moitie-dentre-eux-habitent-loutre-mer.GFAAHQJATVDBXGCNXPGXLPFHXQ.html" target="_blank" rel="noopener">zone de tension</a>, dont 1,6 million en Outre-mer. Diagnostic qui ne fait <a class="lk" href="https://www.argusdelassurance.com/environnement/risques-climatiques/risques-climatiques-lobservatoire-de-lassurabilite-de-ccr-livre-un-premier-diagnostic-rassurant-sans-faire-lunanimite.IIMF6YJEFVFLBJKX3IWFLM5BCU.html" target="_blank" rel="noopener">pas l'unanimité</a>. Pendant que l'État cartographie le risque, le métier industrialise sa réponse : l'<a class="lk" href="https://www.kleinblue.fr/post/insurtech-insights-2026-l-assurance-entre-dans-l-%C3%A8re-de-l-industrialisation-de-l-ia" target="_blank" rel="noopener">IA quitte la phase pilote</a>, Allianz Partners est passé de <a class="lk" href="https://www.innovation-assurance.com/gestion-des-sinistres-assurance-impact-ia/" target="_blank" rel="noopener">10 % à 90 %</a> de traitement automatique des sinistres, et l'IA bondit de la 10ᵉ à la <a class="lk" href="https://www.atlas-mag.net/fr/articles/assurance-et-intelligence-artificielle-une-necessite-strategique" target="_blank" rel="noopener">2ᵉ place</a> des risques redoutés par les assureurs eux-mêmes. La même technologie traite les dossiers… et grossit le passif.</p>
+  </article>
+
+  <!-- 2 -->
+  <article class="item">
+    <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
+    <h3>VivaTech a dix ans, et ouvre sous le signe de l'« impact, pas l'illusion »</h3>
+    <p>Top départ ce matin Porte de Versailles : VivaTech fête sa <a class="lk" href="https://www.franceinfo.fr/partenariats/evenement-viva-tech-le-rendez-vous-startup-et-tech-n-1-en-europe-revient-pour-ses-10-ans-a-paris-porte-de-versailles-du-17-au-20-juin-2026_8014112.html" target="_blank" rel="noopener">dixième édition</a> du 17 au 20 juin, avec <strong>180 000 visiteurs</strong> et 15 000 startups attendus, et un fil rouge en forme de pique à la hype — « <strong>impact, not illusion</strong> ». La tête d'affiche du jour s'appelle <a class="lk" href="https://www.euronews.com/next/2026/06/17/from-jeff-bezos-to-europes-ai-push-everything-to-know-about-vivatech-2026" target="_blank" rel="noopener">Jeff Bezos</a>, présent dès l'ouverture ; <a class="lk" href="https://www.journaldunet.com/start-up/1551423-bernard-arnault-emmanuel-macron-ia-festival-quels-sont-les-temps-forts-attendus-a-vivatech/" target="_blank" rel="noopener">Bernard Arnault</a> et la fine fleur tricolore complètent l'affiche. Côté IA, AWS et NVIDIA montent un <a class="lk" href="https://www.aboutamazon.fr/actualites/aws/vivatech-2026-aws-et-nvidia-presentent-le-startup-village-rassemblant-sept-startups-europeennes-en-pointe-dans-lia" target="_blank" rel="noopener">Startup Village</a> de sept pépites européennes, dont cinq françaises, avec des démos « en production » plutôt que des slides. Et l'<a class="lk" href="https://info.fr/vivatech-2026-inde-partenaire-ia-officiel-paris-expo-2026-06/" target="_blank" rel="noopener">Inde</a> s'invite comme partenaire IA officiel, avec plus de 80 innovations. Reste à voir si l'« impact » survivra aux trois jours de <a class="lk" href="https://www.sfeir.dev/ia/vivatech-2026-jeff-bezos-les-humanoides-macron-et-sfeir-le-guide-complet-de-cette-10e-edition/" target="_blank" rel="noopener">démos d'humanoïdes</a>.</p>
+  </article>
+
+  <!-- 3 -->
+  <article class="item">
+    <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
+    <h3>Le CAC 40 prend goût au vert, la French Tech reste sélective</h3>
+    <p>Quatrième séance consécutive dans le vert : le CAC 40 a grimpé de <a class="lk" href="https://www.moneyvox.fr/bourse/actualites/109318/le-cac-40-enchaine-dans-le-vert-jc-decaux-bondit-le-journal-de-la-bourse-du-16-juin-2026" target="_blank" rel="noopener">0,75 % à 8 447 points</a>, porté par une <strong>détente au Moyen-Orient</strong> — Washington et Téhéran semblant baisser d'un ton — qui fait refluer le pétrole. Côté monétaire, la BCE a calé son taux de dépôt à <strong>2,25 %</strong>, digéré sans heurt par les marchés, et les investisseurs lorgnent déjà les <a class="lk" href="https://fr.investing.com/news/stock-market-news/cac-40-quelles-actions-acheter-en-juin-2026--7-opportunites-a-surveiller-en-priorite-3441195" target="_blank" rel="noopener">prochaines opportunités</a>. Du côté du capital-risque, le robinet reste ouvert mais filtrant : la French Tech affiche une dizaine d'opérations pour <a class="lk" href="https://www.licornesociety.com/levees-de-fonds" target="_blank" rel="noopener">~250 M€</a> à la mi-juin, après 407 M€ levés en <a class="lk" href="https://www.maddyness.com/2026/03/02/french-tech-un-mois-de-fevrier-encourageant-avec-407-millions-deuros-leves/" target="_blank" rel="noopener">février</a>. L'argent va où il y a une thèse : <a class="lk" href="https://challengesanscontact.fr/business-startups/levee-fonds-french-tech/" target="_blank" rel="noopener">IA, défense, santé, énergie</a> — et le label Next40/120 privilégie désormais la <a class="lk" href="https://www.usine-digitale.fr/start-up/french-tech/french-tech-2026-le-next40120-favorise-les-deeptechs-plutot-que-le-saas-le-critere-de-lexcellence-technologique-supplante-les-levees-de-fonds.HGFPOOKFJNHOVAL6EKUMEDFGNI.html" target="_blank" rel="noopener">deeptech au SaaS</a>. Le pitch qui promet « l'IA pour tout » n'émeut plus personne.</p>
+  </article>
+
+  <!-- 4 -->
+  <article class="item">
+    <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
+    <h3>Cat-Nat : la Cour des comptes veut voir clair, l'ACPR resserre les boulons</h3>
+    <p>Le dossier qui ne lâche pas votre comité des risques : la <strong>Cour des comptes</strong> réclame <a class="lk" href="https://www.newsassurancespro.com/reconnaissance-cat-nat-la-cour-des-comptes-reclame-plus-de-transparence/01691686472" target="_blank" rel="noopener">plus de transparence</a> sur la reconnaissance Cat-Nat, jugeant la procédure exposée aux « pressions des parties prenantes » et plaidant pour une commission consultative. En toile de fond, le troisième <a class="lk" href="https://www.argusdelassurance.com/green-assurance/cat-nat-le-troisieme-plan-national-d-adaptation-au-changement-climatique-enfin-devoile.231847" target="_blank" rel="noopener">Plan national d'adaptation</a> au changement climatique, et une surprime Cat-Nat désormais <a class="lk" href="https://tribune-assurance.optionfinance.fr/lessentiel/regime-cat-nat-la-surprime-sera-revue-tous-les-cinq-ans.html" target="_blank" rel="noopener">révisable tous les cinq ans</a>. L'<a class="lk" href="https://www.lejournaldelafinance.com/acpr-assureurs-catnat/" target="_blank" rel="noopener">ACPR intensifie sa vigilance</a> et presse les assureurs de renforcer réserves et procédures. Sur la pile conformité, pas de répit non plus : l'<strong>AI Act</strong> devient majoritairement applicable le 2 août, <a class="lk" href="https://itsocial.fr/cybersecurite/cybersecurite-actualites/cra-nis2-dora-ai-act-le-calendrier-reglementaire-europeen-qui-structure-la-cybersecurite-jusquen-2028/" target="_blank" rel="noopener">DORA, NIS2 et CRA</a> structurent l'agenda cyber jusqu'en 2028, et la première année pleine de <a class="lk" href="https://dora-finance.fr/" target="_blank" rel="noopener">DORA</a> rime avec contrôles renforcés ACPR/EBA. Chaque flux de données réclame désormais sa justification.</p>
+  </article>
+
+  <!-- 5 -->
+  <article class="item">
+    <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
+    <h3>L'IA promeut en haut, débauche en bas</h3>
+    <p>Le baromètre fait froid dans le dos pour qui débute : <strong>99 % des PDG</strong> anticipent des <a class="lk" href="https://emploi.developpez.com/actu/383514/99-pourcent-des-PDG-prevoient-des-suppressions-de-postes-liees-a-l-IA-dans-les-deux-prochaines-annees-une-transition-technologique-qui-frappe-en-premier-les-jeunes-diplomes-en-debut-de-carriere/" target="_blank" rel="noopener">suppressions de postes liées à l'IA</a> d'ici deux ans, et la part de dirigeants ciblant les fonctions juniors a doublé — de 17 % en 2025 à <strong>43 % en 2026</strong>. La France n'est pas épargnée : Capgemini a présenté en janvier un plan « d'adaptation des compétences » synonyme de plus de <a class="lk" href="https://www.itforbusiness.fr/lia-deja-a-lorigine-de-suppressions-massives-demplois-dans-la-tech-97948" target="_blank" rel="noopener">2 400 postes supprimés</a>, et les fameux « <a class="lk" href="https://next.ink/brief-article/les-plans-de-performance-qui-poussent-des-salaries-a-demissionner-debarquent-en-france/" target="_blank" rel="noopener">plans de performance</a> » qui poussent à la démission débarquent dans l'Hexagone. Outre-Atlantique, <a class="lk" href="https://www.solutions-numeriques.com/lia-va-t-elle-supprimer-nos-emplois-chez-meta-oui/" target="_blank" rel="noopener">Meta taille</a> encore. Et ceux qui restent ? Ils craquent sous une nouvelle forme d'épuisement, le <a class="lk" href="https://www.dynamique-mag.com/article/burn-out-algorithmique-quand-lia-pousse-au-bord-de-lepuisement" target="_blank" rel="noopener">burn-out algorithmique</a>. L'IA s'installe à la vitesse de la fibre ; le management, lui, rame encore au modem.</p>
+  </article>
+
+  <!-- 6 -->
+  <article class="item">
+    <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infra</span></div>
+    <h3>La « troisième voie » européenne — sur du béton, du câble… et des fuites</h3>
+    <p>VivaTech sert aussi de tribune géopolitique : Macron et Modi viennent demain mettre en scène une <a class="lk" href="https://info.fr/vivatech-2026-macron-modi-souverainete-numerique-ia/" target="_blank" rel="noopener">« troisième voie » de l'IA</a> face aux États-Unis et à la Chine. Le discours tient si l'infrastructure suit : la France a capté <strong>109 Md€</strong> d'investissements <a class="lk" href="https://www.aquitaineonline.com/actu-news/france/13066-data-center-france-reseau-proximite-souverainete-numerique.html" target="_blank" rel="noopener">data centers</a> et compte désormais <a class="lk" href="https://www.mission-open-data.fr/nombre-data-centers-france-2026-chiffres/" target="_blank" rel="noopener">350 sites pour 714 MW</a>, Marseille jouant les <a class="lk" href="https://datacenter-magazine.fr/cables-sous-marins-levier-de-souverainete-numerique-et-economique/" target="_blank" rel="noopener">têtes de pont</a> des câbles sous-marins entre Europe, Afrique et Proche-Orient. Atout maître : un mix <a class="lk" href="https://www.portail-ie.fr/univers/blockchain-data-et-ia/2026/emergence-et-transformation-des-data-centers-une-souverainete-numerique-redessinee-par-linnovation-technologique/" target="_blank" rel="noopener">nucléaire à 70 %</a>, donc une électricité compétitive pour entraîner les modèles. Mais la maison souveraine prend l'eau par les fenêtres : la cyberattaque <a class="lk" href="https://www.argusdelassurance.com/assurance-de-personnes/donnees-medicales-le-ministere-de-la-sante-confirme-le-piratage-de-cegedim-sante-au-moins-15-millions-de-personnes-concernees.3AARXWBIZNBA7I46DHAI3O2QVE.html" target="_blank" rel="noopener">Cegedim Santé</a> a exposé au moins <strong>15 millions</strong> de Français, et la <a class="lk" href="https://cap-formation.fr/cyberattaque-france-fuites-donnees-2026/" target="_blank" rel="noopener">vague de fuites</a> ne faiblit pas. Souveraineté rime encore trop souvent avec passoire.</p>
+  </article>
+
+  <!-- BONUS -->
+  <div class="bonus">
+    <span class="lab">Bonus</span> VivaTech, c'est <a class="lk" href="https://www.planetegrandesecoles.com/salon-vivatech-2026" target="_blank" rel="noopener">10 ans, Bezos et Modi-Macron</a> – l'Inde débarque avec <a class="lk" href="https://info.fr/vivatech-2026-inde-partenaire-ia-officiel-paris-expo-2026-06/" target="_blank" rel="noopener">80 innovations</a> en partenaire IA officiel – guide pratique : <a class="lk" href="https://tw3partners.fr/fr/vivatech-2026-ia-guide-jour-par-jour/" target="_blank" rel="noopener">quel jour visiter</a> selon votre profil – Jeff Bezos lève <a class="lk" href="https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/" target="_blank" rel="noopener">12 Md$ pour Prometheus</a>, son « ingénieur général » du monde physique – Ramp atteint <a class="lk" href="https://techcrunch.com/2026/06/04/ramp-raises-750m-at-44b-valuation-as-investors-hunger-for-fintechs-with-an-ai-story/" target="_blank" rel="noopener">44 Md$ de valo</a> – Coralogix lève <a class="lk" href="https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/" target="_blank" rel="noopener">200 M$</a> pour surveiller les agents IA – Sandstone amène l'IA aux <a class="lk" href="https://techcrunch.com/2026/06/09/sandstone-raises-30m-to-bring-ai-to-in-house-legal-teams/" target="_blank" rel="noopener">juristes d'entreprise</a> – Pennylane et ses <a class="lk" href="https://www.licornesociety.com/levees-de-fonds" target="_blank" rel="noopener">175 M€</a> – l'assurance affinitaire en pleine <a class="lk" href="https://francefintech.org/insurtech-france-rejoint-france-fintech/" target="_blank" rel="noopener">mue data &amp; IA</a> – l'assurance cyber, <a class="lk" href="https://www.droits-divins.com/assurance-cyber-risques-protection-indispensable-2026" target="_blank" rel="noopener">protection devenue indispensable</a> – une mutuelle piratée, <a class="lk" href="https://www.argusdelassurance.com/assurance-de-personnes/cyber-attaque-une-mutuelle-victime-dune-intrusion-plus-113-000-assures-potentiellement-concernes.VNWUABFCXBFHRMZZXKFNZW7R3Q.html" target="_blank" rel="noopener">113 000 assurés</a> exposés – le boom des datacenters, <a class="lk" href="https://multinationales.org/fr/enquetes/profits-et-pertes-derriere-le-boom-des-datacenters-en-france/big-tech-operateurs-fonds-d-investissement-fournisseurs-a-qui-profite-vraiment" target="_blank" rel="noopener">à qui profite-t-il vraiment</a> ? – et le flux quotidien de <a class="lk" href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> pour garder un coup d'avance. <span class="end">La suite… demain matin !</span>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <h2>Sources surveillées</h2>
+    <div class="chips">
+      <span class="chip">Coverager</span>
+      <span class="chip">L'Argus de l'assurance</span>
+      <span class="chip">News Assurances Pro</span>
+      <span class="chip">La Tribune de l'assurance</span>
+      <span class="chip">ACPR / Banque de France</span>
+      <span class="chip">CCR</span>
+      <span class="chip">France Assureurs</span>
+      <span class="chip">L'Usine Digitale</span>
+      <span class="chip">TechCrunch</span>
+      <span class="chip">Numerama</span>
+      <span class="chip">Maddyness</span>
+      <span class="chip">Siècle Digital</span>
+      <span class="chip">Les Echos</span>
+      <span class="chip">Bpifrance Big Media</span>
+    </div>
+    <p class="note">Format inspiré de <em>Tech Trash</em> (plume vive, références en liens dans le texte) et de <em>Time To Sign Off</em> (briefing court). Agrégation quotidienne de ces flux et newsletters de référence, filtrée puis synthétisée pour un dirigeant — focus France. Chaque lien renvoie à sa source. Édition recompilée chaque matin (jours ouvrés).</p>
+  </div>
+
+  <div class="foot">La Veille du Dirigeant · briefing automatisé · cliquez les liens pour aller à la source</div>
+
+</div>
+</body>
+</html>
