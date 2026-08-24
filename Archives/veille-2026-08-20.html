@@ -1,0 +1,179 @@
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Veille Dirigeant",
+  "schemaVersion": 1,
+  "description": "Briefing matinal du dirigeant : synthèse structurée (assurance/insurtech, tech & IA, économie/finance, réglementaire/risques, capital humain, souveraineté) avec focus France. Inspirée de Tech Trash et Time To Sign Off. Recompilée chaque matin par une tâche planifiée."
+}
+</script>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Veille du Dirigeant</title>
+<style>
+:root{
+  color-scheme: light;
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
+  --line:#e7e4dd; --accent:#0b3d2e; --link:#1d6b4f;
+  --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:30px 22px 72px}
+
+/* Masthead */
+.mast{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.brandline{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:6px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.02em}
+.date{font-size:13px;color:var(--muted);font-weight:600}
+
+/* Edition title + hook */
+.edtitle{font-family:var(--serif);font-size:36px;line-height:1.04;margin:22px 0 10px;font-weight:700;letter-spacing:-.4px}
+.readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
+.hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--accent);padding:4px 0 4px 15px;margin:0 0 26px}
+.hook .go{font-weight:700;color:var(--accent)}
+
+/* En bref */
+.brief{background:var(--accent);color:#eef2ee;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bfe0cf;font-weight:700}
+.brief ul{margin:0;padding:0;list-style:none}
+.brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#7fd1a6}
+
+/* Numbered items — generous vertical rhythm */
+.item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
+.item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;min-width:16px}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
+.item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
+.item p{margin:0;font-size:15px;color:#262626}
+.item p strong{font-weight:700;color:#111}
+
+/* Inline links — the heart of the format */
+a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #aed4c4;font-weight:600;transition:border-color .15s,background .15s}
+a.lk:hover{border-bottom-color:var(--link);background:#eaf4ef}
+
+/* Bonus */
+.bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--accent)}
+
+/* Sources */
+.sources{margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
+.sources h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 11px;color:#444}
+.note{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.55}
+.foot{margin-top:22px;text-align:center;font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">Briefing matinal · Assurance · Tech &amp; IA · Éco · Risques</div>
+    <div class="brandline">
+      <span class="brand">LA VEILLE DU DIRIGEANT</span>
+      <span class="date">Jeudi 20 août 2026 · focus France · <a class="lk" href="index.html">archives</a></span>
+    </div>
+  </header>
+
+  <div class="edtitle">Votre moteur de tarification est officiellement à haut risque</div>
+  <div class="readtime">7 min de lecture · édition recompilée automatiquement chaque matin</div>
+
+  <p class="hook">
+    L'AI Act a mis vos algorithmes de souscription sur la liste rouge – l'ACPR ouvre une consultation qui finira en circulaire – l'assurance-vie encaisse 36,5 Md€ pendant que la dette gronde – et Stripe achète la plomberie de l'IA à 7 Md$ le jour où le public annonce qu'il n'en veut pas. Jeudi matin, café serré. <span class="go">C'est parti.</span>
+  </p>
+
+  <section class="brief">
+    <h2>En 30 secondes</h2>
+    <ul>
+      <li><strong>Assurance :</strong> depuis le <strong>2 août</strong>, tarification vie/santé et scoring de souscription sont des IA « à haut risque ». L'<strong>ACPR</strong> consulte jusqu'au <strong>30 septembre</strong>.</li>
+      <li><strong>Économie :</strong> <strong>36,5 Md€</strong> de collecte nette en assurance-vie au S1, record depuis 2006 — encours à <strong>2 162 Md€</strong>.</li>
+      <li><strong>Tech :</strong> <strong>Stripe</strong> rachète OpenRouter pour <strong>7 Md$+</strong> et devient le péage de l'inférence. Pendant ce temps, l'opinion publique décroche.</li>
+      <li><strong>Souveraineté :</strong> <strong>Orange</strong> et Morrison alignent <strong>3 Md€</strong> et <strong>400 MW</strong> sur cinq data centers français.</li>
+    </ul>
+  </section>
+
+  <!-- 1 -->
+  <article class="item">
+    <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
+    <h3>Votre algorithme de tarification a changé de statut juridique pendant que vous étiez en congés</h3>
+    <p>Le 2 août est passé sans communiqué, sans conférence de presse, sans rien — et c'est précisément le problème : <a class="lk" href="https://www.lassuranceenmouvement.com/2026/08/11/ia-act-ce-qui-sapplique-aux-assureurs-depuis-le-2-aout/" target="_blank" rel="noopener">l'AI Act s'applique désormais pleinement aux assureurs, et la <strong>tarification vie et santé</strong> figure noir sur blanc dans la catégorie « haut risque »</a>. Traduction opérationnelle : <a class="lk" href="https://www.oceajuris.com/articles/intelligence-artificielle-ce-qui-change-vraiment-aout-2026-avec-reglement-europeen-18146.htm" target="_blank" rel="noopener">obligations de transparence, documentation technique, supervision humaine et surveillance post-déploiement</a>, avec la contrainte qui fâche vraiment — <a class="lk" href="https://www.smartpoint.fr/ia-assurance-industrialisation-2026/" target="_blank" rel="noopener">chaque décision automatisée doit être explicable à l'assuré comme au régulateur, et l'origine des données d'entraînement documentée</a>. Si vous avez industrialisé du scoring de fraude ou de la priorisation de sinistres en 2025 sans piste d'audit, vous avez maintenant un actif non conforme, pas un avantage concurrentiel. Et Bruxelles n'était que le premier étage : <a class="lk" href="https://www.argusdelassurance.com/juriscope/intelligence-artificielle-lancement-d-une-consultation-publique-par-l-acpr.140319" target="_blank" rel="noopener">l'<strong>ACPR</strong> a lancé une consultation publique sur l'encadrement de l'IA dans la finance — une première en France</a>, <a class="lk" href="https://www.lassuranceenmouvement.com/2026/07/29/intelligence-artificielle-lacpr-veut-encadrer-les-usages" target="_blank" rel="noopener">ouverte jusqu'au <strong>30 septembre</strong> aux assureurs, insurtechs, associations de consommateurs et universitaires, avec la discrimination tarifaire en vie et santé comme obsession centrale</a>, adossée à <a class="lk" href="https://acpr.banque-france.fr/en/publications-and-statistics/publications/governance-artificial-intelligence-finance" target="_blank" rel="noopener">ses travaux sur la gouvernance des algorithmes et l'auditabilité</a>. Pour le dirigeant : une consultation d'été finit toujours en recommandation d'hiver, puis en point de contrôle au printemps. <strong>Répondre coûte deux semaines de juriste ; se faire écrire la règle par les autres coûte trois ans de refonte.</strong></p>
+  </article>
+
+  <!-- 2 -->
+  <article class="item">
+    <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
+    <h3>Les Français n'ont jamais autant épargné. C'est une excellente nouvelle et un problème.</h3>
+    <p>Le secteur vient de signer sa meilleure demi-année depuis vingt ans, et personne n'a l'air de savoir quoi en faire : <a class="lk" href="https://www.france-epargne.fr/news/assurance-vie-365-milliards-deuros-de-collecte-nette-au-premier-semestre-record-depuis-2006" target="_blank" rel="noopener"><strong>36,5 Md€</strong> de collecte nette en assurance-vie au premier semestre 2026, un niveau inédit depuis 2006</a>, avec <a class="lk" href="https://placement.meilleurtaux.com/assurance-vie/actualites/2026-juillet/assurance-vie-collecte-record-au-1er-semestre-2026.html" target="_blank" rel="noopener">19,3 Md€ de cotisations sur le seul mois de juin, en hausse de <strong>12 %</strong> sur un an</a>. L'encours atteint <a class="lk" href="https://www.franceassureurs.fr/nos-chiffres-cles/lassurance-vie/" target="_blank" rel="noopener"><strong>2 162 Md€</strong>, soit 122 Md€ de plus qu'un an plus tôt</a>, dopé par <a class="lk" href="https://www.bdor.fr/actualites-or/assurance-vie-collecte-record-2026-livret-a" target="_blank" rel="noopener">l'effondrement du rendement des livrets réglementés qui a renvoyé l'épargnant vers les fonds euros</a>. Le hic, c'est le décor : <a class="lk" href="https://www.insee.fr/fr/statistiques/8907421?sommaire=8907467" target="_blank" rel="noopener">l'Insee décrit une croissance fragilisée et une inflation ravivée</a>, la BCE a <a class="lk" href="https://ecb.europa.eu/press/pr/date/2026/html/ecb.mp260205~001d26959b.fr.html" target="_blank" rel="noopener">calé ses taux directeurs et regarde ailleurs</a>, et <a class="lk" href="https://www.banque-france.fr/fr/interventions-gouverneur/les-echos-si-nous-ne-reformons-pas-la-france-restera-toujours-faible-et-fragile-face-aux-chocs" target="_blank" rel="noopener">le gouverneur de la Banque de France répète aux Échos que « si nous ne réformons pas, la France restera toujours faible et fragile face aux chocs »</a>. Pour le dirigeant : une collecte record en fonds euros dans un régime de taux stagnants, c'est <strong>de la marge financière achetée aujourd'hui contre de la contrainte ALM demain</strong>. Regardez la duration de ce que vous encaissez, pas le volume — la ligne du communiqué de presse n'est jamais celle qui vous coûtera cher.</p>
+  </article>
+
+  <!-- 3 -->
+  <article class="item">
+    <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
+    <h3>Stripe achète le péage de l'IA le jour où le public claque la porte</h3>
+    <p>Il y a les entreprises qui vendent de l'IA et celles qui encaissent quand quelqu'un en vend : <a class="lk" href="https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/" target="_blank" rel="noopener">Stripe rachète OpenRouter, la passerelle qui route les requêtes entre modèles, pour plus de <strong>7 Md$</strong></a>. Et non, <a class="lk" href="https://techcrunch.com/2026/08/19/stripe-didnt-really-buy-openrouter-because-of-the-singularity/" target="_blank" rel="noopener">ce n'est pas un pari sur la singularité, quoi qu'en dise le communiqué : c'est un péage sur le trafic d'inférence</a> — le business model le plus ennuyeux et le plus solide de la décennie. Pendant que la plomberie se valorise, la façade prend l'eau : <a class="lk" href="https://techcrunch.com/2026/08/19/ai-was-supposed-to-win-people-over-by-now-it-hasnt/" target="_blank" rel="noopener">TechCrunch constate que l'IA devait avoir convaincu le grand public à ce stade — elle ne l'a pas fait, et les manifestations contre les data centers se multiplient</a>. Les éditeurs l'ont compris et se battent désormais sur la confiance plutôt que sur les benchmarks : <a class="lk" href="https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/" target="_blank" rel="noopener">OpenAI dégaine de nouvelles protections de confidentialité pour doubler Anthropic sur ce terrain</a>, quand <a class="lk" href="https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/" target="_blank" rel="noopener">Anthropic détaille le filigranage des sorties de Claude</a>. Marché toujours fébrile par ailleurs — <a class="lk" href="https://techcrunch.com/2026/08/19/rillet-raises-100m-series-c-at-1b-valuation-2-years-after-emerging-from-stealth/" target="_blank" rel="noopener">Rillet lève 100 M$ et devient licorne deux ans après sa sortie de stealth</a>. Pour le dirigeant : votre exposition IA n'est pas dans vos POC, elle est dans <strong>la couche d'infrastructure que vous ne négociez pas</strong>. Le jour où votre routeur de modèles appartient à votre prestataire de paiement, relisez la clause de portabilité.</p>
+  </article>
+
+  <!-- 4 -->
+  <article class="item">
+    <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
+    <h3>Un opérateur télécom a coupé un câble à la hache. C'était le plan de continuité.</h3>
+    <p>La semaine cyber commence par une image qu'aucun comité des risques n'oubliera : <a class="lk" href="https://techcrunch.com/2026/08/19/t-mobile-chopped-a-cable-to-expel-chinese-hackers-from-its-network/" target="_blank" rel="noopener">T-Mobile a littéralement <strong>sectionné un câble</strong> pour expulser des attaquants chinois de son réseau</a> — la mesure de containment la plus brutale et la plus honnête de l'année. Ailleurs, le coût se compte en dossiers médicaux : <a class="lk" href="https://techcrunch.com/2026/08/19/carecloud-confirms-3-7m-patients-had-their-medical-records-stolen-in-data-breach/" target="_blank" rel="noopener">CareCloud confirme le vol des données de <strong>3,7 millions</strong> de patients</a>. Côté français, le tissu PMI reste le maillon faible : <a class="lk" href="https://www.cyberattaque.org/jone-precision-menace-ransomware-cyberattaque/" target="_blank" rel="noopener">le groupe Qilin revendique 18 Go et 12 578 fichiers exfiltrés chez l'industriel Jone Précision le 15 août</a>, dans un pays qui <a class="lk" href="https://webguard-agency.fr/blog/france-2e-pays-plus-pirate-monde-2026-ransomware-ia-pme-francaises" target="_blank" rel="noopener">figure au deuxième rang mondial des plus attaqués en 2026</a>. Les régulateurs, eux, ont arrêté de se regarder en chiens de faïence : <a class="lk" href="https://cyber.gouv.fr/actualites/lanssi-lacpr-et-la-banque-de-france-signe-un-accord-de-cooperation/" target="_blank" rel="noopener">l'<strong>ANSSI</strong>, l'<strong>ACPR</strong> et la <strong>Banque de France</strong> ont signé le 3 juillet un accord de coopération</a> pour <a class="lk" href="https://www.banque-france.fr/fr/communiques-de-presse/lanssi-lacpr-et-la-banque-de-france-signent-un-accord-et-renforcent-leur-cooperation-en-matiere-de" target="_blank" rel="noopener">croiser leurs informations au titre de NIS 2 et de DORA</a>, <a class="lk" href="https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/transverse/digital-operational-resilience-act-dora" target="_blank" rel="noopener">l'ACPR supervisant l'application de DORA chez les banques et assureurs français</a>. Pour le dirigeant : trois autorités qui partagent leurs signalements, c'est <strong>trois fois plus de chances qu'un incident chez votre prestataire cloud remonte jusqu'à votre dossier de supervision</strong>. Vérifiez que votre registre de prestataires critiques est à jour avant qu'on vous le demande.</p>
+  </article>
+
+  <!-- 5 -->
+  <article class="item">
+    <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
+    <h3>L'IA crée des emplois. Elle épuise surtout ceux qui la déploient.</h3>
+    <p>Deux études en une semaine, deux conclusions qui ne se contredisent qu'en apparence : <a class="lk" href="https://www.boursorama.com/bourse/actualites/ia-et-emploi-entre-espoirs-de-nouveaux-postes-et-craintes-pour-les-salaires-les-enseignements-contrastes-des-premiers-retours-du-terrain-7c01d4fd1286682c3f6c67ea578c2d0d" target="_blank" rel="noopener">les premiers retours de terrain sur IA et emploi oscillent entre espoirs de créations de postes et craintes sur les salaires</a>, avec un chiffre notable côté britannique — <strong>54 %</strong> des entreprises déclarent que l'IA a créé de nouveaux emplois, sans que personne n'ose préciser combien elle en a supprimé au passage. Le vrai coût, lui, se loge ailleurs : <a class="lk" href="https://fortune.com/2026/06/23/ai-rollout-burnout-top-performers-retention/" target="_blank" rel="noopener">Fortune décrit le coût caché des déploiements IA — cramer les meilleurs profils, ceux à qui l'on confie systématiquement le chantier</a>, pendant que <a class="lk" href="https://www.fastcompany.com/91574416/the-coming-burnout-from-managing-ai-agents-technology-ai-agents-burnout" target="_blank" rel="noopener">Fast Company annonce la vague suivante : l'épuisement de ceux dont le métier consiste à <strong>superviser des agents</strong></a>. Ce n'est pas une intuition de consultant : <a class="lk" href="https://www.euronews.com/next/2026/03/10/ai-brain-fry-why-your-brain-feels-fatigued-after-using-ai-chatbots-at-work" target="_blank" rel="noopener">les travaux sur l'« AI brain fry » mesurent 12 % de fatigue mentale supplémentaire chez ceux qui contrôlent les sorties de modèles</a>, et <a class="lk" href="https://www.dynamique-mag.com/article/burn-out-algorithmique-quand-lia-pousse-au-bord-de-lepuisement" target="_blank" rel="noopener">le « burn-out algorithmique » commence à avoir sa propre littérature</a>. Côté cadres français, <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">l'APEC vient de publier son étude 2026 sur les cadres et l'IA</a>. Pour le dirigeant : vous avez transformé vos meilleurs producteurs en <strong>relecteurs de machine</strong>, un métier plus fatigant et moins gratifiant. Si votre plan IA n'a pas de ligne « qui supervise, combien d'heures, et qui les remplace », il n'a pas de plan RH.</p>
+  </article>
+
+  <!-- 6 -->
+  <article class="item">
+    <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infrastructure</span></div>
+    <h3>3 milliards, 400 mégawatts, cinq bâtiments : la souveraineté a enfin un devis</h3>
+    <p>On a beaucoup parlé de souveraineté numérique en conférence ; quelqu'un vient d'y mettre un chèque. <a class="lk" href="https://acteurspublics.fr/articles/orange-et-morrison-projettent-une-plateforme-francaise-de-data-centers-souverains/" target="_blank" rel="noopener">Orange et l'australien Morrison montent une coentreprise 50/50 de data centers souverains français</a>, <a class="lk" href="https://www.webdisclosure.fr/press-release/orange-epa-ora-orange-orange-et-morrison-annoncent-un-projet-de-creation-de-coentreprise-de-data-centers-pour-renforcer-la-souverainete-numerique-de-leurope-JwL2yrqpOWn" target="_blank" rel="noopener">annoncée le 27 juillet, signature définitive attendue avant fin 2026</a>, pour <a class="lk" href="https://www.clubic.com/actualite-623038-orange-et-morrison-lancent-un-data-center-souverain-en-france-ce-qu-il-faut-savoir.html" target="_blank" rel="noopener"><strong>3 Md€</strong> et une cible de <strong>400 MW</strong> répartis sur cinq centres et quatre campus — Chevilly-Larue, Aubervilliers, Chartres, Val-de-Reuil</a>. L'appétit dépasse largement l'opérateur historique : <a class="lk" href="https://aqui.fr/financement-ia-data-centers-souverainete/" target="_blank" rel="noopener">Brookfield viserait 30 Md€ autour de Cambrai et Escaudain, Nebius plus de 8 Md€ sur l'ancien site Bridgestone à Béthune</a>, et <a class="lk" href="https://www.cpim.fr/immobilier-data-center-france-2026/" target="_blank" rel="noopener">le taux d'occupation des data centers parisiens dépasse <strong>95 %</strong>, au point que des opérateurs refusent des clients</a>. Bruxelles pousse dans le même sens avec <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">son paquet « souveraineté technologique » de fin mai : plus de capacités européennes, relance des semi-conducteurs, limitation du recours aux clouds américains pour les données sensibles des États</a>, <a class="lk" href="https://bigmedia.bpifrance.fr/nos-actualites/data-centers-choose-france-2026-propulse-la-france-comme-hub-mondial-des-infrastructures-numeriques-et-ia" target="_blank" rel="noopener">la France se positionnant en hub via Choose France 2026</a>. Reste le nerf de la guerre — l'électron et l'argent : <a class="lk" href="https://techcrunch.com/2026/08/19/terrapowers-nuclear-reactor-has-a-secret-weapon-for-powering-ai-data-centers/" target="_blank" rel="noopener">TerraPower vante déjà son réacteur taillé pour alimenter les centres IA</a>. Pour le dirigeant : la question n'est plus « où sont mes données » mais <strong>« qui a réservé la capacité avant moi »</strong>. À 95 % d'occupation, la souveraineté se négocie en mégawatts, pas en clauses contractuelles.</p>
+  </article>
+
+  <section class="bonus">
+    <p style="margin:0"><span class="lab">Bonus</span>
+    <a class="lk" href="https://techcrunch.com/2026/08/19/waymos-cheaper-next-gen-robotaxi-is-now-open-to-all-riders-in-these-three-cities/" target="_blank" rel="noopener">Le robotaxi nouvelle génération de Waymo, moins cher, s'ouvre à tous dans trois villes</a> — <a class="lk" href="https://techcrunch.com/2026/08/19/amazons-prime-air-is-taking-off-in-nearly-500-u-s-cities/" target="_blank" rel="noopener">Amazon fait décoller Prime Air dans près de 500 villes américaines, et vos actuaires n'ont toujours pas de tarif drone</a> — <a class="lk" href="https://techcrunch.com/2026/08/19/travis-kalanick-kicks-off-another-round-of-vc-bashing-1-are-helpful/" target="_blank" rel="noopener">Travis Kalanick estime que « 1 % » des VC servent à quelque chose, ce qui est déjà généreux</a> — <a class="lk" href="https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/" target="_blank" rel="noopener">le patron de Cognition dément que SpaceX ait tenté de le racheter</a> — <a class="lk" href="https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/" target="_blank" rel="noopener">Cursor profite de l'agacement anti-GitHub pour lancer sa propre plateforme d'hébergement</a> — <a class="lk" href="https://techcrunch.com/2026/08/19/relativity-networks-raises-22-million-to-bring-a-faster-kind-of-fiber-to-data-centers/" target="_blank" rel="noopener">Relativity Networks lève 22 M$ pour une fibre plus rapide dans les data centers</a> — <a class="lk" href="https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/" target="_blank" rel="noopener">des chercheurs accusent OpenAI de leur avoir coupé l'accès à son programme cyber</a> — <a class="lk" href="https://techcrunch.com/2026/08/14/apple-proposes-to-take-a-15-cut-of-purchases-made-outside-the-app-store/" target="_blank" rel="noopener">Apple propose de prélever 15 % sur les achats faits hors App Store, définition moderne de la générosité</a> — <a class="lk" href="https://techcrunch.com/2026/08/19/amazon-makes-its-ai-powered-alexa-free-on-fire-tv-no-prime-required/" target="_blank" rel="noopener">Alexa+ devient gratuit sur Fire TV, sans abonnement Prime</a> — <a class="lk" href="https://techcrunch.com/2026/08/18/reach-capital-raises-265m-fund-v-to-back-ai-founders-building-to-expand-human-potential/" target="_blank" rel="noopener">Reach Capital boucle un fonds V de 265 M$ pour « étendre le potentiel humain »</a> — <a class="lk" href="https://fgtrends.substack.com/p/leocare-embleme-du-peak-insurtech" target="_blank" rel="noopener">Leocare, ex-étendard de l'insurtech française, absorbé par le belge Belfius : le peak insurtech a une date</a> — <a class="lk" href="https://www.argusdelassurance.com/les-assureurs/federations/le-risque-politique-s-impose-parmi-les-menaces-majeures-selon-les-assureurs.238076" target="_blank" rel="noopener">le risque politique s'impose pour la première fois au sommet du classement des menaces des assureurs</a> — <a class="lk" href="https://www.moneyvox.fr/assurance/actualites/108562/catastrophe-naturelle-pourquoi-le-regime-cat-nat-des-assureurs-va-vous-couter-de-plus-en-plus-cher" target="_blank" rel="noopener">le régime cat-nat va coûter de plus en plus cher, et l'assuré le découvrira sur son avis d'échéance</a> — <a class="lk" href="https://techcrunch.com/2026/08/19/home-batteries-are-suddenly-cheap-and-everywhere-heres-why/" target="_blank" rel="noopener">les batteries domestiques deviennent soudain bon marché et omniprésentes : nouveau risque MRH à modéliser</a>. <span class="end">La suite… demain matin !</span></p>
+  </section>
+
+  <section class="sources">
+    <h2>Sources surveillées</h2>
+    <div class="chips">
+      <span class="chip">L'Argus de l'assurance</span>
+      <span class="chip">News Assurances Pro</span>
+      <span class="chip">L'Assurance en Mouvement</span>
+      <span class="chip">France Assureurs</span>
+      <span class="chip">ACPR / Banque de France</span>
+      <span class="chip">ANSSI</span>
+      <span class="chip">TechCrunch</span>
+      <span class="chip">L'Usine Digitale</span>
+      <span class="chip">Siècle Digital</span>
+      <span class="chip">Numerama</span>
+      <span class="chip">Les Echos</span>
+      <span class="chip">La Tribune</span>
+      <span class="chip">Insee</span>
+      <span class="chip">BCE</span>
+      <span class="chip">Bpifrance Big Média</span>
+      <span class="chip">Maddyness</span>
+      <span class="chip">Fortune</span>
+      <span class="chip">Fast Company</span>
+      <span class="chip">APEC</span>
+      <span class="chip">Acteurs Publics</span>
+    </div>
+    <p class="note">Méthodologie : recherche automatisée chaque matin sur les 24–48 dernières heures, priorité aux sources françaises et primaires (régulateurs, fédérations, communiqués). Chaque fait est lié à sa source ; les chiffres non sourcés ne sont pas publiés. Les commentaires « pour le dirigeant » sont des lectures d'aide à la décision, pas des recommandations d'investissement ou de conformité.</p>
+    <div class="foot">La Veille du Dirigeant · briefing automatisé · <a class="lk" href="index.html">consulter les éditions précédentes</a> · cliquez les liens pour aller à la source</div>
+  </section>
+
+</div>
+</body>
+</html>

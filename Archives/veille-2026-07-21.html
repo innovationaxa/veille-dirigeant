@@ -1,0 +1,178 @@
+<!doctype html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Veille Dirigeant",
+  "schemaVersion": 1,
+  "description": "Briefing matinal du dirigeant : synthèse structurée (assurance/insurtech, tech & IA, économie/finance, réglementaire/risques, capital humain, souveraineté) avec focus France. Inspirée de Tech Trash et Time To Sign Off. Recompilée chaque matin par une tâche planifiée."
+}
+</script>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Veille du Dirigeant</title>
+<style>
+:root{
+  color-scheme: light;
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
+  --line:#e7e4dd; --accent:#0b3d2e; --link:#1d6b4f;
+  --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:30px 22px 72px}
+
+/* Masthead */
+.mast{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.brandline{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:6px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.02em}
+.date{font-size:13px;color:var(--muted);font-weight:600}
+
+/* Edition title + hook */
+.edtitle{font-family:var(--serif);font-size:36px;line-height:1.04;margin:22px 0 10px;font-weight:700;letter-spacing:-.4px}
+.readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
+.hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--accent);padding:4px 0 4px 15px;margin:0 0 26px}
+.hook .go{font-weight:700;color:var(--accent)}
+
+/* En bref */
+.brief{background:var(--accent);color:#eef2ee;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bfe0cf;font-weight:700}
+.brief ul{margin:0;padding:0;list-style:none}
+.brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#7fd1a6}
+
+/* Numbered items — generous vertical rhythm */
+.item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
+.item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;min-width:16px}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
+.item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
+.item p{margin:0;font-size:15px;color:#262626}
+.item p strong{font-weight:700;color:#111}
+
+/* Inline links — the heart of the format */
+a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #aed4c4;font-weight:600;transition:border-color .15s,background .15s}
+a.lk:hover{border-bottom-color:var(--link);background:#eaf4ef}
+
+/* Bonus */
+.bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--accent)}
+
+/* Sources */
+.sources{margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
+.sources h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 11px;color:#444}
+.note{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.55}
+.foot{margin-top:22px;text-align:center;font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">Briefing matinal · Assurance · Tech &amp; IA · Éco · Risques</div>
+    <div class="brandline">
+      <span class="brand">LA VEILLE DU DIRIGEANT</span>
+      <span class="date">Mardi 21 juillet 2026 · focus France · <a class="lk" href="index.html">archives</a></span>
+    </div>
+  </header>
+
+  <div class="edtitle">L'argile fissure, le baril rogne, l'AI Act frappe à la porte</div>
+  <div class="readtime">7 min de lecture · édition recompilée automatiquement chaque matin</div>
+
+  <p class="hook">
+    La sécheresse détrône l'inondation et coûte jusqu'à un milliard par an au régime CatNat – l'Insee coupe la croissance à 0,7 % sur un choc pétrolier – Mistral quitte le texte pour les robots pendant que l'infra avale les milliards – et il reste douze jours avant que l'AI Act n'ouvre son carnet d'amendes. Le tour d'horizon du mardi matin. <span class="go">C'est parti.</span>
+  </p>
+
+  <section class="brief">
+    <h2>En 30 secondes</h2>
+    <ul>
+      <li><strong>Assurance :</strong> la <strong>sécheresse</strong> devient le premier poste de sinistralité CatNat — <strong>770 M€ à 1 Md€</strong> en 2025, <strong>11 millions de logements</strong> exposés au retrait-gonflement des argiles.</li>
+      <li><strong>Économie :</strong> l'Insee abaisse la croissance 2026 à <strong>0,7 %</strong>, pouvoir d'achat <strong>−0,3 %</strong>, inflation passée au-dessus de <strong>3 %</strong> au pic du choc énergétique.</li>
+      <li><strong>Tech &amp; IA :</strong> <strong>Mistral</strong> sort un modèle de navigation robotique et ouvre <strong>10 MW</strong> aux Ulis ; <strong>Together AI</strong> lève <strong>800 M$</strong> à 8,3 Md$.</li>
+      <li><strong>Réglementaire :</strong> <strong>J−12</strong> avant l'AI Act, <strong>35 M€ ou 7 % du CA</strong> au menu — et deux fuites françaises revendiquées en 48 heures.</li>
+    </ul>
+  </section>
+
+  <!-- 1 -->
+  <article class="item">
+    <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
+    <h3>Le péril le plus cher de France ne fait pas de bruit</h3>
+    <p>Pas de vagues, pas d'images télé, pas de cellule de crise : juste des murs qui se fendent lentement. La <a class="lk" href="https://www.catnat.net/veille-gestion-des-risques-naturels-et-climat/veille-donnees-et-statistiques/37981-catastrophes-naturelles-la-secheresse-simpose-comme-le-premier-poste-de-sinistralite" target="_blank" rel="noopener">sécheresse s'impose comme le premier poste de sinistralité du régime CatNat, devant l'inondation</a>, avec des pertes assurées estimées par la CCR <a class="lk" href="https://medias.amf.asso.fr/upload/files/20260427-Assurance-des-catastrophes-naturelles(1).pdf" target="_blank" rel="noopener">entre 770 M€ et 1 Md€ pour le seul exercice 2025</a>. Le coupable a un nom d'ingénieur — le retrait-gonflement des argiles — et une surface de marché indécente : <a class="lk" href="https://monimmeuble.com/actualite/assurance-catastrophe-naturelle-ce-qui-change-avec-le-climat" target="_blank" rel="noopener">plus de 11 millions de logements français sont exposés</a>, et <a class="lk" href="https://www.franceassureurs.fr/risques-climatiques-et-assurance/" target="_blank" rel="noopener">France Assureurs projette un doublement de la facture des événements naturels entre 2020 et 2050, de 73,4 à 143 Md€</a>. Pendant que le passif se rigidifie, l'actif, lui, court : l'insurtech européenne a signé <a class="lk" href="https://www.digital-et-assurance.com/analyses/insurtech-europe-analyse-q1-2026/" target="_blank" rel="noopener">1,3 Md€ levés sur le seul premier semestre</a>, <a class="lk" href="https://www.usine-digitale.fr/sante/alan-leve-480-millions-deuros-aupres-de-prosus-pour-devenir-le-standard-mondial-de-lassurance-prevention.DBR6GQ62JFEVFFAMV2B3TNYEWA.html" target="_blank" rel="noopener">Alan encaissant 480 M€ auprès de Prosus pour faire de la prévention un standard mondial</a> — <a class="lk" href="https://www.maddyness.com/2026/06/25/alan-leve-480-millions-deuros-et-atteint-55-milliards-deuros-de-valorisation/" target="_blank" rel="noopener">5,5 Md€ de valorisation, trois mois après un tour à 100 M€</a>. Côté incumbents, <a class="lk" href="https://www.newsassurancespro.com/allianz-france-et-un-et-deux-et-trois-reseaux/01691688683" target="_blank" rel="noopener">Allianz France mise sur ses trois réseaux propriétaires pour atteindre 11 Md€ de CA fin 2028</a>. Pour le dirigeant : le risque qui vous coûtera le plus cher n'est pas celui qui fait la une, c'est celui qui <strong>s'accumule sans événement déclencheur</strong>. Un sinistre spectaculaire se provisionne ; une dérive lente se subit.</p>
+  </article>
+
+  <!-- 2 -->
+  <article class="item">
+    <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
+    <h3>Mistral descend du nuage et met des roues</h3>
+    <p>Le champion français a compris que le prochain terrain de jeu ne s'écrit pas, il se déplace. Mistral vient de publier <a class="lk" href="https://www.bloomberg.com/news/articles/2026-07-08/mistral-ai-releases-robotics-model-to-support-physical-ai-push" target="_blank" rel="noopener">Robostral Navigate, un modèle de navigation robotique entraîné entièrement en simulation et pilotable avec une seule caméra</a>, après avoir signé avec de grands industriels européens — et prépare en parallèle <a class="lk" href="https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm" target="_blank" rel="noopener">un modèle Mixture-of-Experts en accès anticipé, adossé à 4 Md€ de data centers et plus de 400 M$ d'ARR</a>, avec <a class="lk" href="https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/" target="_blank" rel="noopener">l'objectif affiché du milliard d'ARR avant décembre</a>. Le reste du marché confirme que la valeur a glissé du modèle vers la tuyauterie : <a class="lk" href="https://techcrunch.com/2026/07/01/neocloud-together-ai-raises-800m-leaps-to-8-3b-valuation/" target="_blank" rel="noopener">Together AI lève 800 M$ à 8,3 Md$ en louant des clusters Nvidia</a>, <a class="lk" href="https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/" target="_blank" rel="noopener">Microsoft crée une société dédiée au déploiement IA en entreprise avec 2,5 Md$ au pot</a>, et <a class="lk" href="https://techcrunch.com/2026/07/15/indian-ai-coding-startup-emergent-becomes-a-unicorn-just-over-a-year-after-launch/" target="_blank" rel="noopener">l'indien Emergent devient licorne à 1,5 Md$ un an après son lancement</a>. Signal faible mais parlant : <a class="lk" href="https://techcrunch.com/2026/07/15/backed-by-60m-in-funding-oak-steps-out-of-stealth-to-fix-the-identity-mess-that-ai-agents-are-making-worse/" target="_blank" rel="noopener">Oak sort du stealth avec 60 M$ pour régler le chaos d'identité que créent les agents IA</a>. Pour le dirigeant : quand un labo de LLM se met à vendre de la navigation robotique et des mégawatts, ce n'est pas de la diversification, c'est l'aveu que <strong>la marge est en aval du modèle</strong>. Regardez où va l'argent, pas où va la démo.</p>
+  </article>
+
+  <!-- 3 -->
+  <article class="item">
+    <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
+    <h3>L'Insee rabote, le baril facture</h3>
+    <p>La conjoncture française tient désormais en un titre d'institut : <a class="lk" href="https://www.insee.fr/fr/statistiques/8907467" target="_blank" rel="noopener">« Inflation ravivée, croissance fragilisée »</a>. L'Insee <a class="lk" href="https://www.france-epargne.fr/news/linsee-abaisse-la-croissance-francaise-a-07-en-2026-le-choc-petrolier-frappe-les-menages" target="_blank" rel="noopener">abaisse la croissance 2026 à 0,7 %, contre 0,9 % en 2025, avec un pouvoir d'achat des ménages en repli de 0,3 %</a> — le choc énergétique lié aux tensions au Moyen-Orient a fait passer <a class="lk" href="https://www.insee.fr/fr/statistiques/8907421?sommaire=8907467" target="_blank" rel="noopener">l'inflation au-dessus de 3 % au pic, avant un reflux attendu vers 2,7 % en décembre</a>. La BCE, elle, campe sur ses positions après avoir relevé ses taux en juin : <a class="lk" href="https://www.raisin.com/fr-fr/glossaire/taux-bce/" target="_blank" rel="noopener">2,40 % au refi, 2,25 % au dépôt, 2,65 % au prêt marginal</a>, avec une <a class="lk" href="https://www.banque-france.fr/fr/publications-et-statistiques/publications/bulletin-economique-de-la-bce-ndeg22026" target="_blank" rel="noopener">zone euro projetée à 0,9 % en 2026 puis 1,3 % en 2027</a>. Le gouverneur de la Banque de France, jamais du genre à enrober, prévient dans <em>Les Echos</em> que <a class="lk" href="https://www.banque-france.fr/fr/interventions-gouverneur/les-echos-si-nous-ne-reformons-pas-la-france-restera-toujours-faible-et-fragile-face-aux-chocs" target="_blank" rel="noopener">« si nous ne réformons pas, la France restera toujours faible et fragile face aux chocs »</a>. Rendez-vous statistique à surveiller : <a class="lk" href="https://presseagence.fr/paris-economie-croissance-inflation-et-climat-des-affaires-au-coeur-des-publications-de-linsee/" target="_blank" rel="noopener">le PIB du deuxième trimestre tombe le 30 juillet, l'IPC provisoire le 31</a>. Pour le dirigeant : une croissance à 0,7 % avec une inflation à 2,7 %, ce n'est pas une récession, c'est un <strong>plafond de verre sur vos volumes</strong>. Vos hausses de prix 2027 se négocient dans un marché qui ne grossit plus.</p>
+  </article>
+
+  <!-- 4 -->
+  <article class="item">
+    <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
+    <h3>J−12 : l'AI Act sort son carnet à souches</h3>
+    <p>Douze jours. Le <strong>2 août</strong>, <a class="lk" href="https://www.aiacto.eu/en/blog/ai-act-what-changes-august-2-2026" target="_blank" rel="noopener">l'AI Act devient pleinement applicable et active les pouvoirs de sanction de la Commission</a>, avec un barème calibré pour faire réfléchir les comex : <a class="lk" href="https://sciencepost.fr/35-millions-deuros-ou-7-du-chiffre-daffaires-lia-hors-la-loi-coutera-cher-des-aout-2026/" target="_blank" rel="noopener">35 M€ ou 7 % du CA mondial pour les pratiques interdites</a>, <a class="lk" href="https://www.adevweb.com/ressources/ai-act-entreprise-2026" target="_blank" rel="noopener">15 M€ ou 3 % pour un système haut risque non conforme, 7,5 M€ ou 1 % pour un manquement de transparence</a>. Nuance juridique qui ne dispense de rien : <a class="lk" href="https://www.wenvision.com/fr/articles/ai-act-report-echeance-aout-2026-systemes-ia-haut-risque/" target="_blank" rel="noopener">le Digital Omnibus repousse l'annexe III à décembre 2027, mais août 2026 reste la date légalement contraignante tant que le texte n'est pas formellement adopté</a>. Côté superviseur assurance, l'<a class="lk" href="https://acpr.banque-france.fr/fr/reglementation/registre-officiel/notices" target="_blank" rel="noopener">ACPR a publié en juillet un report de l'échéance initiale de remise du reporting « C6P »</a>, tout en gardant <a class="lk" href="https://www.argusdelassurance.com/juriscope/reglementation/l-acpr-devoile-son-programme-de-travail-pour-2026-supervision-de-l-ia-value-for-money-et-entree-en-vigueur-de-l-irdd-au-c-ur-des-priorites.237996" target="_blank" rel="noopener">supervision de l'IA, value for money et IRDD en tête de son programme 2026</a>. Le risque, lui, n'attend pas le calendrier : <a class="lk" href="https://www.cyberattaque.org/" target="_blank" rel="noopener">une fuite attribuée à Accor a été revendiquée le 16 juillet, une autre attribuée à SFR le 17</a>, et l'ANSSI a traité <a class="lk" href="https://www.i-leadconsulting.com/cyberattaques-france-2026/" target="_blank" rel="noopener">831 intrusions avérées en 2025 contre 594 en 2024</a>. Pour le dirigeant : à J−12, la question n'est plus « sommes-nous concernés » mais <strong>« qui signe l'inventaire »</strong>. Un registre incomplet vaut aveu, et le régulateur lit plus vite que votre DSI n'inventorie.</p>
+  </article>
+
+  <!-- 5 -->
+  <article class="item">
+    <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
+    <h3>Un cadre sur deux utilise l'IA, un sur trois a été formé</h3>
+    <p>L'adoption a explosé, la compétence non — et l'écart se paiera. Selon l'APEC, <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">un cadre sur deux utilise désormais l'IA au moins une fois par semaine, contre 35 % un an plus tôt</a>, et <a class="lk" href="https://corporate.apec.fr/files/live/sites/corporate/files/Nos%20etudes/PDF/Les%20cadres%20et%20l'IA%202026.pdf" target="_blank" rel="noopener">21 % s'en servent tous les jours ou presque</a>. La fracture est d'âge autant que de moyens : <a class="lk" href="https://snfocos.org/etudes-apec-cadres-et-ia-pratiques-de-recrutement-les-deux-etudes-apec-de-mai-2026-quil-faut-connaitre/" target="_blank" rel="noopener">62 % des moins de 35 ans contre 38 % des plus de 55 ans</a>, et surtout <strong>29 % seulement</strong> ont bénéficié d'une formation dédiée — autrement dit, sept cadres sur dix improvisent sur un outil qui traite vos données clients. Le marché, lui, redémarre prudemment : l'APEC table sur <a class="lk" href="https://corporate.apec.fr/home/actus-medias/toutes-nos-actualites/recrutement-de-cadres-les-pratiques-evoluent-a-l'heure-de-l'ia-sur-un-marche-moins-tendu.html" target="_blank" rel="noopener">305 800 recrutements de cadres en 2026, soit +4 % sur un an, dans un marché nettement moins tendu</a>, pendant que <a class="lk" href="https://www.helloworkplace.fr/entreprises-recrutements-cadres/" target="_blank" rel="noopener">les embauches repartent surtout dans certains bassins et secteurs</a>. Et de l'autre côté du bureau, deux tiers des cadres <a class="lk" href="https://www.lexia-conseil.fr/comment-lintelligence-artificielle-impacte-lemploi-des-cadres/" target="_blank" rel="noopener">comptent utiliser l'IA lors de leur prochaine recherche d'emploi, dont 77 % pour la lettre de motivation</a> — bonne chance à vos jurys de présélection. Pour le dirigeant : quand l'usage double et que la formation stagne à 29 %, vous n'avez pas déployé une technologie, vous avez <strong>externalisé un risque à vos équipes</strong>. La note s'appelle fuite de données ou décision non explicable.</p>
+  </article>
+
+  <!-- 6 -->
+  <article class="item">
+    <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infra</span></div>
+    <h3>L'Europe branche des mégawatts et raccorde des câbles</h3>
+    <p>La souveraineté numérique quitte enfin le colloque pour le chantier. L'Europe assemble <a class="lk" href="https://highways.today/2026/07/03/power-ports-exaflops/" target="_blank" rel="noopener">plus de puissance de calcul en un an qu'à aucun moment de son histoire, avec 35 nouveaux supercalculateurs IA</a>, tandis que <a class="lk" href="https://ingefii.fr/data-centers-souverains-l-ia-impose-l-hebergement-europeen/" target="_blank" rel="noopener">l'IA impose de fait l'hébergement européen aux data centers dits souverains</a> et que <a class="lk" href="https://www.fntp.fr/leurope-souhaite-accelerer-les-data-centers-et-renforcer-sa-souverainete-numerique/" target="_blank" rel="noopener">Bruxelles cherche à accélérer les autorisations</a>. Reste le petit détail du rapport de force : <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">l'Europe passe aux actes avec son Tech Sovereignty Package</a>, mais <a class="lk" href="https://tech-insider.org/fr/souverainete-numerique-cloud-ue-cada-2026/" target="_blank" rel="noopener">quelque 70 % du cloud européen reste américain</a>, et <a class="lk" href="https://www.maddyness.com/2026/07/13/cloud-souverain-et-si-le-mythe-devenait-enfin-realite/" target="_blank" rel="noopener">le cloud souverain oscille toujours entre mythe et réalité</a>. Sous l'eau, le réseau se recâble à prix d'or : <a class="lk" href="https://www.fierce-network.com/cloud/subsea-cables-are-becoming-hotbed-ai-network-activity" target="_blank" rel="noopener">l'investissement en câbles sous-marins atteint son plus haut niveau depuis vingt ans, plus de 16 Md$ de projets à horizon 2029</a>, poussé par le trafic IA transatlantique. Et le calendrier des géants avance : <a class="lk" href="https://openai.com/index/openai-nvidia-systems-partnership/" target="_blank" rel="noopener">le premier gigawatt du partenariat OpenAI-Nvidia se déploie au second semestre 2026 sur plateforme Vera Rubin</a>. Pour le dirigeant : votre plan de continuité repose sur une chaîne <strong>énergie–câble–juridiction</strong> que vous ne contrôlez sur aucun des trois maillons. Le sujet n'est pas la souveraineté, c'est la substituabilité.</p>
+  </article>
+
+  <!-- BONUS -->
+  <div class="bonus">
+    <span class="lab">Bonus</span> <a class="lk" href="https://www.newsassurancespro.com/la-lettre-de-lassurance-du-6-juillet-2026/01691688878" target="_blank" rel="noopener">Assurance vie à son apogée, comptes de l'Afer dans le rouge : la lettre du secteur</a> – <a class="lk" href="https://www.lecomparateurassurance.com/assurance-habitation/actualites/barometre-assurance-habitation-juillet-2026" target="_blank" rel="noopener">Baromètre habitation : 133 €/an pour un locataire, 422 € pour un propriétaire de maison</a> – <a class="lk" href="https://www.deloitte.com/fr/fr/events/actualites-reglementaires-pour-le-secteur-de-l-assurance.html" target="_blank" rel="noopener">L'EIOPA publie ses lignes directrices définitives et projets de normes techniques de juillet</a> – <a class="lk" href="https://www.argusdelassurance.com/tech/assurtech-des-levees-de-fonds-record-en-trompe-l-il.172824" target="_blank" rel="noopener">Assurtech : des levées de fonds record… en trompe-l'œil</a> – <a class="lk" href="https://kpmg.com/fr/fr/insights/assurance/changement-risque-climatique-assureurs.html" target="_blank" rel="noopener">Ce que le risque climatique change vraiment au bilan des assureurs</a> – <a class="lk" href="https://www.info.gouv.fr/actualite/accelerer-l-ia-dans-l-etat-et-au-service-des-francais" target="_blank" rel="noopener">655 M€ pour l'IA dans l'État, dont un chatbot santé public sur Ameli.fr</a> – <a class="lk" href="https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/" target="_blank" rel="noopener">Près de 90 nouvelles licornes créées depuis janvier : la liste complète</a> – <a class="lk" href="https://techcrunch.com/2026/07/08/these-ai-startups-are-growing-revenue-at-faster-and-faster-rates/" target="_blank" rel="noopener">Ces startups IA dont le revenu accélère de trimestre en trimestre</a> – <a class="lk" href="https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/" target="_blank" rel="noopener">Un chercheur d'OpenAI lèverait 200 M$ à 2 Md$ pour la découverte de médicaments</a> – <a class="lk" href="https://news.crunchbase.com/venture/us-ai-startup-funding-boom-data/" target="_blank" rel="noopener">Le boom du financement IA n'est pas mondial : les données qui dégonflent le récit</a> – <a class="lk" href="https://techstartups.com/2026/07/20/top-tech-news-today-july-20-2026-alibaba-bezos-blackstone-google-moonshot-ai-nvidia-samsung-more/" target="_blank" rel="noopener">Moonshot AI : quand la pénurie de calcul, pas le modèle, décide du classement</a> – <a class="lk" href="https://www.licornesociety.com/levees-de-fonds" target="_blank" rel="noopener">Le tableau de bord actualisé des levées de fonds de la French Tech</a> – <a class="lk" href="https://www.jedha.co/formation-cybersecurite/liste-des-organisations-victimes-dune-cyberattaque-en-2024" target="_blank" rel="noopener">Akira, Qilin, RansomHub : les cinq gangs les plus actifs contre les entreprises françaises</a> – <a class="lk" href="https://www.economie.gouv.fr/cge/barometre-du-numerique-edition-2026" target="_blank" rel="noopener">Baromètre du numérique 2026 : ce que les Français font vraiment de l'IA</a> – et le flux quotidien de <a class="lk" href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> pour garder un coup d'avance. <span class="end">La suite… demain matin !</span>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <h2>Sources surveillées</h2>
+    <div class="chips">
+      <span class="chip">L'Argus de l'assurance</span>
+      <span class="chip">News Assurances Pro</span>
+      <span class="chip">France Assureurs</span>
+      <span class="chip">CCR / CatNat.net</span>
+      <span class="chip">L'Usine Digitale</span>
+      <span class="chip">APEC</span>
+      <span class="chip">Insee</span>
+      <span class="chip">Banque de France</span>
+      <span class="chip">ACPR</span>
+      <span class="chip">Maddyness</span>
+      <span class="chip">TechCrunch</span>
+      <span class="chip">Crunchbase News</span>
+      <span class="chip">Bloomberg</span>
+      <span class="chip">Siècle Digital</span>
+      <span class="chip">Cyberattaque.org</span>
+      <span class="chip">Fierce Network</span>
+    </div>
+    <p class="note">Format inspiré de <em>Tech Trash</em> (plume vive, références en liens dans le texte) et de <em>Time To Sign Off</em> (briefing court). Agrégation quotidienne de ces flux et newsletters de référence, filtrée puis synthétisée pour un dirigeant — focus France. Chaque lien renvoie à sa source. Édition recompilée chaque matin.</p>
+  </div>
+
+  <div class="foot">La Veille du Dirigeant · briefing automatisé · <a class="lk" href="index.html">consulter les éditions précédentes</a> · cliquez les liens pour aller à la source</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Veille Dirigeant",
+  "schemaVersion": 1,
+  "description": "Briefing matinal du dirigeant : synthèse structurée (assurance/insurtech, tech & IA, économie/finance, réglementaire/risques, capital humain, souveraineté) avec focus France. Inspirée de Tech Trash et Time To Sign Off. Recompilée chaque matin par une tâche planifiée."
+}
+</script>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Veille du Dirigeant</title>
+<style>
+:root{
+  color-scheme: light;
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
+  --line:#e7e4dd; --accent:#0b3d2e; --link:#1d6b4f;
+  --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:30px 22px 72px}
+
+/* Masthead */
+.mast{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.brandline{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:6px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.02em}
+.date{font-size:13px;color:var(--muted);font-weight:600}
+
+/* Edition title + hook */
+.edtitle{font-family:var(--serif);font-size:36px;line-height:1.04;margin:22px 0 10px;font-weight:700;letter-spacing:-.4px}
+.readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
+.hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--accent);padding:4px 0 4px 15px;margin:0 0 26px}
+.hook .go{font-weight:700;color:var(--accent)}
+
+/* En bref */
+.brief{background:var(--accent);color:#eef2ee;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bfe0cf;font-weight:700}
+.brief ul{margin:0;padding:0;list-style:none}
+.brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#7fd1a6}
+
+/* Numbered items — generous vertical rhythm */
+.item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
+.item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;min-width:16px}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
+.item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
+.item p{margin:0;font-size:15px;color:#262626}
+.item p strong{font-weight:700;color:#111}
+
+/* Inline links — the heart of the format */
+a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #aed4c4;font-weight:600;transition:border-color .15s,background .15s}
+a.lk:hover{border-bottom-color:var(--link);background:#eaf4ef}
+
+/* Bonus */
+.bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--accent)}
+
+/* Sources */
+.sources{margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
+.sources h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 11px;color:#444}
+.note{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.55}
+.foot{margin-top:22px;text-align:center;font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">Briefing matinal · Assurance · Tech &amp; IA · Éco · Risques</div>
+    <div class="brandline">
+      <span class="brand">LA VEILLE DU DIRIGEANT</span>
+      <span class="date">Mercredi 19 août 2026 · focus France · <a class="lk" href="index.html">archives</a></span>
+    </div>
+  </header>
+
+  <div class="edtitle">La BCE siffle la bulle pendant qu'un fondeur double en trente jours</div>
+  <div class="readtime">7 min de lecture · édition recompilée automatiquement chaque matin</div>
+
+  <p class="hook">
+    Le téléphone est mort, ChatGPT vend des contrats – la BCE chiffre à 440 Md€ ce que la zone euro a mis dans sept actions américaines – un fabricant de puces double sa valorisation en un mois – et l'ACPR vient réécrire votre devoir de conseil. Le tour d'horizon du mercredi matin. <span class="go">C'est parti.</span>
+  </p>
+
+  <section class="brief">
+    <h2>En 30 secondes</h2>
+    <ul>
+      <li><strong>Assurance :</strong> l'<strong>opt-in</strong> téléphonique est entré en vigueur le 11 août — preuve du consentement à conserver <strong>3 ans</strong> — pendant qu'April signe des contrats moto <strong>dans ChatGPT</strong>.</li>
+      <li><strong>Économie :</strong> la BCE alerte sur la bulle IA : <strong>440 Md€</strong> d'exposition des ménages, assureurs et fonds de pension européens aux sept géants américains.</li>
+      <li><strong>Tech :</strong> <strong>Etched</strong> lève 700 M$ et double à <strong>21 Md$</strong> en moins d'un mois. Le client a testé le rack avant de mener le tour.</li>
+      <li><strong>Réglementaire :</strong> l'<strong>ACPR</strong> publie de nouvelles bonnes pratiques sur le devoir de conseil et durcit son programme <strong>2026</strong> sur les pratiques commerciales.</li>
+    </ul>
+  </section>
+
+  <!-- 1 -->
+  <article class="item">
+    <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
+    <h3>Votre plateau d'appels vient de fermer. Votre nouveau vendeur s'appelle ChatGPT.</h3>
+    <p>Le 11 août, la France a changé de régime sans que personne n'organise de cérémonie : <a class="lk" href="https://www.france-epargne.fr/news/demarchage-telephonique-le-passage-a-lopt-in-au-11-aout-2026-rebat-les-cartes-de-lassurance" target="_blank" rel="noopener">le démarchage téléphonique bascule en <strong>opt-in</strong>, et l'assurance figure au premier rang des secteurs concernés</a>. Fini Bloctel et la logique d'opposition : <a class="lk" href="https://www.legalplace.fr/actualites/demarchage-telephonique/" target="_blank" rel="noopener">l'article L.223-1 du Code de la consommation interdit désormais tout appel commercial sans accord préalable « libre, spécifique, éclairé, univoque et révocable »</a>, issu de <a class="lk" href="https://gdroit.fr/droit-des-assurances/demarchage-telephonique-assurance/" target="_blank" rel="noopener">la loi du 30 juin 2025 — avec charge de la preuve sur l'entreprise et conservation numérique du consentement pendant trois ans minimum</a>. Traduction comptable : vos fichiers achetés valent zéro, et votre coût d'acquisition vient de changer d'ordre de grandeur. La réponse du marché existe déjà, elle ne passe pas par un combiné — <a class="lk" href="https://www.argusdelassurance.com/courtiers/april/le-courtier-april-casse-les-codes-de-la-souscription-en-assurance-en-distribuant-une-offre-directement-dans-chatgpt.4QSIF3EHNVDKNC6PTUW5QWGI7A.html" target="_blank" rel="noopener">April distribue une offre directement dans ChatGPT</a>, où <a class="lk" href="https://www.april.com/fr/communique-de-presse/april-annonce-le-lancement-de-son-application-april-moto-dans-chatgpt-dopenai/" target="_blank" rel="noopener">l'application interroge les moteurs tarifaires d'April Moto en temps réel et délivre un vrai devis souscriptible</a>, <a class="lk" href="https://www.lassuranceenmouvement.com/2026/06/15/april-moto-se-souscrit-desormais-directement-dans-chatgpt/" target="_blank" rel="noopener">et non l'estimation approximative dont les chatbots nous gavent depuis dix ans</a>. Pour le dirigeant : le régulateur a fermé le canal sortant le moins cher au moment précis où <strong>la conversation devient un point de vente</strong>. Ceux qui n'ont pas de présence dans les assistants n'auront bientôt ni téléphone, ni vitrine.</p>
+  </article>
+
+  <!-- 2 -->
+  <article class="item">
+    <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
+    <h3>440 milliards d'euros d'épargne européenne, sept actions américaines</h3>
+    <p>Quand la banque centrale se met à parler comme un vendeur à découvert, c'est qu'on approche de quelque chose : <a class="lk" href="https://www.journaldeleconomie.fr/la-bce-sinquiete-des-risques-dune-explosion-de-la-bulle-ia/" target="_blank" rel="noopener">la BCE s'inquiète publiquement d'une explosion de la bulle IA</a>, dans <a class="lk" href="https://www.webmanagercenter.com/2026/08/17/571538/bulle-ia-la-bce-commence-a-sinquieter-du-prix-de-leuphorie/" target="_blank" rel="noopener">une note du 17 août qui met un prix sur l'euphorie</a>. Le chiffre qui doit vous intéresser directement : <a class="lk" href="https://www.cryptonomie.fr/la-bce-compare-lia-a-la-bulle-internet-440-milliards-deuros-dactions-us-exposes/" target="_blank" rel="noopener"><strong>440 Md€</strong> d'exposition des ménages, <strong>assureurs</strong> et fonds de pension de la zone euro aux sept géants technologiques américains, largement logés dans des ETF</a>. Le verdict des économistes de la BCE est sec — <a class="lk" href="https://www.francetransactions.com/actus/news-bourse/marches/bce-alerte-krach-actions-ia.html" target="_blank" rel="noopener">« une correction des valorisations boursières actuelles est probable »</a> — avec une nuance désagréable par rapport à 2000 : <a class="lk" href="https://cryptoast.fr/krach-de-lia-en-vue-la-bce-compare-leuphorie-de-lia-a-la-bulle-internet/" target="_blank" rel="noopener">à l'époque, les banques centrales pouvaient couper les taux pour amortir ; aujourd'hui l'espace budgétaire est verrouillé</a>. Verrouillé, le mot est faible côté français : <a class="lk" href="https://echosplus.com/2026/08/05/budget-de-letat-la-charge-de-la-dette-bondit-de-18-au-premier-semestre/" target="_blank" rel="noopener">la charge de la dette a bondi de <strong>18 %</strong> au premier semestre</a>, et <a class="lk" href="https://www.rexecode.fr/conjoncture-previsions/notes-d-analyse/points-d-actualite/pa-france/choc-du-refinancement-la-dette-publique-francaise-change-de-regime" target="_blank" rel="noopener">Rexecode parle d'un changement de régime : le taux apparent de la dette dépasse désormais la croissance du PIB</a>, tandis que <a class="lk" href="https://www.publicsenat.fr/actualites/economie/la-france-devra-realiser-126-milliards-deuros-deffort-budgetaire-dici-la-fin-du-prochain-quinquennat-pour-stopper-la-progression-de-la-dette" target="_blank" rel="noopener">126 Md€ d'effort budgétaire seraient nécessaires d'ici la fin du prochain quinquennat pour simplement stopper la dérive</a>. Pour le dirigeant : ce n'est pas un débat de marché, c'est <strong>une ligne de votre actif général</strong>. Demandez à votre direction financière la part « Magnificent Seven » regardée en transparence, pas la part « actions internationales » déclarée en agrégat.</p>
+  </article>
+
+  <!-- 3 -->
+  <article class="item">
+    <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
+    <h3>Le client a branché le rack, puis il a mené le tour de table</h3>
+    <p>Pendant que Francfort parle de correction, la Silicon Valley change d'unité de mesure : <a class="lk" href="https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/" target="_blank" rel="noopener">Etched lève <strong>700 M$</strong> et double sa valorisation à <strong>21 Md$</strong> — en moins d'un mois</a>, alors que <a class="lk" href="https://techcrunch.com/2026/07/23/ai-chip-startup-etched-defies-skeptics-hits-10-3b-valuation-from-big-name-investors/" target="_blank" rel="noopener">la même société valait 10,3 Md$ fin juillet, ce que tout le monde jugeait déjà généreux</a>. Le détail qui distingue ce dossier de la moyenne des levées d'août : <a class="lk" href="https://siliconangle.com/2026/08/18/inference-chip-startup-etched-raises-another-700m-at-21b-valuation/" target="_blank" rel="noopener">le tour est mené par Jane Street, qui avait auparavant installé et testé le premier cluster livré dans son propre data center</a>, et <a class="lk" href="https://cryptobriefing.com/etched-valuation-21b-jane-street-funding/" target="_blank" rel="noopener">l'entreprise revendique plus d'1 Md$ de contrats clients signés</a>. Autrement dit, un acheteur exigeant a validé la machine avant de valider le prix — rareté suffisante pour être signalée dans un marché où <a class="lk" href="https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/" target="_blank" rel="noopener">Databricks voulait 1 Md$, s'est vu proposer 15, et a fini par en prendre 5 à 190 Md$ de valorisation</a>, et où <a class="lk" href="https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/" target="_blank" rel="noopener">Cognition rediscute déjà à 40 Md$ trois mois après avoir levé à 26</a>. Pour le dirigeant : la question n'est pas de savoir si la bulle existe, mais <strong>lesquels de vos fournisseurs IA ont un client qui a payé, mesuré et redemandé</strong>. C'est le seul indicateur qui survit à une correction.</p>
+  </article>
+
+  <!-- 4 -->
+  <article class="item">
+    <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
+    <h3>L'ACPR ne vous demande plus de conseiller. Elle vous demande de le prouver.</h3>
+    <p>Le superviseur a sorti sa liste de courses pour l'année : <a class="lk" href="https://acpr.banque-france.fr/fr/communiques-de-presse/devoir-de-conseil-en-assurance-lacpr-recommande-de-nouvelles-bonnes-pratiques" target="_blank" rel="noopener">l'ACPR publie de nouvelles bonnes pratiques sur le <strong>devoir de conseil</strong> en assurance</a>, dans un contexte où <a class="lk" href="https://sequentia.fr/acpr-renforcement-des-controles-sur-les-pratiques-commerciales-des-assureurs-en-2026/" target="_blank" rel="noopener">les contrôles sur les pratiques commerciales sont explicitement renforcés en 2026</a>. Le programme officiel est plus large qu'il n'en a l'air : <a class="lk" href="https://acpr.banque-france.fr/en/press-release/autorite-de-controle-prudentiel-et-de-resolution-prudential-supervision-and-resolution-authority" target="_blank" rel="noopener">cinq axes, avec une attention appuyée sur le contrôle des fonctions externalisées, le recours aux intermédiaires et délégataires, et l'intégration de la durabilité dans la gouvernance des risques</a> — c'est-à-dire précisément les endroits où vos process ont été construits par empilement plutôt que par dessin. Côté prudentiel, le sol reste solide : <a class="lk" href="https://acpr.banque-france.fr/system/files/2026-06/20260630_AS181_assureurs_S2_2025.pdf" target="_blank" rel="noopener">l'analyse de l'ACPR sur la situation des assureurs fin 2025 confirme une solvabilité renforcée</a>, <a class="lk" href="https://www.planetecsca.fr/actualites/environnement-courtage-assurances/situation-assureurs-france-2025-acpr/" target="_blank" rel="noopener">avec des cotisations dommages en hausse de 5,6 % pour une sinistralité à +1,4 % et un ratio combiné revenu à 95,3 %</a>. Le risque, cette année, n'est pas dans le bilan mais dans le dossier client — et dans le SI : <a class="lk" href="https://cap-formation.fr/cyberattaque-france-fuites-donnees-2026/" target="_blank" rel="noopener">la CNIL enregistre une explosion des notifications de violations (+45 %), soit près de 24 fuites déclarées par jour</a>, <a class="lk" href="https://www.cyberattaque.org/" target="_blank" rel="noopener">dans un flux de revendications désormais quotidien</a>. Pour le dirigeant : un devoir de conseil non tracé est un devoir de conseil non exécuté. <strong>Le contrôle de 2026 portera sur vos preuves, pas sur vos intentions</strong> — et vos délégataires signeront pour vous.</p>
+  </article>
+
+  <!-- 5 -->
+  <article class="item">
+    <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
+    <h3>Le vrai problème n'est pas la suppression des postes, c'est la péremption des compétences</h3>
+    <p>Le débat public s'obstine sur le nombre d'emplois détruits ; les données de terrain racontent autre chose. <a class="lk" href="https://www.forbes.com/sites/bryanrobinson/2026/08/10/ai-is-making-these-jobs-irreplaceable-as-hiring-rates-plunge-24/" target="_blank" rel="noopener">Le taux d'embauche global a chuté de <strong>24 %</strong>, mais certains métiers — enseignants, juristes, architectes, sécurité — deviennent au contraire difficiles à remplacer</a>. La vraie ligne de fracture est ailleurs : <a class="lk" href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/07/28/the-real-ai-workforce-crisis-is-skills-expiration-not-job-elimination/" target="_blank" rel="noopener">Forbes la nomme « expiration des compétences » — les entreprises inondent leur infrastructure d'outils IA sans préparer les gens à s'en servir</a>, et les chiffres français lui donnent raison : <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">seuls <strong>29 %</strong> des cadres déclarent avoir été formés à l'IA en 2026, soit +5 points en un an</a>, pendant que <a class="lk" href="https://corporate.apec.fr/home/actus-medias/toutes-nos-actualites/recrutement-de-cadres-les-pratiques-evoluent-a-l'heure-de-l'ia-sur-un-marche-moins-tendu.html" target="_blank" rel="noopener">l'APEC observe des pratiques de recrutement qui évoluent sur un marché nettement moins tendu</a>. Côté management, la fiche de poste change de nature : <a class="lk" href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/08/13/the-new-leadership-challenge-managing-humans-and-machines-together/" target="_blank" rel="noopener">diriger consiste désormais à piloter humains et machines dans la même équipe</a>, et <a class="lk" href="https://www.fastcompany.com/91445660/how-ai-is-reshaping-workforce-strategy" target="_blank" rel="noopener">la planification des effectifs cesse d'être un exercice de headcount pour devenir un exercice de compétences</a>. N'oubliez pas la contrainte légale qui vient de tomber dessus : <a class="lk" href="https://hey-hr.com/ia-recrutement-cadres-conformite/" target="_blank" rel="noopener">depuis le 2 août, inventaire des systèmes, supervision humaine réelle et transparence envers les candidats</a>. Pour le dirigeant : votre budget formation IA est probablement inférieur à votre budget licences IA. <strong>C'est l'inversion la plus coûteuse de votre P&amp;L</strong>, et elle ne se voit pas avant dix-huit mois.</p>
+  </article>
+
+  <!-- 6 -->
+  <article class="item">
+    <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infra</span></div>
+    <h3>L'Europe a retiré la souveraineté de son label cloud pour la remettre dans ses achats</h3>
+    <p>Bruxelles a trouvé une élégante pirouette : ce qu'elle a lâché sur la certification, elle le récupère sur la commande publique. <a class="lk" href="https://itsocial.fr/cybersecurite/cybersecurite-articles/eucs-et-cada-leurope-abandonne-la-souverainete-dans-son-label-cloud-et-la-reintroduit-dans-la-commande-publique/" target="_blank" rel="noopener">Le critère de souveraineté disparaît du schéma de certification EUCS, mais réapparaît dans le Cloud and AI Development Act</a>, présenté le 3 juin avec <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">un cadre à quatre niveaux allant de la simple localisation européenne à l'absence d'ingérence de pays tiers et au contrôle capitalistique européen du fournisseur</a>. L'argent suit, modestement : <a class="lk" href="https://france.representation.ec.europa.eu/informations/souverainete-numerique-la-commission-octroie-180-millions-deuros-quatre-fournisseurs-europeens-2026-04-17_fr" target="_blank" rel="noopener">la Commission a octroyé <strong>180 M€</strong> à quatre fournisseurs européens — Post Telecom avec OVHcloud et Clever Cloud, StackIT, Scaleway et Proximus</a>. Reste que la souveraineté se joue aussi sous l'eau, là où personne ne fait de communiqué : <a class="lk" href="https://datacenter-magazine.fr/cables-sous-marins-levier-de-souverainete-numerique-et-economique/" target="_blank" rel="noopener">les câbles sous-marins concentrent rivalités géopolitiques et dépendances économiques</a>, <a class="lk" href="https://www.revuepolitique.fr/les-cables-sous-marins-ce-reseau-invisible-qui-connecte-le-monde/" target="_blank" rel="noopener">Marseille en accueille désormais 17 contre 13 en 2020, ce qui la place dans le top 5 mondial</a>, et <a class="lk" href="https://www.portail-ie.fr/univers/blockchain-data-et-ia/2026/emergence-et-transformation-des-data-centers-une-souverainete-numerique-redessinee-par-linnovation-technologique/" target="_blank" rel="noopener">un territoire n'attire des câbles que s'il dispose déjà de data centers pour exploiter les flux</a>. Pendant ce temps, <a class="lk" href="https://www.solutions-numeriques.com/digital-omnibus-simplification-ou-recul-strategique-pour-la-souverainete-numerique-de-leurope/" target="_blank" rel="noopener">le Digital Omnibus se fait accuser de troquer la simplification contre un recul stratégique</a>. Pour le dirigeant : le jour où le critère souverain passe de la certification au marché public, <strong>votre appel d'offres devient l'instrument de politique industrielle</strong>. Relisez vos clauses de réversibilité avant que quelqu'un ne les relise pour vous.</p>
+  </article>
+
+  <!-- BONUS -->
+  <div class="bonus">
+    <span class="lab">Bonus</span> <a class="lk" href="https://www.blogdumoderateur.com/google-ai-overviews-presse-francaise-saisit-autorite-concurrence/" target="_blank" rel="noopener">La presse française saisit l'Autorité de la concurrence contre les AI Overviews de Google</a> – <a class="lk" href="https://www.alliancepresse.fr/actualite/services-dia-de-google-lalliance-saisit-lautorite-de-la-concurrence/" target="_blank" rel="noopener">la version de l'Alliance elle-même, plainte à l'appui</a> – <a class="lk" href="https://www.opinion-internationale.com/2026/08/11/google-ai-overviews-arrive-en-france-les-editeurs-de-presse-saisissent-lautorite-de-la-concurrence_144042.html" target="_blank" rel="noopener">33 à 38 % de trafic perdu sur les marchés européens où la fonction est déjà active</a> – <a class="lk" href="https://www.usine-digitale.fr/intelligence-artificielle/nous-avons-ete-le-premier-client-de-mistral-ai-a-deployer-mistral-vibe-a-tres-grande-echelle-julien-smadja-directeur-de-lia-chez-cma-cgm.YT3NTLIZFVGM3CSZEKJVO776SA.html" target="_blank" rel="noopener">CMA CGM, premier client de Mistral à déployer Vibe à très grande échelle</a> – <a class="lk" href="https://siecledigital.fr/2026/06/01/rodolphe-saade-expose-sa-strategie-ia-de-cma-cgm-lors-du-ai-now-summit/" target="_blank" rel="noopener">100 M€ dans Mistral, 23 000 collaborateurs formés : la méthode Saadé</a> – <a class="lk" href="https://www.franceinfo.fr/economie/incendies-canicules-secheresse-pourquoi-il-est-difficile-de-chiffrer-l-impact-des-evenements-climatiques_8135747.html" target="_blank" rel="noopener">Canicule à 10-15 Md€ : le gouvernement chiffre, l'Insee dément être la source</a> – <a class="lk" href="https://actu.orange.fr/france/canicules-incendies-secheresse-la-facture-vertigineuse-des-catastrophes-climatiques-en-france-magicExpress-CNT000002rl0YN.html" target="_blank" rel="noopener">65 % du pays en sécheresse d'une intensité vue une année sur 25</a> – <a class="lk" href="https://www.forbes.fr/technologie/assurances-et-ia-agentique-quels-defis-en-2026/" target="_blank" rel="noopener">Forbes : l'IA agentique arrive dans l'assurance, et elle décide</a> – <a class="lk" href="https://www.orchestraintelligence.fr/blog/agents-ia-assurance-sinistres-automatisation-2026" target="_blank" rel="noopener">Les sinistres pèsent 60 % des coûts opérationnels : la cible évidente de l'automatisation</a> – <a class="lk" href="https://startbrain.ai/blog/ia-assurance-transformation/" target="_blank" rel="noopener">AXA prolonge Shift Technology pour cinq ans sur 15 pays et trois continents</a> – <a class="lk" href="https://www.mandalorepartners.com/research/insurtech-2026-les-10-tendances-qui-redfinissent-lassurance-en-europe" target="_blank" rel="noopener">Les 10 tendances qui redéfinissent l'insurtech européenne en 2026</a> – <a class="lk" href="https://www.globenewswire.com/news-release/2026/07/31/3336600/0/fr/cr%C3%A9dit-agricole-assurances-un-chiffre-d-affaires-historique-port%C3%A9-par-l-ensemble-des-lignes-m%C3%A9tiers.html" target="_blank" rel="noopener">Crédit Agricole Assurances signe un chiffre d'affaires historique sur toutes ses lignes</a> – <a class="lk" href="https://www.assurances.groupebpce.com/pole-assurances-resultats-premier-semestre-2026/" target="_blank" rel="noopener">Les résultats semestriels de BPCE Assurances, pour comparer</a> – <a class="lk" href="https://techstartups.com/2026/08/18/top-tech-news-today-august-18-2026-apple-baidu-bytedance-google-meta-openai-xiaomi-more/" target="_blank" rel="noopener">AirPods à caméra, robotaxis Pony.ai et procès Meta dans 29 États : la journée tech du 18 août</a> – <a class="lk" href="https://techcrunch.com/2026/08/07/the-founders-guide-to-techcrunch-disrupt-2026-everything-you-need-to-know/" target="_blank" rel="noopener">TechCrunch Disrupt, du 13 au 15 octobre à San Francisco, mode d'emploi</a> – et le flux quotidien de <a class="lk" href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> pour garder un coup d'avance. <span class="end">La suite… demain matin !</span>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <h2>Sources surveillées</h2>
+    <div class="chips">
+      <span class="chip">L'Argus de l'assurance</span>
+      <span class="chip">News Assurances Pro</span>
+      <span class="chip">France Assureurs</span>
+      <span class="chip">L'Assurance en Mouvement</span>
+      <span class="chip">Banque de France / ACPR</span>
+      <span class="chip">BCE</span>
+      <span class="chip">L'Usine Digitale</span>
+      <span class="chip">Siècle Digital</span>
+      <span class="chip">Blog du Modérateur</span>
+      <span class="chip">APEC</span>
+      <span class="chip">Forbes / Forbes France</span>
+      <span class="chip">Fast Company</span>
+      <span class="chip">TechCrunch</span>
+      <span class="chip">SiliconANGLE</span>
+      <span class="chip">Rexecode</span>
+      <span class="chip">Public Sénat</span>
+      <span class="chip">IT Social</span>
+      <span class="chip">Cyberattaque.org</span>
+    </div>
+    <p class="note">Format inspiré de <em>Tech Trash</em> (plume vive, références en liens dans le texte) et de <em>Time To Sign Off</em> (briefing court). Agrégation quotidienne de ces flux et newsletters de référence, filtrée puis synthétisée pour un dirigeant — focus France. Chaque lien renvoie à sa source. Édition recompilée chaque matin.</p>
+  </div>
+
+  <div class="foot">La Veille du Dirigeant · briefing automatisé · <a class="lk" href="index.html">consulter les éditions précédentes</a> · cliquez les liens pour aller à la source</div>
+
+</div>
+</body>
+</html>

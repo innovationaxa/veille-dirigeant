@@ -1,0 +1,177 @@
+<!doctype html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Veille Dirigeant",
+  "schemaVersion": 1,
+  "description": "Briefing matinal du dirigeant : synthèse structurée (assurance/insurtech, tech & IA, économie/finance, réglementaire/risques, capital humain, souveraineté) avec focus France. Inspirée de Tech Trash et Time To Sign Off. Recompilée chaque matin par une tâche planifiée."
+}
+</script>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Veille du Dirigeant</title>
+<style>
+:root{
+  color-scheme: light;
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
+  --line:#e7e4dd; --accent:#0b3d2e; --link:#1d6b4f;
+  --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:30px 22px 72px}
+
+/* Masthead */
+.mast{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.brandline{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:6px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.02em}
+.date{font-size:13px;color:var(--muted);font-weight:600}
+
+/* Edition title + hook */
+.edtitle{font-family:var(--serif);font-size:36px;line-height:1.04;margin:22px 0 10px;font-weight:700;letter-spacing:-.4px}
+.readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
+.hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--accent);padding:4px 0 4px 15px;margin:0 0 26px}
+.hook .go{font-weight:700;color:var(--accent)}
+
+/* En bref */
+.brief{background:var(--accent);color:#eef2ee;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bfe0cf;font-weight:700}
+.brief ul{margin:0;padding:0;list-style:none}
+.brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#7fd1a6}
+
+/* Numbered items — generous vertical rhythm */
+.item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
+.item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;min-width:16px}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
+.item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
+.item p{margin:0;font-size:15px;color:#262626}
+.item p strong{font-weight:700;color:#111}
+
+/* Inline links — the heart of the format */
+a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #aed4c4;font-weight:600;transition:border-color .15s,background .15s}
+a.lk:hover{border-bottom-color:var(--link);background:#eaf4ef}
+
+/* Bonus */
+.bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--accent)}
+
+/* Sources */
+.sources{margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
+.sources h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 11px;color:#444}
+.note{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.55}
+.foot{margin-top:22px;text-align:center;font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">Briefing matinal · Assurance · Tech &amp; IA · Éco · Risques</div>
+    <div class="brandline">
+      <span class="brand">LA VEILLE DU DIRIGEANT</span>
+      <span class="date">Lundi 17 août 2026 · focus France · <a class="lk" href="index.html">archives</a></span>
+    </div>
+  </header>
+
+  <div class="edtitle">L'AI Act a quinze jours et déjà des dents, l'épargne bat un record de vingt ans</div>
+  <div class="readtime">7 min de lecture · édition recompilée automatiquement chaque matin</div>
+
+  <p class="hook">
+    AXA publie un semestre insolent pendant que la santé prépare l'addition de 2027 – l'AI Act est passé du PowerPoint au procès-verbal – 36,5 Md€ ont fui le Livret A vers l'assurance vie – et Bruxelles met 10 Md€ sur sept usines à calcul. Le tour d'horizon du lundi matin. <span class="go">C'est parti.</span>
+  </p>
+
+  <section class="brief">
+    <h2>En 30 secondes</h2>
+    <ul>
+      <li><strong>Assurance :</strong> <strong>66,3 Md€</strong> de primes AXA au S1 (<strong>+5 %</strong>), santé <strong>+34 %</strong> de résultat opérationnel — et <strong>1,4 Md€</strong> de charges qui basculent vers les mutuelles en 2027.</li>
+      <li><strong>Tech &amp; IA :</strong> <strong>Cognition</strong> reparle levée à <strong>40 Md$</strong>, <strong>Thrive</strong> encaisse <strong>2 Md$</strong>, <strong>Lovable</strong> double à <strong>13,3 Md$</strong> — et Mistral sort <strong>Shieldstral</strong>.</li>
+      <li><strong>Économie :</strong> croissance <strong>0,7 %</strong>, PIB atone au T1, inflation qui remonte vers <strong>2,7 %</strong> en décembre, pouvoir d'achat <strong>−0,3 %</strong>. L'assurance vie, elle, engrange <strong>36,5 Md€</strong>.</li>
+      <li><strong>Réglementaire :</strong> AI Act applicable depuis le <strong>2 août</strong> — <strong>35 M€ ou 7 % du CA</strong> — pendant que Santé publique France, Valve et France VAE alimentent le compteur des fuites.</li>
+    </ul>
+  </section>
+
+  <!-- 1 -->
+  <article class="item">
+    <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
+    <h3>Un semestre de rêve, une facture 2027 déjà écrite</h3>
+    <p>Les chiffres d'abord : <a class="lk" href="https://www.argusdelassurance.com/compagnies/axa/axa-publie-un-resultat-operationnel-en-hausse-de-4-au-premier-semestre-porte-par-le-segment-vie.ILGJ75KMB5BHXM4L2PZZCZEDOU.html" target="_blank" rel="noopener">AXA publie 66,3 Md€ de primes au premier semestre, en hausse de 5 %, tirées par une vie-santé à +8 %</a>, avec un <a class="lk" href="https://www.zonebourse.com/actualite-bourse/axa-le-ropa-depasse-les-attentes-au-premier-semestre-objectif-2026-confirme-ce7f50dbda8df325" target="_blank" rel="noopener">résultat opérationnel par action à 2,19 €, +8 %, au-dessus du consensus et objectif 2026 confirmé</a> — la branche santé affichant à elle seule <strong>+34 % de résultat opérationnel</strong> sur <a class="lk" href="https://www.axa.com/fr/actualites/resultats-semestriels-2026-actualites" target="_blank" rel="noopener">10,8 Md€ de primes</a>. Le tableau d'ensemble est plus nuancé : <a class="lk" href="https://www.argusdelassurance.com/les-assureurs/compagnies/axa-cnp-generali-des-resultats-semestriels-contrastes.232361" target="_blank" rel="noopener">l'Argus qualifie de « contrastés » les semestriels d'AXA, CNP et Generali</a>. Et la fête a une date de péremption : Bercy a transmis fin juillet <a class="lk" href="https://www.moneyvox.fr/assurance/actualites/109798/remboursements-de-soins-ce-qui-va-changer-pour-votre-mutuelle-en-2027" target="_blank" rel="noopener">cinq projets de décret qui redessinent la frontière entre Sécu et complémentaires</a>, soit <a class="lk" href="https://www.france-epargne.fr/news/sante-14-milliard-deuros-de-remboursements-basculent-vers-les-mutuelles-en-2027" target="_blank" rel="noopener">1,4 Md€ de remboursements transférés vers les mutuelles en 2027</a> — la Mutualité parlant plutôt de <a class="lk" href="https://www.publicsenat.fr/actualites/sante/mutuelles-pourquoi-les-cotisations-des-assures-devraient-encore-augmenter-en-2026-voire-en-2027" target="_blank" rel="noopener">1,5 à 1,7 Md€, avec une nouvelle vague de hausses à la clé</a>. Pour le dirigeant : la santé finance aujourd'hui votre croissance et paiera demain votre arbitrage politique. Un <strong>résultat porté par un poste que l'État peut retarifer par décret</strong> n'est pas une performance, c'est un emprunt sur 2027.</p>
+  </article>
+
+  <!-- 2 -->
+  <article class="item">
+    <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
+    <h3>Le capital ne finance plus les modèles, il achète des entreprises à automatiser</h3>
+    <p>Le signal de la quinzaine ne vient pas d'un benchmark mais d'un montage financier : <a class="lk" href="https://techcrunch.com/2026/08/12/openai-backed-thrive-holdings-raises-2b-to-bring-ai-to-the-enterprise/" target="_blank" rel="noopener">Thrive Holdings lève 2 Md$ à 12 Md$ pour racheter des cabinets comptables et y injecter de l'IA</a> — du private equity qui vend de la marge, pas du modèle. Le reste suit la même logique inflationniste : <a class="lk" href="https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/" target="_blank" rel="noopener">Cognition rediscute déjà un tour à 40 Md$, trois mois après en avoir bouclé un à 26</a>, <a class="lk" href="https://rekto.substack.com/p/vendredi-14-aout-2026" target="_blank" rel="noopener">Lovable double sa valorisation à 13,3 Md$ et Google enchaîne Gemini 3.7 Flash trois semaines après le précédent</a>, et <a class="lk" href="https://techcrunch.com/2026/08/03/a-marc-benioff-backed-startup-thinks-ai-can-solve-the-ai-deployment-problem/" target="_blank" rel="noopener">une pré-seed à 20 M$ menée par Marc Benioff promet de régler… le problème du déploiement de l'IA</a>. Aveu utile : si déployer est devenu un marché, c'est que peu de projets aboutissent. Côté français, <a class="lk" href="https://www.blogdumoderateur.com/dossier/mistral/" target="_blank" rel="noopener">Mistral a dévoilé le 5 août Shieldstral, un modèle qui évalue la sûreté de textes et d'images à partir de règles en langage naturel</a>, et prépare <a class="lk" href="https://www.usine-digitale.fr/intelligence-artificielle/mistral-ai/" target="_blank" rel="noopener">un data center de 10 MW en France pour le troisième trimestre</a>. Le marché, lui, se durcit : <a class="lk" href="https://techstartups.com/2026/08/14/top-tech-news-today-august-14-2026-apple-anthropic-deepseek-google-ibm-pony-ai-openai-spacex-uber-more/" target="_blank" rel="noopener">OpenAI et Anthropic baissent leurs prix sous la pression chinoise, IBM s'allie à OpenAI, Uber et Pony.ai visent 2 000 robotaxis en Europe</a>, pendant que <a class="lk" href="https://techcrunch.com/2026/07/29/microsoft-is-openly-competing-with-openai-anthropic-more-than-ever/" target="_blank" rel="noopener">Microsoft prêche ouvertement le multi-modèle contre ses propres partenaires</a>. Pour le dirigeant : quand les prix baissent et que les valorisations montent, la valeur a déjà migré du modèle vers <strong>l'intégration et la donnée métier</strong>. Négociez vos contrats à 12 mois, pas à 36.</p>
+  </article>
+
+  <!-- 3 -->
+  <article class="item">
+    <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
+    <h3>Les Français n'investissent plus, ils se mettent à l'abri</h3>
+    <p>Trente-six milliards et demi. C'est ce que l'assurance vie a capté en collecte nette au premier semestre, <a class="lk" href="https://www.france-epargne.fr/news/assurance-vie-365-milliards-deuros-de-collecte-nette-au-premier-semestre-record-depuis-2006" target="_blank" rel="noopener">un record depuis 2006, publié le 30 juillet par France Assureurs</a>, avec un <a class="lk" href="https://www.toutsurmesfinances.com/actualites/a/assurance-vie-la-collecte-nette-atteint-son-plus-haut-niveau-depuis-20-ans" target="_blank" rel="noopener">mois de juin à 19,3 Md€ de versements, +12 % sur un an</a> — pendant que <a class="lk" href="https://www.bdor.fr/actualites-or/assurance-vie-collecte-record-2026-livret-a" target="_blank" rel="noopener">le Livret A perdait 5,93 Md€ sur la même période, avant de remonter à 1,70 % au 1er août</a>. Une épargne record n'est pas une bonne nouvelle macro : c'est un pays qui thésaurise. Le décor le confirme — <a class="lk" href="https://www.abcbourse.com/marches/france-l-insee-anticipe-une-croissance-de-0-7-en-2026_698441" target="_blank" rel="noopener">l'Insee tient 0,7 % de croissance en 2026 malgré un PIB atone au premier trimestre</a>, avec une <a class="lk" href="https://www.monportailfinance.fr/prevision-inflation-2026-insee-que-faut-il-vraiment-anticiper/" target="_blank" rel="noopener">inflation qui repart de 2,3 % en août vers 2,7 % en décembre, portée par le pétrole</a> et un <a class="lk" href="https://www.toutsurmesfinances.com/argent/a/inflation-france-2026" target="_blank" rel="noopener">pouvoir d'achat des ménages en repli de 0,3 % sur l'année</a>. Le tout dans une conjoncture où <a class="lk" href="https://www.parlons-politique.fr/actualite-nationale/pib-a-larret-inflation-en-hausse-edf-epinglee-leconomie-francaise-accumule-les-mauvaises-nouvelles-avant-2027_19805/" target="_blank" rel="noopener">les mauvaises nouvelles s'empilent avant l'échéance de 2027</a>. Pour le dirigeant : vos clients ont de l'argent et n'en dépensent pas. C'est un <strong>marché de la peur, pas un marché du désir</strong> — et ça se vend autrement.</p>
+  </article>
+
+  <!-- 4 -->
+  <article class="item">
+    <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
+    <h3>Quinze jours d'AI Act : la phase « pédagogie » est terminée</h3>
+    <p>Depuis le <strong>2 août</strong>, <a class="lk" href="https://www.usine-digitale.fr/intelligence-artificielle/ia-generative/ai-act-ces-regles-et-nouvelles-exigences-de-transparence-appliquees-depuis-le-2-aout-par-la-commission-europeenne.6WIMKTS2UNFOVDHPWWB35WNFLM.html" target="_blank" rel="noopener">le règlement européen sur l'IA est entré dans sa phase de contrôle et de sanction</a> : <a class="lk" href="https://www.blogdumoderateur.com/ia-act-2-aout-2026/" target="_blank" rel="noopener">l'article 50 impose d'étiqueter chatbots, deepfakes et contenus générés</a>, et le barème est calibré comité exécutif — <a class="lk" href="https://www.clubic.com/actualite-623773-tres-attendu-le-reglement-europeen-sur-l-ia-entre-en-application-ce-2-aout-voici-ce-qui-change-pour-vous.html" target="_blank" rel="noopener">15 M€ ou 3 % du CA mondial pour un manquement à la transparence, 35 M€ ou 7 % pour les pratiques interdites</a>. Le secteur est en première ligne : <a class="lk" href="https://www.lassuranceenmouvement.com/2026/08/11/ia-act-ce-qui-sapplique-aux-assureurs-depuis-le-2-aout/" target="_blank" rel="noopener">tarification, scoring et gestion de sinistres tombent dans le viseur, avec obligation d'informer l'assuré qui parle à une machine</a>, alors même que <a class="lk" href="https://www.decauxassurances.com/blog/2026/08/07/video-assurance-ia-intelligence-artificielle-souscription-2026/" target="_blank" rel="noopener">l'IA est déjà opérationnelle en souscription, détection de fraude et sinistres « light »</a>. Sur l'autre front, l'ACPR ne relâche rien : elle a <a class="lk" href="https://www.argusdelassurance.com/juriscope/cyber-l-acpr-rappelle-ses-attendus-sur-dora.234247" target="_blank" rel="noopener">rappelé ses attendus DORA</a> dans un contexte où <a class="lk" href="https://ayinedjimi-consultants.fr/articles/dora-2026-bilan-conformite" target="_blank" rel="noopener">plus d'un assureur sur deux se déclarait « partiellement conforme » ou « non conforme » sur au moins deux des quatre piliers</a>, et où <a class="lk" href="https://acpr.banque-france.fr/en/press-release/autorite-de-controle-prudentiel-et-de-resolution-prudential-supervision-and-resolution-authority" target="_blank" rel="noopener">son programme 2026 inscrit noir sur blanc la préparation à la supervision de l'IA</a>. Le réel n'attend pas : <a class="lk" href="https://frenchbreaches.com/" target="_blank" rel="noopener">Santé publique France (80 000 personnes, revendication le 11 août), Valve via CEVA Logistics le 7, France VAE le 10</a>, sans compter <a class="lk" href="https://www.cyberattaque.org/" target="_blank" rel="noopener">le flux continu des revendications recensées en France</a>. Pour le dirigeant : le registre IA et le registre d'incidents sont désormais <strong>le même sujet devant le même régulateur</strong>. Deux inventaires manquants, une seule signature — la vôtre.</p>
+  </article>
+
+  <!-- 5 -->
+  <article class="item">
+    <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
+    <h3>Le patron va mal, et personne ne coche la case</h3>
+    <p>On mesure le burn-out des équipes ; celui du dirigeant reste hors périmètre. Le baromètre Ifop 2026 est pourtant net : <a class="lk" href="https://www.planetecsca.fr/actualites/environnement-courtage-assurances/sante-mentale-dirigeants-entreprise-barometre-mma-2026/" target="_blank" rel="noopener">les dirigeants ne sont pas moins exposés que leurs salariés à la souffrance au travail, entre stress administratif et pression économique</a>, et <a class="lk" href="https://www.gallhope.com/un-dirigeant-sur-deux-a-souffert-psychologiquement-en-2026-et-personne-nen-parle/" target="_blank" rel="noopener">un dirigeant sur deux confesse avoir souffert psychologiquement cette année, tandis que 85 % des entrepreneurs déclarent au moins un symptôme</a> — le tout dans un <a class="lk" href="https://www.januarius.fr/la-sante-mentale-des-dirigeants-et-les-managers-sera-un-enjeu-majeur-en-2026-marque-par-une-deterioration-alarmante/" target="_blank" rel="noopener">contexte de dégradation qualifiée d'alarmante pour 2026</a>, que le JDD résume par une formule qui devrait finir en conseil d'administration : <a class="lk" href="https://www.lejdd.fr/economie/la-sante-mentale-des-dirigeants-est-un-sujet-economique-lalerte-de-sylvie-bonello-176688" target="_blank" rel="noopener">« la santé mentale des dirigeants est un sujet économique »</a>. En dessous, la couche managériale encaisse la transformation IA sans mode d'emploi : <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">un cadre sur deux utilise l'IA chaque semaine, 55 % chez les managers, mais 29 % seulement ont été formés — et 72 % le réclament</a>, dans un <a class="lk" href="https://www.hiringlab.org/fr/blog/2026/04/01/avril-2026-lia-progresse-dans-un-marche-du-travail-en-recul/" target="_blank" rel="noopener">marché du travail où l'IA progresse pendant que les offres reculent</a> — même si <a class="lk" href="https://www.apec.fr/tendances-emploi-cadre/recrutement-et-pratiques-rh/quels-sont-les-cadres-qui-seront-les-plus-recrutes-en-2026-.html" target="_blank" rel="noopener">305 800 recrutements de cadres restent attendus en 2026, +4 %</a>. Pour le dirigeant : vous demandez à des managers épuisés de piloter une technologie qu'on ne leur a pas apprise. Ce n'est pas un plan de transformation, c'est <strong>une clause d'exclusion sur votre propre couverture</strong>.</p>
+  </article>
+
+  <!-- 6 -->
+  <article class="item">
+    <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infra</span></div>
+    <h3>Sept usines à calcul, et toujours le même fournisseur de puces</h3>
+    <p>Bruxelles a passé commande. Le 3 août, <a class="lk" href="https://www.technology.org/2026/08/01/eu-seven-ai-gigafactories-10-billion-tender/" target="_blank" rel="noopener">la Commission a ouvert l'appel à projets pour sept gigafactories IA, dotées de 10 Md€ publics</a>, avec l'ambition <a class="lk" href="https://www.euronews.com/my-europe/2026/07/30/eu-opens-call-for-seven-gigafactories-to-train-next-generation-ai-technologies" target="_blank" rel="noopener">de déclencher plus de 30 Md€ d'investissements et au moins 100 000 puces avancées par site</a>, soit quatre fois la puissance des data centers européens actuels. Détail qui vaut stratégie : <a class="lk" href="https://www.mobileeurope.co.uk/eu-ai-gigafactory-nvidia/" target="_blank" rel="noopener">la Commission a signé des lettres d'intention avec AMD, Nvidia et Qualcomm pour sécuriser l'accès au matériel</a> — la souveraineté européenne se construit donc avec des fournisseurs américains, ce qui est réaliste mais mérite d'être dit. Le calendrier, lui, invite à la patience : <a class="lk" href="https://euraxess.ec.europa.eu/worldwide/india/news/eu-launches-ai-gigafactories-call-boost-europes-computing-capacity-and-unlock" target="_blank" rel="noopener">candidatures closes le 12 novembre, décisions début 2027, mise en service jusqu'à 18 mois après signature</a>. Côté français, les opérateurs n'attendent pas : <a class="lk" href="https://www.globenewswire.com/news-release/2026/07/27/3333788/0/fr/orange-orange-et-morrison-annoncent-un-projet-de-cr%C3%A9ation-de-coentreprise-de-data-centers-pour-renforcer-la-souverainet%C3%A9-num%C3%A9rique-de-l-europe.html" target="_blank" rel="noopener">Orange et Morrison ont annoncé le 27 juillet une coentreprise data centers, documentation attendue d'ici fin 2026</a>. Reste le débat de fond, que <a class="lk" href="https://www.usine-digitale.fr/souverainete/oublier-laws-europeen-la-souverainete-numerique-passera-par-la-cooperation-et-les-standards-ouverts.YI2GL2MLCRBIJOAUPJFWF4YAZ4.html" target="_blank" rel="noopener">L'Usine Digitale tranche sans ménagement : oubliez « l'AWS européen », la souveraineté passera par les standards ouverts</a>, pendant que <a class="lk" href="https://www.frenchweb.fr/pendant-que-leurope-parle-de-souverainete-les-big-tech-sy-emploient/459608" target="_blank" rel="noopener">les Big Tech, elles, s'y emploient concrètement</a>. Pour le dirigeant : un calcul disponible en 2028 ne sécurise pas un contrat signé en 2026. La vraie question reste <strong>la réversibilité de vos charges de travail</strong>, pas le drapeau sur le bâtiment.</p>
+  </article>
+
+  <!-- BONUS -->
+  <div class="bonus">
+    <span class="lab">Bonus</span> <a class="lk" href="https://www.magnolia.fr/actualites/sante/mutuelle-sante-pourquoi-tarifs-augmentent-2027" target="_blank" rel="noopener">Pourquoi les tarifs mutuelle vont encore grimper en 2027 : le détail des mécanismes</a> – <a class="lk" href="https://score-expertises.fr/franchise-catastrophe-naturelle/" target="_blank" rel="noopener">Franchise CatNat 2026 : 380 € en habitation, 1 520 € en sécheresse-réhydratation</a> – <a class="lk" href="https://www.franceassureurs.fr/risques-climatiques-et-assurance/" target="_blank" rel="noopener">Le tableau de bord climat de France Assureurs, mis à jour en continu</a> – <a class="lk" href="https://www.echangesassurances.org/actualites/catastrophe-naturelle-arrete-12-juin-2026-secheresse" target="_blank" rel="noopener">183 communes reconnues en état de catastrophe naturelle par l'arrêté du 12 juin</a> – <a class="lk" href="https://www.digital-et-assurance.com/analyses/insurtech-europe-analyse-q1-2026/" target="_blank" rel="noopener">Insurtech Europe : l'argent est revenu, mais les règles ont changé</a> – <a class="lk" href="https://www.lassuranceenmouvement.com/2026/05/22/planete-csca-outille-les-courtiers-face-a-lia/" target="_blank" rel="noopener">Planète CSCA lance « Vision IA » pour armer les courtiers sans lâcher la validation humaine</a> – <a class="lk" href="https://www.argusdelassurance.com/nominations/" target="_blank" rel="noopener">Le fil des nominations de la place, pour savoir qui bouge avant votre concurrent</a> – <a class="lk" href="https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/" target="_blank" rel="noopener">Anthropic annonce que ses propres modèles ont pénétré trois entreprises lors de tests de sécurité</a> – <a class="lk" href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/" target="_blank" rel="noopener">Claude Sonnet 5 : faire tourner des agents pour moins cher, la nouvelle bataille</a> – <a class="lk" href="https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/" target="_blank" rel="noopener">Près de 90 licornes créées depuis janvier : la liste complète, tenue à jour</a> – <a class="lk" href="https://independant.io/top-levees-fonds-france-2026/" target="_blank" rel="noopener">Le top 50 des levées de fonds françaises de 2026</a> – <a class="lk" href="https://www.btdconsulting.fr/post/french-tech-pourquoi-juillet-2026-marque-un-tournant-pour-le-financement-des-startups-fran%C3%A7aises" target="_blank" rel="noopener">Pourquoi juillet 2026 marque un tournant pour le financement de la French Tech</a> – <a class="lk" href="https://quantumcomputingreport.com/news/" target="_blank" rel="noopener">Quantique : Quantinuum à +279 % de revenus après son IPO à 1,7 Md$, le fil des annonces</a> – <a class="lk" href="https://www.jedha.co/formation-cybersecurite/liste-des-organisations-victimes-dune-cyberattaque-en-2024" target="_blank" rel="noopener">La liste actualisée des organisations françaises victimes d'une cyberattaque</a> – et le flux quotidien de <a class="lk" href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> pour garder un coup d'avance. <span class="end">La suite… demain matin !</span>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <h2>Sources surveillées</h2>
+    <div class="chips">
+      <span class="chip">L'Argus de l'assurance</span>
+      <span class="chip">News Assurances Pro</span>
+      <span class="chip">France Assureurs</span>
+      <span class="chip">L'Assurance en Mouvement</span>
+      <span class="chip">Digital &amp; Assurance</span>
+      <span class="chip">L'Usine Digitale</span>
+      <span class="chip">APEC</span>
+      <span class="chip">Insee</span>
+      <span class="chip">Banque de France / ACPR</span>
+      <span class="chip">Bercy</span>
+      <span class="chip">Maddyness</span>
+      <span class="chip">TechCrunch</span>
+      <span class="chip">Euronews</span>
+      <span class="chip">Cyberattaque.org</span>
+      <span class="chip">FrenchBreaches</span>
+    </div>
+    <p class="note">Format inspiré de <em>Tech Trash</em> (plume vive, références en liens dans le texte) et de <em>Time To Sign Off</em> (briefing court). Agrégation quotidienne de ces flux et newsletters de référence, filtrée puis synthétisée pour un dirigeant — focus France. Chaque lien renvoie à sa source. Édition recompilée chaque matin.</p>
+  </div>
+
+  <div class="foot">La Veille du Dirigeant · briefing automatisé · <a class="lk" href="index.html">consulter les éditions précédentes</a> · cliquez les liens pour aller à la source</div>
+
+</div>
+</body>
+</html>
