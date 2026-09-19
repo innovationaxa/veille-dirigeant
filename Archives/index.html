@@ -224,6 +224,7 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
       <details class="bookmark">
         <summary>Ajouter à mes favoris</summary>
         <div class="bookmark-help">
+          <button type="button" class="bookmark-close" aria-label="Fermer l’aide aux favoris"><span aria-hidden="true">×</span></button>
           <p id="bookmark-shortcut">Pour ajouter cette page à vos favoris, appuyez sur <kbd>Ctrl + D</kbd> (Windows) ou <kbd>⌘ + D</kbd> (Mac).</p>
           <p>Sur mobile, ouvrez le menu de votre navigateur ou le menu de partage, puis choisissez « Ajouter aux favoris » ou l’étoile ☆.</p>
         </div>
@@ -319,6 +320,11 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
   if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !(platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
     shortcut.innerHTML = 'Pour ajouter cette page à vos favoris, appuyez sur <kbd>' + (/Mac/i.test(platform) ? '⌘ + D' : 'Ctrl + D') + '</kbd>, puis confirmez dans votre navigateur.';
   }
+  document.querySelector('.bookmark-close').addEventListener('click', function () {
+    var details = this.closest('details');
+    details.open = false;
+    details.querySelector('summary').focus();
+  });
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       var details = document.querySelector('.bookmark');

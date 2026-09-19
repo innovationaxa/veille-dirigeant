@@ -60,3 +60,9 @@ a.lk:focus-visible{outline:2px solid #8c5a2c;outline-offset:3px}
 .item .takeaway{margin:23px 0 0;padding:2px 0 2px 18px;border-left:3px solid #916537}
 .item .takeaway p{margin:0;color:#233e4b;font-size:16px;font-weight:700;line-height:1.7}
 @media(max-width:540px){.item .takeaway{padding-left:15px;margin-top:21px}.item .takeaway p{font-size:15px}}
+
+/* Fermeture explicite de l’aide aux favoris. */
+.bookmark-help{padding-top:42px}
+.bookmark-close{position:absolute;top:5px;right:5px;display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:5px;background:transparent;color:#233e4b;font-family:var(--sans);font-size:25px;line-height:1;cursor:pointer}
+.bookmark-close:hover{background:#ece1ce}
+.bookmark-close:focus-visible{outline:2px solid #916537;outline-offset:1px}
