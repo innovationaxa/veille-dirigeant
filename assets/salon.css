@@ -1,0 +1,57 @@
+/* Proposition complète — palette du salon : encre, papier, laiton, terre cuite. */
+:root{
+ --bg:#eee8de;--card:#fbf7ef;--ink:#202b34;--muted:#6e675e;
+ --line:#d9cebd;--navy:#101b2a;--deep:#1d3041;--red:#b58243;
+ --accent:#a36a35;--link:#77502e;--lilac:#d6bb89;
+ --t-assur:#294354;--t-tech:#4b5354;--t-eco:#775035;
+ --t-reg:#465448;--t-rh:#80513f;--t-souv:#4d4d58;
+ --shadow:0 2px 8px rgba(50,32,16,.04),0 8px 24px rgba(50,32,16,.04);
+}
+.wrap{background:var(--card);box-shadow:0 0 70px #3625120b;padding-bottom:0}
+.inner{padding:0 28px}
+.edtitle{color:var(--navy);font-size:36px;line-height:1.12;margin-top:32px;letter-spacing:-.6px}
+.readtime{color:var(--muted);margin-bottom:24px}
+.hook{color:#494137;border-left:2px solid #b58243;line-height:1.8;margin-bottom:30px;padding-left:18px}
+.brief{background:#172736;color:#f1e8d9;border:1px solid #33434e;border-radius:8px;padding:23px 24px;box-shadow:var(--shadow)}
+.brief h2{color:#e3bd80;letter-spacing:.18em;margin-bottom:15px}
+.brief li{line-height:1.7;margin:10px 0;padding-left:18px}
+.brief li::before{background:#d8a964;width:5px;height:5px;top:10px}
+.item{padding-top:30px;margin-top:34px;border-color:#d9cebd}
+.item-head{gap:12px;margin-bottom:15px}
+.num{font-size:29px;font-weight:400;color:#916537;min-width:21px}
+.pill{font-size:10px;letter-spacing:.09em;border-radius:4px;padding:4px 9px;color:#fff9ee}
+.item h3{font-size:24px;line-height:1.25;color:var(--navy);letter-spacing:-.3px;margin-bottom:17px}
+.item p{color:#393731;font-size:15px;line-height:1.85}
+.item p strong{color:#252c30}
+.bf{color:#233e4b;font-weight:700}
+a.lk{color:#77502e;border-bottom:1px solid #cbb38c;font-weight:600}
+a.lk:hover{color:#56361c;background:#eee0c8;border-color:#916537}
+a.lk:focus-visible{outline:2px solid #8c5a2c;outline-offset:3px}
+.bonus{background:#f1e9da;border:1px solid #d9c9b0;border-radius:8px;padding:24px;margin-top:36px;box-shadow:none;color:#494137}
+.bonus h2{font-family:var(--serif);font-size:27px;font-weight:400;color:#77502e;margin:0 0 13px;line-height:1.2}
+.bonus p{margin:0;line-height:1.85}
+.bonus .end{display:block;margin-top:17px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:21px;color:#77502e}
+.bookmark-help{background:#fbf7ef}
+.bookmark-help kbd{background:#ece1ce}
+.flfoot{padding:0;margin-top:40px;background:#101b2a;color:#fff2db}
+.footer-scene{padding:30px 28px;min-height:325px;display:flex;align-items:center;background-image:linear-gradient(90deg,rgba(9,18,27,.93),rgba(9,18,27,.7) 40%,rgba(9,18,27,.04) 76%),url('salon-cafe.png');background-size:cover;background-position:center}
+.session{max-width:340px;margin:0;padding:0;background:none;border:0;border-radius:0}
+.session p:first-child{font-family:var(--serif);font-size:29px;line-height:1.2;color:#fff1d5}
+.session strong{font-weight:400}
+.session p+p{margin-top:21px;font-size:13px;color:#e4d6be;line-height:1.9}
+.session a{color:#fff1d5}
+.session .session-cta{display:table;padding:10px 17px;margin-bottom:13px;border:1px solid #e6c28a;background:#e6c28a;color:#172532;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;transition:background .15s}
+.session .session-cta:hover{background:#f5dbb0}
+.footer-base{padding:23px 28px 25px}
+.flfoot .pw{opacity:1}
+.flfoot .pw span,.flfoot .org{color:#d6bd95}
+.flfoot .pw svg{color:#fff1d5}
+.legal{color:#c1b8a8;border-top:1px solid #d6bd9533;font-size:11.5px;margin:19px 0 0;padding-top:18px;line-height:1.8}
+.legal a{color:#f2dfbd;border-color:#a38b6266}
+@media(max-width:540px){
+ .inner{padding:0 22px}.edtitle{font-size:32px}.item h3{font-size:23px}
+ .brief,.bonus{padding:20px}.item p{line-height:1.8}
+ .footer-scene{min-height:410px;padding:25px 22px;align-items:flex-end;background-position:68% center;background-image:linear-gradient(0deg,rgba(9,18,27,.98),rgba(9,18,27,.88) 42%,rgba(9,18,27,.03) 85%),url('salon-cafe.png')}
+ .session{max-width:100%}.session p:first-child{font-size:28px;max-width:290px}
+ .session p+p{margin-top:18px}.footer-base{padding:22px}
+}
