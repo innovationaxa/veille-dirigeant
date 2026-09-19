@@ -1,23 +1,21 @@
-<!doctype html>
-<script type="application/json" id="cowork-artifact-meta">
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
 {
   "name": "future.now",
   "schemaVersion": 1,
-  "description": "Briefing matinal du dirigeant : synthèse structurée (assurance/insurtech, tech & IA, économie/finance, réglementaire/risques, capital humain, souveraineté) avec focus France. Inspirée de Tech Trash et Time To Sign Off. Recompilée chaque matin par une tâche planifiée."
+  "description": "future.now — 6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain. Powered by future.lab. Assurance & insurtech, tech & IA, économie, réglementaire & risques, capital humain, souveraineté. Focus France, recompilé chaque matin."
 }
 </script>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>future.now — archives</title>
+<title>future.now — 6 actus pour comprendre demain</title>
 <style>
-
-:root{--navy:#00005C;--red:#FF1721;
-
+:root{
   color-scheme: light;
   --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
-  --line:#e7e4dd; --accent:#00005C; --link:#1a3a9e;
+  --line:#e7e4dd; --navy:#00005C; --deep:#00008F; --red:#FF1721;
+  --accent:#00005C; --link:#1a3a9e; --lilac:#8e8ed8;
   --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
   --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
@@ -25,78 +23,136 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:30px 22px 72px}
+.wrap{max-width:720px;margin:0 auto;padding:0 0 72px}
+.inner{padding:0 22px}
 
-/* Masthead */
-.mast{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
-.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.brandline{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:6px}
-.brand{font-size:13px;font-weight:700;letter-spacing:.02em}
-.date{font-size:13px;color:var(--muted);font-weight:600}
+/* Masthead — bandeau nuit */
+.mast{background:var(--navy);padding:26px 22px 22px}
+.mast .top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
+.tag{font-size:14px;color:#a9a9e4;margin-top:12px;line-height:1.5}
+.rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
+.colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--lilac);font-weight:600}
+.mast .date a{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);text-decoration:none}
+.pw{display:inline-flex;align-items:center;gap:8px;opacity:.82}
+.pw span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lilac);font-weight:600}
+.pw svg{width:78px;height:auto;color:#fff;display:block}
 
 /* Edition title + hook */
-.edtitle{font-family:var(--serif);font-size:36px;line-height:1.04;margin:22px 0 10px;font-weight:700;letter-spacing:-.4px}
+.edtitle{font-family:var(--serif);font-size:35px;line-height:1.05;margin:26px 0 10px;font-weight:700;letter-spacing:-.4px}
 .readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
 .hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--red);padding:4px 0 4px 15px;margin:0 0 26px}
-.hook .go{font-weight:700;color:var(--accent)}
+.hook .go{font-weight:700;color:var(--navy)}
 
-/* En bref */
-.brief{background:var(--accent);color:#eef2ee;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
-.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8e8ed8;font-weight:700}
+/* En 30 secondes */
+.brief{background:var(--navy);color:#eeeefa;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac);font-weight:700}
 .brief ul{margin:0;padding:0;list-style:none}
 .brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
-.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#FF1721}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--red)}
 
-/* Numbered items — generous vertical rhythm */
+/* Numbered items */
 .item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
 .item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
-.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;min-width:16px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--navy);line-height:1;min-width:16px}
 .pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
 .item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
 .item p{margin:0;font-size:15px;color:#262626}
 .item p strong{font-weight:700;color:#111}
+.bf{font-weight:800;color:var(--navy);letter-spacing:.01em}
 
-/* Inline links — the heart of the format */
+/* Inline links */
 a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #b9bfe4;font-weight:600;transition:border-color .15s,background .15s}
 a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
 
 /* Bonus */
 .bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
-.bonus .lab{display:inline-block;font-weight:800;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
-.bonus .end{font-weight:700;color:var(--accent)}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--navy)}
 
-/* Sources */
-.sources{margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
-.sources h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 11px;color:#444}
-.note{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.55}
-.foot{margin-top:22px;text-align:center;font-size:11px;color:var(--muted)}
-
-.mast{background:var(--navy);margin:-30px -22px 0;padding:26px 22px 22px;border-bottom:none}
-.wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
-.tag{font-size:14px;color:#a9a9e4;margin-top:12px;max-width:52ch;line-height:1.5}
-.rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
-.colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8e8ed8;font-weight:600}
-.mast .date a{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);text-decoration:none}
-.pw{display:inline-flex;align-items:center;gap:8px;opacity:.82}
-.pw>span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8e8ed8;font-weight:600}
-.pw svg{width:78px;height:auto;color:#fff;display:block}
-.edtitle{margin-top:26px}
-.bf{font-weight:800;color:var(--navy);letter-spacing:.01em}
-.flfoot{background:var(--navy);color:#e4e4f6;padding:24px 22px 22px;margin:38px -22px -72px}
+/* Footer Future Lab */
+.flfoot{background:var(--navy);color:#e4e4f6;padding:24px 22px 22px;margin-top:38px}
 .flfoot .top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .flfoot .pw svg{width:88px}
-.flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8e8ed8;font-weight:700}
-.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:19px 0 17px}
-.door{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;font-size:13px;color:#e9e9fb;text-decoration:none;display:block;transition:background .15s}
-.door:hover{background:rgba(255,255,255,.17)}
-.door b{display:block;font-weight:700;font-size:13.5px;color:#fff;margin-bottom:2px}
-.door span{color:#a9a9e4;font-size:11.5px}
-.legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px;margin:0}
+.flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:700}
+.legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
 .legal a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
-.legal strong{color:#fff}
+/* Header actions and session contact */
+.mast .top{align-items:center}
+.tag{max-width:none}
+.bookmark{position:relative;color:#fff;font-size:12px}
+.bookmark summary{cursor:pointer;list-style:none;border:1px solid rgba(255,255,255,.4);border-radius:7px;padding:9px 12px;min-height:40px;font-weight:600;background:rgba(255,255,255,.07)}
+.bookmark summary::-webkit-details-marker{display:none}
+.bookmark summary::before{content:"☆";margin-right:7px;font-size:16px}
+.bookmark summary:hover,.bookmark[open] summary{background:rgba(255,255,255,.16)}
+.bookmark summary:focus-visible,.archive-link:focus-visible,.session a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.bookmark-help{position:absolute;z-index:2;right:0;top:calc(100% + 8px);width:280px;max-width:calc(100vw - 44px);padding:14px 16px;background:#fff;color:var(--navy);border-radius:8px;box-shadow:0 6px 24px #0003;font-size:13px;line-height:1.6}
+.bookmark-help p{margin:0}
+.bookmark-help p+p{margin-top:8px}
+.bookmark-help kbd{font-family:inherit;font-weight:700;background:#eeeefa;border-radius:3px;padding:2px 5px}
+.archive-nav{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#a9a9e4}
+.archive-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:5px;padding:5px 9px;font-weight:600}
+.archive-link:hover{background:rgba(255,255,255,.12)}
+.session{margin:20px 0;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.07);font-size:14px;line-height:1.7}
+.session p{margin:0}
+.session p+p{margin-top:7px;color:#bdbdec;font-size:13px}
+.session a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:720px){.tag{white-space:nowrap}}
+@media(max-width:540px){.mast .top{gap:18px}.bookmark-help{left:0;right:auto}.colo{gap:12px}.archive-nav{width:100%}.wordmark{width:280px}}
+
+/* Proposition locale : salon de lecture */
+.mast{padding:0;background:#101b2a}
+.mast .hero-scene{position:relative;isolation:isolate;padding:28px 22px 22px;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.95),transparent 55%),url('/assets/salon-robot.png');background-size:cover;background-position:center 44%}
+.mast .top{align-items:flex-start;gap:12px}
+.mast .wordmark{width:320px;margin:29px 0 0;color:#fff5d9;filter:drop-shadow(0 2px 10px #0008)}
+.mast .bookmark{position:absolute;left:22px;top:145px;margin-top:0;font-size:11px}
+.mast .bookmark-help{left:0;right:auto}
+.mast .bookmark summary{background:rgba(10,20,33,.65);backdrop-filter:blur(10px);border-color:#e4cf9c66;color:#fff5dc}
+.mast .bookmark-help{color:#162236}
+.mast .tag{margin:0;color:#fff2d6;font-size:14px;line-height:1.6;position:relative;text-shadow:0 1px 5px #000}
+.mast .rule{display:none}
+.mast .colo{padding:16px 22px;background:#101b2a;border-top:1px solid #efd59b44;gap:12px}
+.mast .date,.mast .archive-nav{color:#d1c4a9}
+.mast .pw span{color:#d1c4a9}
+.mast .archive-link{border-color:#efd59b66;color:#fff3d8}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:330px;padding:20px 22px;background-position:67% center;background-image:linear-gradient(90deg,rgba(5,15,29,.52),rgba(5,15,29,.05)),linear-gradient(0deg,rgba(7,17,30,.98),transparent 65%),url('/assets/salon-robot.png')}
+ .mast .top{align-items:flex-start}
+ .mast .bookmark{top:125px}
+ .mast .wordmark{padding-top:26px}
+ .mast .wordmark{width:265px;margin:0}
+ .mast .tag{max-width:30ch;font-size:14px}
+ .mast .bookmark summary{padding:6px 10px;min-height:34px}
+ .mast .colo{padding-top:15px;padding-bottom:17px}
+}
+</style>
+<link rel="stylesheet" href="../assets/salon.css">
+<style>
+/* Proposition : la promesse et les repères de lecture réunis. */
+.mast .hero-scene{min-height:320px;padding-bottom:22px;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.98),rgba(7,17,30,.5) 25%,transparent 66%),url('/assets/salon-robot.png')}
+.mast .wordmark{margin-top:15px}
+.mast .bookmark{top:120px}
+.mast .header-promise{margin-top:90px}
+.mast .tag{font-size:17px;line-height:1.45;color:#f9edd7;white-space:normal;max-width:none;letter-spacing:-.15px}
+.mast .tag strong{font-weight:700;color:#f2d39d}
+.reading-guide{display:flex;list-style:none;margin:17px 0 0;padding:0;gap:0;color:#f2dfbd}
+.reading-guide li{display:flex;flex-direction:column;gap:2px;padding:0 22px;border-left:1px solid #d6bd954d}
+.reading-guide li:first-child{padding-left:0;border-left:0}
+.reading-guide strong{font-size:15px;font-weight:600;line-height:1.4}
+.reading-guide span{font-size:11px;color:#d3c7b5;line-height:1.5}
+.edtitle{margin-bottom:24px}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:370px;padding-bottom:22px;background-position:67% center}
+ .mast .wordmark{margin-top:0}
+ .mast .header-promise{margin-top:112px}
+ .mast .tag{max-width:28ch;font-size:16px;line-height:1.5}
+ .reading-guide{margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1.55fr}
+ .reading-guide li{padding:0 10px;gap:4px}
+ .reading-guide li:last-child{padding-right:0}
+ .reading-guide strong{font-size:13px;white-space:nowrap}
+ .reading-guide span{font-size:10.5px;line-height:1.4}
+}
 </style>
 </head>
 <body>
@@ -148,21 +204,39 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
     </g>
   </g>
 </g></symbol></svg>
-
 <div class="wrap">
-
   <header class="mast">
+    <div class="hero-scene">
+    <div class="top">
     <svg class="wordmark" viewBox="0 0 1164 193" role="img" aria-label="future.now"><use href="#fn"/></svg>
-    <div class="tag">6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain.</div>
+      <details class="bookmark">
+        <summary>Ajouter à mes favoris</summary>
+        <div class="bookmark-help">
+          <button type="button" class="bookmark-close" aria-label="Fermer l’aide aux favoris"><span aria-hidden="true">×</span></button>
+          <p id="bookmark-shortcut">Pour ajouter cette page à vos favoris, appuyez sur <kbd>Ctrl + D</kbd> (Windows) ou <kbd>⌘ + D</kbd> (Mac).</p>
+          <p>Sur mobile, ouvrez le menu de votre navigateur ou le menu de partage, puis choisissez « Ajouter aux favoris » ou l’étoile ☆.</p>
+        </div>
+      </details>
+    </div>
+    <div class="header-promise">
+      <p class="tag"><strong>6 actus</strong> pour comprendre demain, dès aujourd’hui.</p>
+      <ul class="reading-guide" aria-label="Votre rendez-vous de lecture">
+        <li><strong>3 min</strong><span>pour l’essentiel</span></li>
+        <li><strong>7 min</strong><span>pour tout lire</span></li>
+        <li><strong>Chaque matin</strong><span>mise à jour automatique</span></li>
+      </ul>
+    </div>
+    </div>
     <div class="rule"></div>
     <div class="colo">
-      <span class="date">Dimanche 19 juillet 2026 · <a href="index.html">archives</a></span>
+      <span class="date">Dimanche 19 juillet 2026</span>
+      <nav class="archive-nav" aria-label="Éditions précédentes"><span>Ce que vous avez raté :</span> <a class="archive-link" href="index.html">Nos Archives</a></nav>
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
     </div>
   </header>
+<main class="inner">
+<div class="edtitle">Le régulateur dégaine, les données fuient, l'argile craque</div>
 
-  <div class="edtitle">Le régulateur dégaine, les données fuient, l'argile craque</div>
-  <div class="readtime">7 min de lecture · édition recompilée automatiquement chaque matin</div>
 
   <p class="hook">
     L'AI Act arme ses sanctions à J−14 et l'ACPR passe du questionnaire au contrôle – SFR et Accor rejoignent la longue file des données volées – le sol argileux avale douze millions de maisons pendant que l'assureur automatise ses sinistres – et la BCE fait le mort à trois jours de son verdict, taux crispés malgré une inflation domptée. Le tour d'horizon du dimanche matin. <span class="go">C'est parti.</span>
@@ -182,42 +256,42 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
   <article class="item">
     <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
     <h3>Le sol se dérobe, l'assureur passe en pilote automatique</h3>
-    <p>Le péril climatique n'est plus une hypothèse, c'est une cartographie. Depuis le 1<sup>er</sup> juillet, la France a redessiné son risque : la nouvelle carte du <strong>retrait-gonflement des argiles</strong> classe désormais <a class="lk" href="https://www.service-public.gouv.fr/particuliers/actualites/A18807" target="_blank" rel="noopener">55 % du territoire hors Paris en exposition moyenne à forte, soit 12,1 millions de maisons (61,5 % du parc individuel)</a>, avec un sinistre moyen chiffré par la CCR à ~24 000 € — deux fois une inondation. Et la facture s'emballe : France Assureurs voit la sécheresse coûter <a class="lk" href="https://www.argusdelassurance.com/environnement/risques-climatiques/catastrophes-naturelles/catastrophes-naturelles-qui-va-payer-pour-lexplosion-des-sinistres-lies-au-retrait-gonflement-des-argiles.IXS6F657HFN3DDO4MPQGDDVUPU.html" target="_blank" rel="noopener">jusqu'à 43 Md€ cumulés sur 2020-2050</a>, contre 14,3 Md€ sur les trente ans précédents, tandis que l'<a class="lk" href="https://www.ecologie.gouv.fr/presse/proteger-durablement-habitations-face-aux-risques-retrait-gonflement-sols-argileux-letat" target="_blank" rel="noopener">État lance une expérimentation de prévention</a> et généralise l'<a class="lk" href="https://www.vrignonconstruction.fr/reglementation-rga/" target="_blank" rel="noopener">étude de sol obligatoire</a>. Pendant que le sol craque, l'assureur muscle l'automatique : l'IA agentique promet <a class="lk" href="https://insurancenewsnet.com/innarticle/how-agentic-ai-is-rewiring-insurance-for-2026" target="_blank" rel="noopener">30 à 40 % de coût en moins par sinistre</a> — mais le secteur pourrait être <a class="lk" href="https://www.pymnts.com/insurance/2026/insurance-industry-may-be-unprepared-for-agentic-ai-risks/" target="_blank" rel="noopener">mal préparé aux risques de sa propre IA agentique</a>. <span class="bf">Pour vous, visiteurs du futur :</span> quand le péril devient structurel et la gestion s'automatise, le vrai sujet n'est plus le coût du sinistre mais la <strong>soutenabilité du régime</strong> — et la gouvernance de la machine qui indemnise.</p>
+    <p>Le péril climatique n'est plus une hypothèse, c'est une cartographie. Depuis le 1<sup>er</sup> juillet, la France a redessiné son risque : la nouvelle carte du <strong>retrait-gonflement des argiles</strong> classe désormais <a class="lk" href="https://www.service-public.gouv.fr/particuliers/actualites/A18807" target="_blank" rel="noopener">55 % du territoire hors Paris en exposition moyenne à forte, soit 12,1 millions de maisons (61,5 % du parc individuel)</a>, avec un sinistre moyen chiffré par la CCR à ~24 000 € — deux fois une inondation. Et la facture s'emballe : France Assureurs voit la sécheresse coûter <a class="lk" href="https://www.argusdelassurance.com/environnement/risques-climatiques/catastrophes-naturelles/catastrophes-naturelles-qui-va-payer-pour-lexplosion-des-sinistres-lies-au-retrait-gonflement-des-argiles.IXS6F657HFN3DDO4MPQGDDVUPU.html" target="_blank" rel="noopener">jusqu'à 43 Md€ cumulés sur 2020-2050</a>, contre 14,3 Md€ sur les trente ans précédents, tandis que l'<a class="lk" href="https://www.ecologie.gouv.fr/presse/proteger-durablement-habitations-face-aux-risques-retrait-gonflement-sols-argileux-letat" target="_blank" rel="noopener">État lance une expérimentation de prévention</a> et généralise l'<a class="lk" href="https://www.vrignonconstruction.fr/reglementation-rga/" target="_blank" rel="noopener">étude de sol obligatoire</a>. Pendant que le sol craque, l'assureur muscle l'automatique : l'IA agentique promet <a class="lk" href="https://insurancenewsnet.com/innarticle/how-agentic-ai-is-rewiring-insurance-for-2026" target="_blank" rel="noopener">30 à 40 % de coût en moins par sinistre</a> — mais le secteur pourrait être <a class="lk" href="https://www.pymnts.com/insurance/2026/insurance-industry-may-be-unprepared-for-agentic-ai-risks/" target="_blank" rel="noopener">mal préparé aux risques de sa propre IA agentique</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Quand le péril devient structurel et la gestion s'automatise, le vrai sujet n'est plus le coût du sinistre mais la <strong>soutenabilité du régime</strong> — et la gouvernance de la machine qui indemnise.</p></aside>
   </article>
 
   <!-- 2 -->
   <article class="item">
     <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
     <h3>L'argent se concentre, les puces passent au clou</h3>
-    <p>Le capital-risque n'a jamais autant coulé — ni aussi peu réparti. Au premier semestre, l'investissement mondial a atteint un <a class="lk" href="https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/" target="_blank" rel="noopener">record de 510 Md$, dont 217 Md$ (43 %) pour les seuls OpenAI et Anthropic</a> — deux labos qui pèsent désormais <a class="lk" href="https://techcrunch.com/2026/07/09/anthropic-openai-and-spacex-are-bigger-than-the-last-25-years-of-tech-exits/" target="_blank" rel="noopener">plus que vingt-cinq ans de sorties tech réunies</a>. Signe que le boom mûrit et se financiarise : le 17 juillet, General Compute a décroché <a class="lk" href="https://techcrunch.com/2026/07/17/why-the-first-gpu-financiers-are-turning-to-inference-chips-in-a-400-million-deal/" target="_blank" rel="noopener">un prêt de 400 M$ gagé sur des puces d'inférence</a> — première fois qu'on met au clou le silicium qui <em>fait tourner</em> les modèles plutôt que celui qui les entraîne. Et la bataille se déplace du modèle vers l'usage : Anthropic et Blackstone parient que <a class="lk" href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/" target="_blank" rel="noopener">le prochain business à mille milliards est l'implémentation, pas les modèles</a>, pendant que les <a class="lk" href="https://techcrunch.com/2026/07/08/these-ai-startups-are-growing-revenue-at-faster-and-faster-rates/" target="_blank" rel="noopener">startups IA voient leurs revenus accélérer</a> et que 2026 a déjà frappé <a class="lk" href="https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/" target="_blank" rel="noopener">près de 90 licornes</a>. <span class="bf">Pour les visiteurs du futur :</span> quand deux acteurs aspirent la moitié du capital et qu'on finance déjà l'inférence à crédit, la question n'est plus « quel modèle » mais « quelle dépendance » — et à quel taux vous la refinancerez.</p>
+    <p>Le capital-risque n'a jamais autant coulé — ni aussi peu réparti. Au premier semestre, l'investissement mondial a atteint un <a class="lk" href="https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/" target="_blank" rel="noopener">record de 510 Md$, dont 217 Md$ (43 %) pour les seuls OpenAI et Anthropic</a> — deux labos qui pèsent désormais <a class="lk" href="https://techcrunch.com/2026/07/09/anthropic-openai-and-spacex-are-bigger-than-the-last-25-years-of-tech-exits/" target="_blank" rel="noopener">plus que vingt-cinq ans de sorties tech réunies</a>. Signe que le boom mûrit et se financiarise : le 17 juillet, General Compute a décroché <a class="lk" href="https://techcrunch.com/2026/07/17/why-the-first-gpu-financiers-are-turning-to-inference-chips-in-a-400-million-deal/" target="_blank" rel="noopener">un prêt de 400 M$ gagé sur des puces d'inférence</a> — première fois qu'on met au clou le silicium qui <em>fait tourner</em> les modèles plutôt que celui qui les entraîne. Et la bataille se déplace du modèle vers l'usage : Anthropic et Blackstone parient que <a class="lk" href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/" target="_blank" rel="noopener">le prochain business à mille milliards est l'implémentation, pas les modèles</a>, pendant que les <a class="lk" href="https://techcrunch.com/2026/07/08/these-ai-startups-are-growing-revenue-at-faster-and-faster-rates/" target="_blank" rel="noopener">startups IA voient leurs revenus accélérer</a> et que 2026 a déjà frappé <a class="lk" href="https://techcrunch.com/2026/07/05/almost-40-new-unicorns-have-been-minted-so-far-this-year-here-they-are/" target="_blank" rel="noopener">près de 90 licornes</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Quand deux acteurs aspirent la moitié du capital et qu'on finance déjà l'inférence à crédit, la question n'est plus « quel modèle » mais « quelle dépendance » — et à quel taux vous la refinancerez.</p></aside>
   </article>
 
   <!-- 3 -->
   <article class="item">
     <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
     <h3>La BCE fait le mort à trois jours du verdict</h3>
-    <p>L'inflation est domptée, la détente non. Les prix montent à <strong>1,7 % en France</strong> et 1,8 % en zone euro, <a class="lk" href="https://info.fr/inflation-sous-2-pourcent-france-zone-euro/" target="_blank" rel="noopener">sous la barre des 2 % pour la première fois depuis fin 2021</a>. De quoi desserrer l'étau ? Le Conseil des gouverneurs se réunit les <a class="lk" href="https://rankia.fr/prochaine-reunion-bce-calendrier/" target="_blank" rel="noopener">23 et 24 juillet</a> en affichant un <a class="lk" href="https://www.france-epargne.fr/news/la-bce-affiche-un-ton-mesure-sur-linflation-mais-appelle-a-la-vigilance" target="_blank" rel="noopener">ton mesuré mais un appel à la vigilance</a>, laissant les <a class="lk" href="https://www.raisin.com/fr-fr/glossaire/taux-bce/" target="_blank" rel="noopener">taux hauts — dépôt à 2,25 %, refi à 2,40 %</a> — sur fond de <a class="lk" href="https://www.banque-france.fr/fr/publications-et-statistiques/publications/bulletin-economique-de-la-bce-ndeg22026" target="_blank" rel="noopener">croissance calée autour de 0,9 %</a>. Côté French Tech, le robinet goutte plus qu'il ne coule : <a class="lk" href="https://www.maddyness.com/2026/07/17/les-startups-francaises-ont-leve-56-millions-deuros-la-semaine-derniere/" target="_blank" rel="noopener">55,7 M€ levés la semaine du 17 juillet</a>, après <a class="lk" href="https://www.maddyness.com/2026/07/10/les-startups-francaises-ont-leve-113-millions-deuros-cette-semaine/" target="_blank" rel="noopener">113 M€ la précédente</a> — l'été fait bâiller les investisseurs. <span class="bf">Visiteurs du futur,</span> une inflation au tapis ne rouvre pas mécaniquement le crédit. Tant que Francfort joue la crédibilité contre la conjoncture, le <strong>coût de l'argent</strong> reste votre variable la plus rigide — budgétez cher, refinancez tôt.</p>
+    <p>L'inflation est domptée, la détente non. Les prix montent à <strong>1,7 % en France</strong> et 1,8 % en zone euro, <a class="lk" href="https://info.fr/inflation-sous-2-pourcent-france-zone-euro/" target="_blank" rel="noopener">sous la barre des 2 % pour la première fois depuis fin 2021</a>. De quoi desserrer l'étau ? Le Conseil des gouverneurs se réunit les <a class="lk" href="https://rankia.fr/prochaine-reunion-bce-calendrier/" target="_blank" rel="noopener">23 et 24 juillet</a> en affichant un <a class="lk" href="https://www.france-epargne.fr/news/la-bce-affiche-un-ton-mesure-sur-linflation-mais-appelle-a-la-vigilance" target="_blank" rel="noopener">ton mesuré mais un appel à la vigilance</a>, laissant les <a class="lk" href="https://www.raisin.com/fr-fr/glossaire/taux-bce/" target="_blank" rel="noopener">taux hauts — dépôt à 2,25 %, refi à 2,40 %</a> — sur fond de <a class="lk" href="https://www.banque-france.fr/fr/publications-et-statistiques/publications/bulletin-economique-de-la-bce-ndeg22026" target="_blank" rel="noopener">croissance calée autour de 0,9 %</a>. Côté French Tech, le robinet goutte plus qu'il ne coule : <a class="lk" href="https://www.maddyness.com/2026/07/17/les-startups-francaises-ont-leve-56-millions-deuros-la-semaine-derniere/" target="_blank" rel="noopener">55,7 M€ levés la semaine du 17 juillet</a>, après <a class="lk" href="https://www.maddyness.com/2026/07/10/les-startups-francaises-ont-leve-113-millions-deuros-cette-semaine/" target="_blank" rel="noopener">113 M€ la précédente</a> — l'été fait bâiller les investisseurs.</p><aside class="takeaway" aria-label="À retenir"><p>Une inflation au tapis ne rouvre pas mécaniquement le crédit. Tant que Francfort joue la crédibilité contre la conjoncture, le <strong>coût de l'argent</strong> reste votre variable la plus rigide — budgétez cher, refinancez tôt.</p></aside>
   </article>
 
   <!-- 4 -->
   <article class="item">
     <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
     <h3>L'AI Act arme ses sanctions, les données prennent la fuite</h3>
-    <p>Le compte à rebours est lancé. Le <strong>2 août</strong> — dans deux semaines — l'AI Act active ses <a class="lk" href="https://diamondsolutions.io/ai-act-2026" target="_blank" rel="noopener">pouvoirs de sanction et ses obligations de transparence</a>, avec des amendes jusqu'à <a class="lk" href="https://www.leto.legal/guides/ai-act-conformite" target="_blank" rel="noopener">35 M€ ou 7 % du chiffre d'affaires mondial</a> et la fin de la période de grâce pour les <a class="lk" href="https://www.actuia.com/en/news/new-milestone-for-the-ai-act-obligations-for-general-purpose-ai-models-come-into-effect/" target="_blank" rel="noopener">modèles à usage général déjà sur le marché</a> — les systèmes à haut risque de l'annexe III étant, eux, repoussés à décembre 2027 par le Digital Omnibus. Pour la banque et l'assurance, c'est l'<a class="lk" href="https://www.argusdelassurance.com/juriscope/reglementation/l-acpr-devoile-son-programme-de-travail-pour-2026-supervision-de-l-ia-value-for-money-et-entree-en-vigueur-de-l-irdd-au-c-ur-des-priorites.237996" target="_blank" rel="noopener">ACPR qui héritera de la supervision de l'IA</a>, dans le prolongement de son année « DORA » où elle <a class="lk" href="https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/transverse/digital-operational-resilience-act-dora" target="_blank" rel="noopener">exige désormais des preuves, plus des intentions</a>. Et la menace ne prend pas de congés : après Spedidam et le CH de Chaumont, <a class="lk" href="https://www.i-leadconsulting.com/cyberattaques-france-2026/" target="_blank" rel="noopener">Accor (16 juillet) et SFR (17 juillet) rejoignent la longue file des données volées</a>. <span class="bf">Pour vous, visiteurs du futur :</span> à J−14, votre registre IA et votre registre d'incidents valent autant qu'un bilan — le superviseur veut voir les tests, pas les bonnes résolutions de rentrée.</p>
+    <p>Le compte à rebours est lancé. Le <strong>2 août</strong> — dans deux semaines — l'AI Act active ses <a class="lk" href="https://diamondsolutions.io/ai-act-2026" target="_blank" rel="noopener">pouvoirs de sanction et ses obligations de transparence</a>, avec des amendes jusqu'à <a class="lk" href="https://www.leto.legal/guides/ai-act-conformite" target="_blank" rel="noopener">35 M€ ou 7 % du chiffre d'affaires mondial</a> et la fin de la période de grâce pour les <a class="lk" href="https://www.actuia.com/en/news/new-milestone-for-the-ai-act-obligations-for-general-purpose-ai-models-come-into-effect/" target="_blank" rel="noopener">modèles à usage général déjà sur le marché</a> — les systèmes à haut risque de l'annexe III étant, eux, repoussés à décembre 2027 par le Digital Omnibus. Pour la banque et l'assurance, c'est l'<a class="lk" href="https://www.argusdelassurance.com/juriscope/reglementation/l-acpr-devoile-son-programme-de-travail-pour-2026-supervision-de-l-ia-value-for-money-et-entree-en-vigueur-de-l-irdd-au-c-ur-des-priorites.237996" target="_blank" rel="noopener">ACPR qui héritera de la supervision de l'IA</a>, dans le prolongement de son année « DORA » où elle <a class="lk" href="https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/transverse/digital-operational-resilience-act-dora" target="_blank" rel="noopener">exige désormais des preuves, plus des intentions</a>. Et la menace ne prend pas de congés : après Spedidam et le CH de Chaumont, <a class="lk" href="https://www.i-leadconsulting.com/cyberattaques-france-2026/" target="_blank" rel="noopener">Accor (16 juillet) et SFR (17 juillet) rejoignent la longue file des données volées</a>.</p><aside class="takeaway" aria-label="À retenir"><p>À J−14, votre registre IA et votre registre d'incidents valent autant qu'un bilan — le superviseur veut voir les tests, pas les bonnes résolutions de rentrée.</p></aside>
   </article>
 
   <!-- 5 -->
   <article class="item">
     <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
     <h3>Le cadre adopte l'IA, l'employeur oublie la notice</h3>
-    <p>L'outil est partout, le mode d'emploi au vestiaire. Selon l'<strong>APEC</strong>, la moitié des cadres utilisent désormais l'IA <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">au moins une fois par semaine (+15 points en un an)</a>, 62 % chez les plus jeunes, et 31 % s'en servent déjà pour <a class="lk" href="https://corporate.apec.fr/home/actus-medias/toutes-nos-actualites/recrutement-de-cadres-les-pratiques-evoluent-a-l'heure-de-l'ia-sur-un-marche-moins-tendu.html" target="_blank" rel="noopener">chercher un emploi (contre 15 % fin 2024), sur un marché nettement moins tendu</a>. Le hic : la compétence ne suit pas l'usage, et l'IA <a class="lk" href="https://www.asfelia.fr/ia-et-emploi-des-cadres-le-grand-basculement-de-2026/" target="_blank" rel="noopener">rebat déjà en profondeur les cartes des métiers cadres</a>. Côté organisation, les entreprises formalisent à la hâte leurs <a class="lk" href="https://www.talentprogram.fr/actus/actus-rh-juillet-2026/" target="_blank" rel="noopener">chartes de travail hybride</a> pour endiguer le désengagement, dans un <a class="lk" href="https://www.hiringlab.org/fr/blog/2025/12/10/le-marche-de-lemploi-en-2026-en-pleine-mutation-face-aux-nouveaux-equilibres-economiques/" target="_blank" rel="noopener">marché en pleine mutation</a>. <span class="bf">Pour les visiteurs du futur :</span> distribuer des licences IA sans former, c'est armer une équipe sans stand de tir. La vraie dépense de l'été n'est pas l'outil — c'est <strong>le temps de montée en compétence</strong>.</p>
+    <p>L'outil est partout, le mode d'emploi au vestiaire. Selon l'<strong>APEC</strong>, la moitié des cadres utilisent désormais l'IA <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">au moins une fois par semaine (+15 points en un an)</a>, 62 % chez les plus jeunes, et 31 % s'en servent déjà pour <a class="lk" href="https://corporate.apec.fr/home/actus-medias/toutes-nos-actualites/recrutement-de-cadres-les-pratiques-evoluent-a-l'heure-de-l'ia-sur-un-marche-moins-tendu.html" target="_blank" rel="noopener">chercher un emploi (contre 15 % fin 2024), sur un marché nettement moins tendu</a>. Le hic : la compétence ne suit pas l'usage, et l'IA <a class="lk" href="https://www.asfelia.fr/ia-et-emploi-des-cadres-le-grand-basculement-de-2026/" target="_blank" rel="noopener">rebat déjà en profondeur les cartes des métiers cadres</a>. Côté organisation, les entreprises formalisent à la hâte leurs <a class="lk" href="https://www.talentprogram.fr/actus/actus-rh-juillet-2026/" target="_blank" rel="noopener">chartes de travail hybride</a> pour endiguer le désengagement, dans un <a class="lk" href="https://www.hiringlab.org/fr/blog/2025/12/10/le-marche-de-lemploi-en-2026-en-pleine-mutation-face-aux-nouveaux-equilibres-economiques/" target="_blank" rel="noopener">marché en pleine mutation</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Distribuer des licences IA sans former, c'est armer une équipe sans stand de tir. La vraie dépense de l'été n'est pas l'outil — c'est <strong>le temps de montée en compétence</strong>.</p></aside>
   </article>
 
   <!-- 6 -->
   <article class="item">
     <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infra</span></div>
     <h3>Mistral lève pour ne pas louer sa souveraineté</h3>
-    <p>La souveraineté a un prix, et il grimpe. <strong>Mistral</strong> serait en discussions pour lever <a class="lk" href="https://l-echo.info/mistral-en-discussions-pour-lever-3-milliards-deuros/" target="_blank" rel="noopener">près de 3 Md€</a>, prolongeant sa course à l'<a class="lk" href="https://www.24matins.fr/mistral-ai-accelere-sur-lia-dentreprise-et-la-souverainete-europeenne-1416435" target="_blank" rel="noopener">IA d'entreprise souveraine</a> et son plan de <a class="lk" href="https://siecledigital.fr/2026/03/31/mistral-ai-leve-830-millions-pour-batir-son-datacenter-francais/" target="_blank" rel="noopener">data centers en France</a>. Mais l'indépendance bute sur les tuyaux : entre 2014 et 2024, la part des Big Tech dans la capacité des <a class="lk" href="https://www.zorobama.net/2026/05/sous-locean-la-fin-de-la-souverainete.html" target="_blank" rel="noopener">câbles sous-marins est passée de 10 % à 71 %</a> (90 % sur l'axe Europe-USA), poussant Bruxelles à <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">reprendre la main sur ses infrastructures numériques</a>. Reste que « l'AWS européen » relève du fantasme : la vraie voie passe par <a class="lk" href="https://www.usine-digitale.fr/souverainete/oublier-laws-europeen-la-souverainete-numerique-passera-par-la-cooperation-et-les-standards-ouverts.YI2GL2MLCRBIJOAUPJFWF4YAZ4.html" target="_blank" rel="noopener">la coopération et les standards ouverts</a>. <span class="bf">Visiteurs du futur,</span> un modèle tricolore posé sur des serveurs et des câbles étrangers reste une <strong>indépendance en trompe-l'œil</strong>. La question n'est pas « quel modèle », mais « qui tient la prise en dessous ».</p>
+    <p>La souveraineté a un prix, et il grimpe. <strong>Mistral</strong> serait en discussions pour lever <a class="lk" href="https://l-echo.info/mistral-en-discussions-pour-lever-3-milliards-deuros/" target="_blank" rel="noopener">près de 3 Md€</a>, prolongeant sa course à l'<a class="lk" href="https://www.24matins.fr/mistral-ai-accelere-sur-lia-dentreprise-et-la-souverainete-europeenne-1416435" target="_blank" rel="noopener">IA d'entreprise souveraine</a> et son plan de <a class="lk" href="https://siecledigital.fr/2026/03/31/mistral-ai-leve-830-millions-pour-batir-son-datacenter-francais/" target="_blank" rel="noopener">data centers en France</a>. Mais l'indépendance bute sur les tuyaux : entre 2014 et 2024, la part des Big Tech dans la capacité des <a class="lk" href="https://www.zorobama.net/2026/05/sous-locean-la-fin-de-la-souverainete.html" target="_blank" rel="noopener">câbles sous-marins est passée de 10 % à 71 %</a> (90 % sur l'axe Europe-USA), poussant Bruxelles à <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">reprendre la main sur ses infrastructures numériques</a>. Reste que « l'AWS européen » relève du fantasme : la vraie voie passe par <a class="lk" href="https://www.usine-digitale.fr/souverainete/oublier-laws-europeen-la-souverainete-numerique-passera-par-la-cooperation-et-les-standards-ouverts.YI2GL2MLCRBIJOAUPJFWF4YAZ4.html" target="_blank" rel="noopener">la coopération et les standards ouverts</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Un modèle tricolore posé sur des serveurs et des câbles étrangers reste une <strong>indépendance en trompe-l'œil</strong>. La question n'est pas « quel modèle », mais « qui tient la prise en dessous ».</p></aside>
   </article>
 
   <!-- BONUS -->
@@ -226,19 +300,43 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
   </div>
 
   <!-- SOURCES -->
-  <footer class="flfoot">
+</main>
+<footer class="flfoot">
+    <div class="footer-scene">
+    <div class="session">
+      <p><strong>Une visite ou un workshop en équipe au Future Lab ?</strong></p>
+      <p><a class="session-cta" href="https://forms.cloud.microsoft/e/1WeVdUG4sd" target="_blank" rel="noopener">Demander une session</a> ou écrivez-nous à <a href="mailto:futurelab@axa.fr">futurelab@axa.fr</a>.</p>
+    </div>
+    </div>
+    <div class="footer-base">
     <div class="top">
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
       <span class="org">Diffusion interne</span>
     </div>
-    <div class="doors">
-      <a class="door" href="https://futurelab-axa.vercel.app/explorer" target="_blank" rel="noopener"><b>Explorer le plateau</b><span>120&nbsp;m&sup2;, huit zones &agrave; manipuler</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/parcours" target="_blank" rel="noopener"><b>Les quatre parcours</b><span>De 30&nbsp;minutes &agrave; une journ&eacute;e</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/reserver" target="_blank" rel="noopener"><b>R&eacute;server un cr&eacute;neau</b><span>Venez avec une vraie question</span></a>
+    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="index.html">Consulter les &eacute;ditions pr&eacute;c&eacute;dentes</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
     </div>
-    <p class="legal"><strong>Diffusion interne.</strong> Sélection et commentaires du Future Lab, sans valeur de position officielle. Sélection compilée chaque matin avec l'aide de l'IA sur les 24–48 dernières heures, priorité aux sources françaises et primaires ; chaque fait est lié à sa source et les chiffres non sourcés ne sont pas publiés. · <a href="index.html">Consulter les éditions précédentes</a> · <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
   </footer>
 
 </div>
+<script>
+(function () {
+  var shortcut = document.getElementById('bookmark-shortcut');
+  var platform = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+  if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !(platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    shortcut.innerHTML = 'Pour ajouter cette page à vos favoris, appuyez sur <kbd>' + (/Mac/i.test(platform) ? '⌘ + D' : 'Ctrl + D') + '</kbd>, puis confirmez dans votre navigateur.';
+  }
+  document.querySelector('.bookmark-close').addEventListener('click', function () {
+    var details = this.closest('details');
+    details.open = false;
+    details.querySelector('summary').focus();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      var details = document.querySelector('.bookmark');
+      if (details.open) { details.open = false; details.querySelector('summary').focus(); }
+    }
+  });
+}());
+</script>
 </body>
 </html>

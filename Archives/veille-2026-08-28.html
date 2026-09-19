@@ -14,7 +14,7 @@
 :root{
   color-scheme: light;
   --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
-  --line:#e7e4dd; --navy:#00005C; --axa:#00008F; --red:#FF1721;
+  --line:#e7e4dd; --navy:#00005C; --deep:#00008F; --red:#FF1721;
   --accent:#00005C; --link:#1a3a9e; --lilac:#8e8ed8;
   --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
   --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
@@ -30,7 +30,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line
 .mast{background:var(--navy);padding:26px 22px 22px}
 .mast .top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
-.tag{font-size:14px;color:#a9a9e4;margin-top:12px;max-width:52ch;line-height:1.5}
+.tag{font-size:14px;color:#a9a9e4;margin-top:12px;line-height:1.5}
 .rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
 .colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--lilac);font-weight:600}
@@ -76,13 +76,83 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
 .flfoot .top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .flfoot .pw svg{width:88px}
 .flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:700}
-.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:19px 0 17px}
-.door{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;font-size:13px;color:#e9e9fb;text-decoration:none;display:block;transition:background .15s}
-.door:hover{background:rgba(255,255,255,.17)}
-.door b{display:block;font-weight:700;font-size:13.5px;color:#fff;margin-bottom:2px}
-.door span{color:#a9a9e4;font-size:11.5px}
 .legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
 .legal a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+/* Header actions and session contact */
+.mast .top{align-items:center}
+.tag{max-width:none}
+.bookmark{position:relative;color:#fff;font-size:12px}
+.bookmark summary{cursor:pointer;list-style:none;border:1px solid rgba(255,255,255,.4);border-radius:7px;padding:9px 12px;min-height:40px;font-weight:600;background:rgba(255,255,255,.07)}
+.bookmark summary::-webkit-details-marker{display:none}
+.bookmark summary::before{content:"☆";margin-right:7px;font-size:16px}
+.bookmark summary:hover,.bookmark[open] summary{background:rgba(255,255,255,.16)}
+.bookmark summary:focus-visible,.archive-link:focus-visible,.session a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.bookmark-help{position:absolute;z-index:2;right:0;top:calc(100% + 8px);width:280px;max-width:calc(100vw - 44px);padding:14px 16px;background:#fff;color:var(--navy);border-radius:8px;box-shadow:0 6px 24px #0003;font-size:13px;line-height:1.6}
+.bookmark-help p{margin:0}
+.bookmark-help p+p{margin-top:8px}
+.bookmark-help kbd{font-family:inherit;font-weight:700;background:#eeeefa;border-radius:3px;padding:2px 5px}
+.archive-nav{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#a9a9e4}
+.archive-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:5px;padding:5px 9px;font-weight:600}
+.archive-link:hover{background:rgba(255,255,255,.12)}
+.session{margin:20px 0;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.07);font-size:14px;line-height:1.7}
+.session p{margin:0}
+.session p+p{margin-top:7px;color:#bdbdec;font-size:13px}
+.session a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:720px){.tag{white-space:nowrap}}
+@media(max-width:540px){.mast .top{gap:18px}.bookmark-help{left:0;right:auto}.colo{gap:12px}.archive-nav{width:100%}.wordmark{width:280px}}
+
+/* Proposition locale : salon de lecture */
+.mast{padding:0;background:#101b2a}
+.mast .hero-scene{position:relative;isolation:isolate;padding:28px 22px 22px;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.95),transparent 55%),url('/assets/salon-robot.png');background-size:cover;background-position:center 44%}
+.mast .top{align-items:flex-start;gap:12px}
+.mast .wordmark{width:320px;margin:29px 0 0;color:#fff5d9;filter:drop-shadow(0 2px 10px #0008)}
+.mast .bookmark{position:absolute;left:22px;top:145px;margin-top:0;font-size:11px}
+.mast .bookmark-help{left:0;right:auto}
+.mast .bookmark summary{background:rgba(10,20,33,.65);backdrop-filter:blur(10px);border-color:#e4cf9c66;color:#fff5dc}
+.mast .bookmark-help{color:#162236}
+.mast .tag{margin:0;color:#fff2d6;font-size:14px;line-height:1.6;position:relative;text-shadow:0 1px 5px #000}
+.mast .rule{display:none}
+.mast .colo{padding:16px 22px;background:#101b2a;border-top:1px solid #efd59b44;gap:12px}
+.mast .date,.mast .archive-nav{color:#d1c4a9}
+.mast .pw span{color:#d1c4a9}
+.mast .archive-link{border-color:#efd59b66;color:#fff3d8}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:330px;padding:20px 22px;background-position:67% center;background-image:linear-gradient(90deg,rgba(5,15,29,.52),rgba(5,15,29,.05)),linear-gradient(0deg,rgba(7,17,30,.98),transparent 65%),url('/assets/salon-robot.png')}
+ .mast .top{align-items:flex-start}
+ .mast .bookmark{top:125px}
+ .mast .wordmark{padding-top:26px}
+ .mast .wordmark{width:265px;margin:0}
+ .mast .tag{max-width:30ch;font-size:14px}
+ .mast .bookmark summary{padding:6px 10px;min-height:34px}
+ .mast .colo{padding-top:15px;padding-bottom:17px}
+}
+</style>
+<link rel="stylesheet" href="../assets/salon.css">
+<style>
+/* Proposition : la promesse et les repères de lecture réunis. */
+.mast .hero-scene{min-height:320px;padding-bottom:22px;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.98),rgba(7,17,30,.5) 25%,transparent 66%),url('/assets/salon-robot.png')}
+.mast .wordmark{margin-top:15px}
+.mast .bookmark{top:120px}
+.mast .header-promise{margin-top:90px}
+.mast .tag{font-size:17px;line-height:1.45;color:#f9edd7;white-space:normal;max-width:none;letter-spacing:-.15px}
+.mast .tag strong{font-weight:700;color:#f2d39d}
+.reading-guide{display:flex;list-style:none;margin:17px 0 0;padding:0;gap:0;color:#f2dfbd}
+.reading-guide li{display:flex;flex-direction:column;gap:2px;padding:0 22px;border-left:1px solid #d6bd954d}
+.reading-guide li:first-child{padding-left:0;border-left:0}
+.reading-guide strong{font-size:15px;font-weight:600;line-height:1.4}
+.reading-guide span{font-size:11px;color:#d3c7b5;line-height:1.5}
+.edtitle{margin-bottom:24px}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:370px;padding-bottom:22px;background-position:67% center}
+ .mast .wordmark{margin-top:0}
+ .mast .header-promise{margin-top:112px}
+ .mast .tag{max-width:28ch;font-size:16px;line-height:1.5}
+ .reading-guide{margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1.55fr}
+ .reading-guide li{padding:0 10px;gap:4px}
+ .reading-guide li:last-child{padding-right:0}
+ .reading-guide strong{font-size:13px;white-space:nowrap}
+ .reading-guide span{font-size:10.5px;line-height:1.4}
+}
 </style>
 </head>
 <body>
@@ -135,21 +205,38 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
   </g>
 </g></symbol></svg>
 <div class="wrap">
-
   <header class="mast">
+    <div class="hero-scene">
+    <div class="top">
     <svg class="wordmark" viewBox="0 0 1164 193" role="img" aria-label="future.now"><use href="#fn"/></svg>
-    <div class="tag">6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain.</div>
+      <details class="bookmark">
+        <summary>Ajouter à mes favoris</summary>
+        <div class="bookmark-help">
+          <button type="button" class="bookmark-close" aria-label="Fermer l’aide aux favoris"><span aria-hidden="true">×</span></button>
+          <p id="bookmark-shortcut">Pour ajouter cette page à vos favoris, appuyez sur <kbd>Ctrl + D</kbd> (Windows) ou <kbd>⌘ + D</kbd> (Mac).</p>
+          <p>Sur mobile, ouvrez le menu de votre navigateur ou le menu de partage, puis choisissez « Ajouter aux favoris » ou l’étoile ☆.</p>
+        </div>
+      </details>
+    </div>
+    <div class="header-promise">
+      <p class="tag"><strong>6 actus</strong> pour comprendre demain, dès aujourd’hui.</p>
+      <ul class="reading-guide" aria-label="Votre rendez-vous de lecture">
+        <li><strong>3 min</strong><span>pour l’essentiel</span></li>
+        <li><strong>7 min</strong><span>pour tout lire</span></li>
+        <li><strong>Chaque matin</strong><span>mise à jour automatique</span></li>
+      </ul>
+    </div>
+    </div>
     <div class="rule"></div>
     <div class="colo">
-      <span class="date">Vendredi 28 août 2026 · <a href="index.html">archives</a></span>
+      <span class="date">Vendredi 28 août 2026</span>
+      <nav class="archive-nav" aria-label="Éditions précédentes"><span>Ce que vous avez raté :</span> <a class="archive-link" href="index.html">Nos Archives</a></nav>
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
     </div>
   </header>
+<main class="inner">
+<div class="edtitle">Le marchand de pelles rachète la mine d'or</div>
 
-  <div class="inner">
-
-  <div class="edtitle">Le marchand de pelles rachète la mine d'or</div>
-  <div class="readtime">3 min pour l'essentiel · 7 min en entier · recompilé automatiquement chaque matin</div>
 
   <p class="hook">
     Nvidia s'offre le dépôt où le monde entier range ses modèles – 947 M€ de fraude détectée pendant que les faux papiers se vendent 50 € sur Telegram – 181 rançongiciels revendiqués en France avant même la fin août, soit plus que toute l'année dernière – et un data center de 400 MW qui pousse en Île-de-France parce qu'il n'y a plus une prise libre à Paris. Bonjour, visiteurs du futur : la semaine où le fournisseur d'infrastructure a cessé de vendre des outils pour acheter le terrain, le stock et la clientèle. <span class="go">C'est parti.</span>
@@ -169,63 +256,85 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
   <article class="item">
     <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
     <h3>Nvidia achète l'endroit où le monde entier range ses modèles. Y compris ceux qui devaient s'en passer.</h3>
-    <p>Le vendeur de pelles vient d'acheter le cadastre : <a class="lk" href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener">Nvidia a accepté de racheter <strong>Hugging Face</strong> pour <strong>12,9 Md$</strong></a>, soit <a class="lk" href="https://www.forbes.com/sites/siladityaray/2026/08/27/nvidia-has-reportedly-agreed-to-buy-ai-model-hosting-platform-hugging-face-for-13-billion/" target="_blank" rel="noopener">de très loin la plus grosse opération de son histoire — près du double des <strong>6,9 Md$</strong> payés pour Mellanox en 2020</a>. Le détail qui dérange : la plateforme fondée en 2016 par des Français est <em>le</em> point de passage obligé de l'IA ouverte, celle-là même que les entreprises citent pour ne pas dépendre d'un fournisseur unique. <a class="lk" href="https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/" target="_blank" rel="noopener">L'accord n'était pas signé au moment des premières fuites et pourrait encore capoter</a>, mais le calendrier ne doit rien au hasard : la veille, <a class="lk" href="https://www.generation-nt.com/actualites/nvidia-revenus-record-croissance-forte-previsions-intelligence-artificielle-2080258" target="_blank" rel="noopener">Nvidia publiait un trimestre à <strong>96,2 Md$</strong> (<strong>+106 %</strong> sur un an), dont <strong>89 Md$</strong> de data centers (<strong>+117 %</strong>), et promettait <strong>70 %</strong> de croissance pour l'exercice 2028</a>. <a class="lk" href="https://www.france-epargne.fr/news/nvidia-promet-70-de-croissance-en-2028-laction-bondit-de-865" target="_blank" rel="noopener">Le titre a bondi de <strong>8,65 %</strong> à <strong>227,80 $</strong>, portant la capitalisation à <strong>5 500 Md$</strong></a> — de quoi financer l'opération avec la monnaie de la journée. <span class="bf">Pour les visiteurs du futur :</span> « open source » n'a jamais voulu dire « sans propriétaire ». Une stratégie de réversibilité fondée sur des modèles ouverts hébergés au même endroit n'est pas une stratégie de réversibilité — c'est une dépendance qui n'a pas encore reçu sa facture.</p>
+    <p>Le vendeur de pelles vient d'acheter le cadastre : <a class="lk" href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener">Nvidia a accepté de racheter <strong>Hugging Face</strong> pour <strong>12,9 Md$</strong></a>, soit <a class="lk" href="https://www.forbes.com/sites/siladityaray/2026/08/27/nvidia-has-reportedly-agreed-to-buy-ai-model-hosting-platform-hugging-face-for-13-billion/" target="_blank" rel="noopener">de très loin la plus grosse opération de son histoire — près du double des <strong>6,9 Md$</strong> payés pour Mellanox en 2020</a>. Le détail qui dérange : la plateforme fondée en 2016 par des Français est <em>le</em> point de passage obligé de l'IA ouverte, celle-là même que les entreprises citent pour ne pas dépendre d'un fournisseur unique. <a class="lk" href="https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/" target="_blank" rel="noopener">L'accord n'était pas signé au moment des premières fuites et pourrait encore capoter</a>, mais le calendrier ne doit rien au hasard : la veille, <a class="lk" href="https://www.generation-nt.com/actualites/nvidia-revenus-record-croissance-forte-previsions-intelligence-artificielle-2080258" target="_blank" rel="noopener">Nvidia publiait un trimestre à <strong>96,2 Md$</strong> (<strong>+106 %</strong> sur un an), dont <strong>89 Md$</strong> de data centers (<strong>+117 %</strong>), et promettait <strong>70 %</strong> de croissance pour l'exercice 2028</a>. <a class="lk" href="https://www.france-epargne.fr/news/nvidia-promet-70-de-croissance-en-2028-laction-bondit-de-865" target="_blank" rel="noopener">Le titre a bondi de <strong>8,65 %</strong> à <strong>227,80 $</strong>, portant la capitalisation à <strong>5 500 Md$</strong></a> — de quoi financer l'opération avec la monnaie de la journée.</p><aside class="takeaway" aria-label="À retenir"><p>« open source » n'a jamais voulu dire « sans propriétaire ». Une stratégie de réversibilité fondée sur des modèles ouverts hébergés au même endroit n'est pas une stratégie de réversibilité — c'est une dépendance qui n'a pas encore reçu sa facture.</p></aside>
   </article>
 
   <!-- 2 -->
   <article class="item">
     <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
     <h3>947 M€ de fraude détectée. Le vrai chiffre est trois fois plus gros, et le faux papier a perdu la partie.</h3>
-    <p>Le bilan annuel a le mérite de la franchise sur ce qu'il ignore : <a class="lk" href="https://www.argusdelassurance.com/assurance-de-personnes/des-filieres-de-larnaque-utilisent-lintelligence-artificielle-pres-dun-milliard-deuros-de-fraudes-a-lassurance-detecte-en-2025.VRVQHSDANZGGZL5GXH7FHW3JU4.html" target="_blank" rel="noopener">l'<strong>ALFA</strong> a détecté <strong>947 M€</strong> de sinistres frauduleux en 2025, en hausse de <strong>5 %</strong>, dont <strong>627 M€</strong> sur les seules branches IARD et auto</a> — pendant que <a class="lk" href="https://www.itesoft.com/fr/blog/fraude-assurance-chiffres-cles-alfa/" target="_blank" rel="noopener">le coût réel du phénomène est estimé à <strong>2,5 Md€</strong> par an</a>. Autrement dit : on attrape environ un tiers. Le basculement de l'année n'est pas dans le montant mais dans la matière : <a class="lk" href="https://www.planetecsca.fr/actualites/environnement-courtage-assurances/fraude-documentaire-2026-ia-assurance-banque/" target="_blank" rel="noopener">pour la première fois en 2026, les falsifications numériques (<strong>57 %</strong>) dépassent en volume les contrefaçons physiques, avec <strong>+700 %</strong> de tentatives de <em>deepfake</em> en un an</a>, et <a class="lk" href="https://www.lassuranceenmouvement.com/2026/05/20/lia-generative-arme-les-fraudeurs-lia-defensive-riposte/" target="_blank" rel="noopener">des kits de faux documents prêts à l'emploi vendus <strong>50 à 200 €</strong> sur Telegram — templates d'assureurs français, tutoriel et service après-vente inclus</a>. Réponse du secteur : <a class="lk" href="https://www.larevuedudigital.com/axa-renouvelle-son-contrat-avec-shift-technology-pour-lusage-de-lia-dans-lassurance/" target="_blank" rel="noopener">AXA a reconduit son partenariat IA avec l'insurtech française <strong>Shift Technology</strong>, étendu à <strong>15 pays</strong> sur la souscription, la détection de fraude et les sinistres</a>, dans un marché où <a class="lk" href="https://www.smartpoint.fr/ia-assurance-industrialisation-2026/" target="_blank" rel="noopener">Allianz Partners revendique un passage de <strong>10 %</strong> à <strong>90 %</strong> de traitement automatique des sinistres</a>. <span class="bf">Visiteurs du futur,</span> quand le justificatif coûte 50 € à fabriquer et zéro à dupliquer, la pièce jointe cesse d'être une preuve. La confiance se déplace vers ce qui n'est pas déclaratif — la donnée d'origine, l'horodatage, la source vérifiable — et cette bascule-là ne se règle pas par un module anti-fraude de plus.</p>
+    <p>Le bilan annuel a le mérite de la franchise sur ce qu'il ignore : <a class="lk" href="https://www.argusdelassurance.com/assurance-de-personnes/des-filieres-de-larnaque-utilisent-lintelligence-artificielle-pres-dun-milliard-deuros-de-fraudes-a-lassurance-detecte-en-2025.VRVQHSDANZGGZL5GXH7FHW3JU4.html" target="_blank" rel="noopener">l'<strong>ALFA</strong> a détecté <strong>947 M€</strong> de sinistres frauduleux en 2025, en hausse de <strong>5 %</strong>, dont <strong>627 M€</strong> sur les seules branches IARD et auto</a> — pendant que <a class="lk" href="https://www.itesoft.com/fr/blog/fraude-assurance-chiffres-cles-alfa/" target="_blank" rel="noopener">le coût réel du phénomène est estimé à <strong>2,5 Md€</strong> par an</a>. Autrement dit : on attrape environ un tiers. Le basculement de l'année n'est pas dans le montant mais dans la matière : <a class="lk" href="https://www.planetecsca.fr/actualites/environnement-courtage-assurances/fraude-documentaire-2026-ia-assurance-banque/" target="_blank" rel="noopener">pour la première fois en 2026, les falsifications numériques (<strong>57 %</strong>) dépassent en volume les contrefaçons physiques, avec <strong>+700 %</strong> de tentatives de <em>deepfake</em> en un an</a>, et <a class="lk" href="https://www.lassuranceenmouvement.com/2026/05/20/lia-generative-arme-les-fraudeurs-lia-defensive-riposte/" target="_blank" rel="noopener">des kits de faux documents prêts à l'emploi vendus <strong>50 à 200 €</strong> sur Telegram — templates d'assureurs français, tutoriel et service après-vente inclus</a>. Réponse du secteur : <a class="lk" href="https://www.larevuedudigital.com/axa-renouvelle-son-contrat-avec-shift-technology-pour-lusage-de-lia-dans-lassurance/" target="_blank" rel="noopener">AXA a reconduit son partenariat IA avec l'insurtech française <strong>Shift Technology</strong>, étendu à <strong>15 pays</strong> sur la souscription, la détection de fraude et les sinistres</a>, dans un marché où <a class="lk" href="https://www.smartpoint.fr/ia-assurance-industrialisation-2026/" target="_blank" rel="noopener">Allianz Partners revendique un passage de <strong>10 %</strong> à <strong>90 %</strong> de traitement automatique des sinistres</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Quand le justificatif coûte 50 € à fabriquer et zéro à dupliquer, la pièce jointe cesse d'être une preuve. La confiance se déplace vers ce qui n'est pas déclaratif — la donnée d'origine, l'horodatage, la source vérifiable — et cette bascule-là ne se règle pas par un module anti-fraude de plus.</p></aside>
   </article>
 
   <!-- 3 -->
   <article class="item">
     <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
     <h3>181 rançongiciels avant la fin août. L'année 2025 entière en comptait 176.</h3>
-    <p>Le compteur a déjà dépassé l'exercice précédent avec quatre mois d'avance : <a class="lk" href="https://www.zataz.com/ransomware-avec-181-victimes-2026-depasse-deja-toute-lannee-2025/" target="_blank" rel="noopener">au <strong>20 août 2026</strong>, <strong>181</strong> publications étaient attribuées à des groupes de rançongiciel visant la France, contre <strong>176</strong> pour toute l'année 2025</a>, Akira, RansomHub, Qilin, DragonForce et Medusa en tête d'affiche. Le mois d'août à lui seul a servi <a class="lk" href="https://incyber.org/article/france-fuites-de-donnees-aout-2026-retenir/" target="_blank" rel="noopener">une fuite sur <strong>cloud.numerique.gouv.fr</strong> le <strong>22 août</strong>, le registrar <strong>Netim</strong> revendiqué le <strong>23</strong>, et le groupe <strong>Axess</strong> avec <strong>67</strong> bases de données et près de <strong>19 000</strong> comptes exposés</a>. Pendant ce temps, le superviseur passe de la pédagogie au contrôle : <a class="lk" href="https://axenia.app/blog/annee-supervision-acpr-2026-dora" target="_blank" rel="noopener">l'<strong>ACPR</strong> fait de <strong>2026</strong> son année de supervision <strong>DORA</strong>, avec pour priorités la gestion des incidents, le cadre de risque TIC et la conformité des contrats prestataires</a>, sur un règlement qui <a class="lk" href="https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/transverse/digital-operational-resilience-act-dora" target="_blank" rel="noopener">s'applique pleinement depuis le <strong>17 janvier 2025</strong> à <strong>21</strong> catégories d'entités financières</a> et prévoit <a class="lk" href="https://www.elitek.fr/post/dora-reglementation-2026" target="_blank" rel="noopener">des sanctions allant de <strong>5 à 10 M€</strong> ou <strong>5 à 10 %</strong> du chiffre d'affaires annuel</a>. <span class="bf">Pour vous, visiteurs du futur :</span> vos points faibles ne sont plus dans votre système d'information mais dans celui de vos prestataires — hébergeur, éditeur métier, registrar, tiers de paiement. Le registre des dépendances ICT n'est pas un exercice documentaire : c'est la seule carte qui existe le jour où l'un d'eux tombe.</p>
+    <p>Le compteur a déjà dépassé l'exercice précédent avec quatre mois d'avance : <a class="lk" href="https://www.zataz.com/ransomware-avec-181-victimes-2026-depasse-deja-toute-lannee-2025/" target="_blank" rel="noopener">au <strong>20 août 2026</strong>, <strong>181</strong> publications étaient attribuées à des groupes de rançongiciel visant la France, contre <strong>176</strong> pour toute l'année 2025</a>, Akira, RansomHub, Qilin, DragonForce et Medusa en tête d'affiche. Le mois d'août à lui seul a servi <a class="lk" href="https://incyber.org/article/france-fuites-de-donnees-aout-2026-retenir/" target="_blank" rel="noopener">une fuite sur <strong>cloud.numerique.gouv.fr</strong> le <strong>22 août</strong>, le registrar <strong>Netim</strong> revendiqué le <strong>23</strong>, et le groupe <strong>Axess</strong> avec <strong>67</strong> bases de données et près de <strong>19 000</strong> comptes exposés</a>. Pendant ce temps, le superviseur passe de la pédagogie au contrôle : <a class="lk" href="https://axenia.app/blog/annee-supervision-acpr-2026-dora" target="_blank" rel="noopener">l'<strong>ACPR</strong> fait de <strong>2026</strong> son année de supervision <strong>DORA</strong>, avec pour priorités la gestion des incidents, le cadre de risque TIC et la conformité des contrats prestataires</a>, sur un règlement qui <a class="lk" href="https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/transverse/digital-operational-resilience-act-dora" target="_blank" rel="noopener">s'applique pleinement depuis le <strong>17 janvier 2025</strong> à <strong>21</strong> catégories d'entités financières</a> et prévoit <a class="lk" href="https://www.elitek.fr/post/dora-reglementation-2026" target="_blank" rel="noopener">des sanctions allant de <strong>5 à 10 M€</strong> ou <strong>5 à 10 %</strong> du chiffre d'affaires annuel</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Vos points faibles ne sont plus dans votre système d'information mais dans celui de vos prestataires — hébergeur, éditeur métier, registrar, tiers de paiement. Le registre des dépendances ICT n'est pas un exercice documentaire : c'est la seule carte qui existe le jour où l'un d'eux tombe.</p></aside>
   </article>
 
   <!-- 4 -->
   <article class="item">
     <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infrastructure</span></div>
     <h3>Il n'y a plus une prise libre à Paris. Trois milliards viennent d'être posés sur la table pour en fabriquer.</h3>
-    <p>La contrainte est physique avant d'être politique : <a class="lk" href="https://www.cpim.fr/immobilier-data-center-france-2026/" target="_blank" rel="noopener">le taux d'occupation moyen des data centers parisiens dépasse <strong>95 %</strong> en 2026, et plusieurs opérateurs refusent purement et simplement des clients</a>. D'où l'annonce du trimestre : <a class="lk" href="https://www.emarketerz.fr/pourquoi-orange-et-morrison-investissent-trois-milliards-dans-un-data-center-souverain-en-france-en-2026/" target="_blank" rel="noopener"><strong>Orange</strong> et l'investisseur <strong>Morrison</strong> engagent <strong>3 Md€</strong> dans un data center souverain de <strong>400 MW</strong> en France</a>, sur un marché européen du cloud souverain <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">évalué à <strong>38 Md€</strong> en 2026 et visant <strong>100 Md€</strong> à l'horizon 2031, après le paquet souveraineté dévoilé fin mai par la Commission</a>. Côté logiciel, Mistral avance ses pions au même rythme : <a class="lk" href="https://tech-insider.org/fr/mistral-shieldstral-regional-endpoints-2026/" target="_blank" rel="noopener">le modèle de modération open source <strong>Shieldstral</strong> a été dévoilé le <strong>4 août</strong>, complété par un LLM institutionnel destiné aux administrations et par le choix de la localisation des calculs</a>. Et la Commission a désormais les moyens de sa doctrine : <a class="lk" href="https://www.oceajuris.com/articles/intelligence-artificielle-ce-qui-change-vraiment-aout-2026-avec-reglement-europeen-18146.htm" target="_blank" rel="noopener">depuis le <strong>2 août 2026</strong>, elle dispose de pleins pouvoirs de contrôle et de sanction sur les fournisseurs de modèles à usage général, jusqu'à <strong>15 M€</strong> ou <strong>3 %</strong> du chiffre d'affaires mondial</a>. <span class="bf">Pour les visiteurs du futur :</span> la souveraineté a cessé d'être une clause contractuelle pour devenir une question de mégawatts disponibles à moins de 50 km. Un projet IA qui suppose de la capacité de calcul en 2028 se réserve en 2026, comme on réserve du foncier.</p>
+    <p>La contrainte est physique avant d'être politique : <a class="lk" href="https://www.cpim.fr/immobilier-data-center-france-2026/" target="_blank" rel="noopener">le taux d'occupation moyen des data centers parisiens dépasse <strong>95 %</strong> en 2026, et plusieurs opérateurs refusent purement et simplement des clients</a>. D'où l'annonce du trimestre : <a class="lk" href="https://www.emarketerz.fr/pourquoi-orange-et-morrison-investissent-trois-milliards-dans-un-data-center-souverain-en-france-en-2026/" target="_blank" rel="noopener"><strong>Orange</strong> et l'investisseur <strong>Morrison</strong> engagent <strong>3 Md€</strong> dans un data center souverain de <strong>400 MW</strong> en France</a>, sur un marché européen du cloud souverain <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">évalué à <strong>38 Md€</strong> en 2026 et visant <strong>100 Md€</strong> à l'horizon 2031, après le paquet souveraineté dévoilé fin mai par la Commission</a>. Côté logiciel, Mistral avance ses pions au même rythme : <a class="lk" href="https://tech-insider.org/fr/mistral-shieldstral-regional-endpoints-2026/" target="_blank" rel="noopener">le modèle de modération open source <strong>Shieldstral</strong> a été dévoilé le <strong>4 août</strong>, complété par un LLM institutionnel destiné aux administrations et par le choix de la localisation des calculs</a>. Et la Commission a désormais les moyens de sa doctrine : <a class="lk" href="https://www.oceajuris.com/articles/intelligence-artificielle-ce-qui-change-vraiment-aout-2026-avec-reglement-europeen-18146.htm" target="_blank" rel="noopener">depuis le <strong>2 août 2026</strong>, elle dispose de pleins pouvoirs de contrôle et de sanction sur les fournisseurs de modèles à usage général, jusqu'à <strong>15 M€</strong> ou <strong>3 %</strong> du chiffre d'affaires mondial</a>.</p><aside class="takeaway" aria-label="À retenir"><p>La souveraineté a cessé d'être une clause contractuelle pour devenir une question de mégawatts disponibles à moins de 50 km. Un projet IA qui suppose de la capacité de calcul en 2028 se réserve en 2026, comme on réserve du foncier.</p></aside>
   </article>
 
   <!-- 5 -->
   <article class="item">
     <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
     <h3>La moitié des cadres utilisent l'IA chaque semaine. L'autre moitié sera bientôt évaluée là-dessus.</h3>
-    <p>L'adoption a franchi la ligne de flottaison en douze mois : <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">selon l'<strong>APEC</strong>, la moitié des cadres utilisent désormais un outil d'IA au moins une fois par semaine, soit <strong>+15 points</strong> en un an</a>, et l'effet se propage immédiatement au recrutement : <a class="lk" href="https://www.katchme.fr/recruter-avec-intelligence-artificielle-2026/" target="_blank" rel="noopener"><strong>53 %</strong> des grandes entreprises comptent accorder plus de poids aux compétences en IA pour leurs futurs recrutements de cadres, et <strong>13 %</strong> des ETI et grandes entreprises ont déjà utilisé l'IA pour recruter en 2025, contre <strong>6 %</strong> en 2024</a>. Le marché, lui, se déforme là où le texte est le produit : <a class="lk" href="https://adapte-toi.com/guides/ia-emploi-chiffres-cles/" target="_blank" rel="noopener">les offres reculent de <strong>67 %</strong> dans les centres d'appels, <strong>53 %</strong> en rédaction publicitaire et <strong>48 %</strong> en gestion de projets IT</a>, quand <a class="lk" href="https://www.hiringlab.org/fr/blog/2026/04/01/avril-2026-lia-progresse-dans-un-marche-du-travail-en-recul/" target="_blank" rel="noopener">l'IA progresse dans un marché du travail par ailleurs en repli</a>. Symbole en forme d'épitaphe : <a class="lk" href="https://www.cnbc.com/2026/08/25/amazon-service-that-jeff-bezos-called-artificial-ai-is-shutting-down.html" target="_blank" rel="noopener">Amazon ferme le <strong>30 septembre</strong> Mechanical Turk, la place de marché de micro-tâches humaines que Bezos appelait « l'intelligence artificielle artificielle », après <strong>21</strong> ans et jusqu'à <strong>500 000</strong> travailleurs</a>. <span class="bf">Visiteurs du futur,</span> la compétence IA est en train de basculer du bonus au critère — et un critère de recrutement finit toujours par devenir un critère d'évaluation. Reste la question que personne ne tranche : forme-t-on aussi vite qu'on exige ?</p>
+    <p>L'adoption a franchi la ligne de flottaison en douze mois : <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">selon l'<strong>APEC</strong>, la moitié des cadres utilisent désormais un outil d'IA au moins une fois par semaine, soit <strong>+15 points</strong> en un an</a>, et l'effet se propage immédiatement au recrutement : <a class="lk" href="https://www.katchme.fr/recruter-avec-intelligence-artificielle-2026/" target="_blank" rel="noopener"><strong>53 %</strong> des grandes entreprises comptent accorder plus de poids aux compétences en IA pour leurs futurs recrutements de cadres, et <strong>13 %</strong> des ETI et grandes entreprises ont déjà utilisé l'IA pour recruter en 2025, contre <strong>6 %</strong> en 2024</a>. Le marché, lui, se déforme là où le texte est le produit : <a class="lk" href="https://adapte-toi.com/guides/ia-emploi-chiffres-cles/" target="_blank" rel="noopener">les offres reculent de <strong>67 %</strong> dans les centres d'appels, <strong>53 %</strong> en rédaction publicitaire et <strong>48 %</strong> en gestion de projets IT</a>, quand <a class="lk" href="https://www.hiringlab.org/fr/blog/2026/04/01/avril-2026-lia-progresse-dans-un-marche-du-travail-en-recul/" target="_blank" rel="noopener">l'IA progresse dans un marché du travail par ailleurs en repli</a>. Symbole en forme d'épitaphe : <a class="lk" href="https://www.cnbc.com/2026/08/25/amazon-service-that-jeff-bezos-called-artificial-ai-is-shutting-down.html" target="_blank" rel="noopener">Amazon ferme le <strong>30 septembre</strong> Mechanical Turk, la place de marché de micro-tâches humaines que Bezos appelait « l'intelligence artificielle artificielle », après <strong>21</strong> ans et jusqu'à <strong>500 000</strong> travailleurs</a>.</p><aside class="takeaway" aria-label="À retenir"><p>La compétence IA est en train de basculer du bonus au critère — et un critère de recrutement finit toujours par devenir un critère d'évaluation. Reste la question que personne ne tranche : forme-t-on aussi vite qu'on exige ?</p></aside>
   </article>
 
   <!-- 6 -->
   <article class="item">
     <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
     <h3>Le patronat s'est donné rendez-vous à Roland-Garros pour parler « courage ». La macro, elle, est à 0,2 %.</h3>
-    <p>Deux jours de plénières sous le thème le plus révélateur de la rentrée : <a class="lk" href="https://www.medef.com/la-ref/laref26-2026" target="_blank" rel="noopener">la <strong>REF 2026</strong> du Medef s'est tenue les <strong>26 et 27 août</strong> à Roland-Garros autour du mot « <strong>Courage</strong> »</a>, avec <a class="lk" href="https://medefyvelines.com/actualites/la-rencontre-des-entrepreneurs-de-france-au-stade-roland-garros-laref2026/" target="_blank" rel="noopener"><strong>treize</strong> plénières sur le court Philippe-Chatrier et <strong>trente-quatre</strong> sessions consacrées entre autres à l'IA, à la réindustrialisation et à la souveraineté économique</a>. Le décor chiffré est moins lyrique : <a class="lk" href="https://www.insee.fr/fr/statistiques/8907421?sommaire=8907467" target="_blank" rel="noopener">l'économie française a progressé de <strong>0,2 %</strong> entre avril et juin, avec un chômage à <strong>8,3 %</strong> au deuxième trimestre</a> et <a class="lk" href="https://www.clubpatrimoine.com/contenus/inflation-france" target="_blank" rel="noopener">une inflation à <strong>2,1 %</strong> sur un an en juillet, confirmée par l'Insee le <strong>14 août</strong></a>. Et l'avertissement le plus net de l'été n'est pas venu du patronat mais de Francfort : <a class="lk" href="https://siecledigital.fr/2026/08/20/leurope-a-rate-le-virage-du-numerique-christine-lagarde-craint-quelle-fasse-la-meme-erreur-avec-lia/" target="_blank" rel="noopener">Christine Lagarde a rappelé le <strong>19 août</strong> que l'Europe « a largement manqué la première révolution numérique » et ne peut pas « se permettre de répéter cette expérience avec l'IA »</a>, alors que <a class="lk" href="https://www.maddyness.com/2026/08/19/ia-christine-lagarde-estime-que-leurope-ne-peut-pas-se-permettre-de-rater-encore-une-revolution-numerique/" target="_blank" rel="noopener">les entreprises de la zone euro ne prévoient d'y consacrer que <strong>9 %</strong> de leurs investissements en 2026</a>. <span class="bf">Pour vous, visiteurs du futur :</span> 9 % d'un budget d'investissement, ce n'est pas une transformation, c'est une ligne budgétaire. L'écart de croissance des trois prochaines années se joue moins sur la qualité des outils choisis que sur la part du capital que vos arbitrages leur accordent réellement.</p>
+    <p>Deux jours de plénières sous le thème le plus révélateur de la rentrée : <a class="lk" href="https://www.medef.com/la-ref/laref26-2026" target="_blank" rel="noopener">la <strong>REF 2026</strong> du Medef s'est tenue les <strong>26 et 27 août</strong> à Roland-Garros autour du mot « <strong>Courage</strong> »</a>, avec <a class="lk" href="https://medefyvelines.com/actualites/la-rencontre-des-entrepreneurs-de-france-au-stade-roland-garros-laref2026/" target="_blank" rel="noopener"><strong>treize</strong> plénières sur le court Philippe-Chatrier et <strong>trente-quatre</strong> sessions consacrées entre autres à l'IA, à la réindustrialisation et à la souveraineté économique</a>. Le décor chiffré est moins lyrique : <a class="lk" href="https://www.insee.fr/fr/statistiques/8907421?sommaire=8907467" target="_blank" rel="noopener">l'économie française a progressé de <strong>0,2 %</strong> entre avril et juin, avec un chômage à <strong>8,3 %</strong> au deuxième trimestre</a> et <a class="lk" href="https://www.clubpatrimoine.com/contenus/inflation-france" target="_blank" rel="noopener">une inflation à <strong>2,1 %</strong> sur un an en juillet, confirmée par l'Insee le <strong>14 août</strong></a>. Et l'avertissement le plus net de l'été n'est pas venu du patronat mais de Francfort : <a class="lk" href="https://siecledigital.fr/2026/08/20/leurope-a-rate-le-virage-du-numerique-christine-lagarde-craint-quelle-fasse-la-meme-erreur-avec-lia/" target="_blank" rel="noopener">Christine Lagarde a rappelé le <strong>19 août</strong> que l'Europe « a largement manqué la première révolution numérique » et ne peut pas « se permettre de répéter cette expérience avec l'IA »</a>, alors que <a class="lk" href="https://www.maddyness.com/2026/08/19/ia-christine-lagarde-estime-que-leurope-ne-peut-pas-se-permettre-de-rater-encore-une-revolution-numerique/" target="_blank" rel="noopener">les entreprises de la zone euro ne prévoient d'y consacrer que <strong>9 %</strong> de leurs investissements en 2026</a>.</p><aside class="takeaway" aria-label="À retenir"><p>9 % d'un budget d'investissement, ce n'est pas une transformation, c'est une ligne budgétaire. L'écart de croissance des trois prochaines années se joue moins sur la qualité des outils choisis que sur la part du capital que vos arbitrages leur accordent réellement.</p></aside>
   </article>
 
   <section class="bonus">
     <p style="margin:0"><span class="lab">Bonus</span>
     <a class="lk" href="https://siecledigital.fr/2026/08/27/waymo-va-lancer-ses-robotaxis-sans-conducteur-dans-une-grande-ville-europeenne" target="_blank" rel="noopener">Waymo choisit Munich comme première tête de pont européenne, tests dans les prochaines semaines et service commercial fin 2027</a> — <a class="lk" href="https://zagdaily.com/connected/waymo-registers-entities-in-france-the-netherlands-spain-and-germany/" target="_blank" rel="noopener">une entité française a été enregistrée à Paris le 23 juin, mais la France n'a toujours pas de cadre légal pour le robotaxi</a> — <a class="lk" href="https://techstartups.com/2026/08/27/top-tech-news-today-august-27-2026-amazon-apple-google-meta-nvidia-openai-salesforce-more/" target="_blank" rel="noopener">AWS prévoit de déployer 2 millions de GPU Nvidia supplémentaires en 2027 et 2028, dont des systèmes Blackwell Ultra et Rubin</a> — <a class="lk" href="https://www.usinenouvelle.com/industrie-technologie/deeptech/technos-quantique/quantique-alicebob-leve-le-voile-sur-helium-son-premier-ordinateur-quantique-tout-en-un-dote-de-18-qubits.E2GKPFF2I5AE5NUS74N7YD2RGU.html" target="_blank" rel="noopener">Alice&amp;Bob dévoile Helium, 18 qubits dans 40 kW, soit 5 à 10 fois moins d'énergie que la concurrence comparable</a> — <a class="lk" href="https://tech-insider.org/fr/pasqal-170-millions-ipo-nasdaq-quantique-francais-2026/" target="_blank" rel="noopener">Pasqal lève 170 M€ et vise une entrée au Nasdaq au-delà du milliard de dollars</a> — <a class="lk" href="https://www.lavoixdefrance.fr/actualites/quantique-francais-pasqal-a-25-millions-quobly-a-115-millions-et-un-ordinateur-commercial-annonce-fin-2026-5887/" target="_blank" rel="noopener">le programme PROQCIMA mobilise 500 M€ de la Défense sur cinq startups françaises, dans une stratégie nationale à 1,8 Md€</a> — <a class="lk" href="https://next.ink/253206/cowork-et-claude-font-maintenant-memoire-commune/" target="_blank" rel="noopener">Anthropic fusionne le 25 août les mémoires de Claude et de Cowork, avec exclusion par défaut des données sensibles</a> — <a class="lk" href="https://www.magnolia.fr/actualites/sante/flambee-tarifs-assurance-sante-auto-habitation-en-2026" target="_blank" rel="noopener">habitation +7,5 à 8 %, auto +5 à 5,5 %, santé individuelle +4,5 % médian : la note 2026 est servie</a> — <a class="lk" href="https://www.magnolia.fr/actualites/assurance-emprunteur/assurance-pret-seule-assurance-epargnee-par-hausse-tarifs-2026" target="_blank" rel="noopener">seule exception du tableau, l'assurance emprunteur baisse, effet retard de la loi Lemoine</a> — <a class="lk" href="https://www.argusdelassurance.com/environnement/risques-climatiques/retrait-gonflement-des-argiles-rga/les-maisons-fissurees-par-la-secheresse-pourraient-couter-500-milliards-deuros-estime-edouard-vieillefond-ccr.H2RNZ6FS45EINJQV53BMVE7Q2Y.html" target="_blank" rel="noopener">10,4 millions de maisons sont exposées au retrait-gonflement des argiles, désormais plus de la moitié des indemnisations cat-nat bâtiment</a> — <a class="lk" href="https://www.echangesassurances.org/actualites/catastrophe-naturelle-arrete-12-juin-2026-secheresse" target="_blank" rel="noopener">183 communes de 48 départements reconnues en état de catastrophe naturelle par l'arrêté du 12 juin</a> — <a class="lk" href="https://www.kleinblue.fr/post/insurtech-insights-2026-l-assurance-entre-dans-l-%C3%A8re-de-l-industrialisation-de-l-ia" target="_blank" rel="noopener">à Insurtech Insights 2026, la moitié des 150 conférences et 42 % des 130 exposants tech parlaient d'IA agentique</a> — <a class="lk" href="https://www.ifri.org/fr/presse-contenus-repris-sur-le-site-video/leur-sabotage-peut-paralyser-internet-plongee-au-coeur-de" target="_blank" rel="noopener">plus de 99 % du trafic de données intercontinental passe par des câbles sous-marins, devenus cibles de sabotage assumées</a> — <a class="lk" href="https://www.marknotes.fr/startups-levees-fonds-2026/" target="_blank" rel="noopener">Alan boucle une série G de 480 M€ menée par Prosus, dans un mois de juin à 1,3 Md€ pour la French Tech</a>. <span class="end">La suite… demain matin !</span></p>
   </section>
+</main>
+<footer class="flfoot">
+    <div class="footer-scene">
+    <div class="session">
+      <p><strong>Une visite ou un workshop en équipe au Future Lab ?</strong></p>
+      <p><a class="session-cta" href="https://forms.cloud.microsoft/e/1WeVdUG4sd" target="_blank" rel="noopener">Demander une session</a> ou écrivez-nous à <a href="mailto:futurelab@axa.fr">futurelab@axa.fr</a>.</p>
     </div>
-
-  <footer class="flfoot">
+    </div>
+    <div class="footer-base">
     <div class="top">
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
       <span class="org">Diffusion interne</span>
     </div>
-    <div class="doors">
-      <a class="door" href="https://futurelab-axa.vercel.app/explorer" target="_blank" rel="noopener"><b>Explorer le plateau</b><span>120&nbsp;m&sup2;, huit zones &agrave; manipuler</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/parcours" target="_blank" rel="noopener"><b>Les quatre parcours</b><span>De 30&nbsp;minutes &agrave; une journ&eacute;e</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/reserver" target="_blank" rel="noopener"><b>R&eacute;server un cr&eacute;neau</b><span>Venez avec une vraie question</span></a>
+    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="index.html">Consulter les &eacute;ditions pr&eacute;c&eacute;dentes</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
     </div>
-    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> Sélection et commentaires du Future Lab, sans valeur de position officielle. Sélection compilée chaque matin avec l'aide de l'IA sur les 24–48 dernières heures, priorité aux sources françaises et primaires ; chaque fait est lié à sa source et les chiffres non sourcés ne sont pas publiés. · <a href="index.html">Consulter les éditions précédentes</a> · <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
   </footer>
 
 </div>
+<script>
+(function () {
+  var shortcut = document.getElementById('bookmark-shortcut');
+  var platform = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+  if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !(platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    shortcut.innerHTML = 'Pour ajouter cette page à vos favoris, appuyez sur <kbd>' + (/Mac/i.test(platform) ? '⌘ + D' : 'Ctrl + D') + '</kbd>, puis confirmez dans votre navigateur.';
+  }
+  document.querySelector('.bookmark-close').addEventListener('click', function () {
+    var details = this.closest('details');
+    details.open = false;
+    details.querySelector('summary').focus();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      var details = document.querySelector('.bookmark');
+      if (details.open) { details.open = false; details.querySelector('summary').focus(); }
+    }
+  });
+}());
+</script>
 </body>
 </html>

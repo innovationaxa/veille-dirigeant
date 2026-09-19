@@ -2,21 +2,20 @@
 {
   "name": "future.now",
   "schemaVersion": 1,
-  "description": "Briefing matinal du dirigeant : synthèse structurée (assurance/insurtech, tech & IA, économie/finance, réglementaire/risques, capital humain, souveraineté) avec focus France. Inspirée de Tech Trash et Time To Sign Off. Recompilée chaque matin par une tâche planifiée."
+  "description": "future.now — 6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain. Powered by future.lab. Assurance & insurtech, tech & IA, économie, réglementaire & risques, capital humain, souveraineté. Focus France, recompilé chaque matin."
 }
 </script>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>future.now — archives</title>
+<title>future.now — 6 actus pour comprendre demain</title>
 <style>
-
-:root{--navy:#00005C;--red:#FF1721;
-
+:root{
   color-scheme: light;
   --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
-  --line:#e7e4dd; --accent:#00005C; --link:#1a3a9e;
+  --line:#e7e4dd; --navy:#00005C; --deep:#00008F; --red:#FF1721;
+  --accent:#00005C; --link:#1a3a9e; --lilac:#8e8ed8;
   --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
   --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
@@ -24,78 +23,136 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:30px 22px 72px}
+.wrap{max-width:720px;margin:0 auto;padding:0 0 72px}
+.inner{padding:0 22px}
 
-/* Masthead */
-.mast{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
-.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.brandline{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:6px}
-.brand{font-size:13px;font-weight:700;letter-spacing:.02em}
-.date{font-size:13px;color:var(--muted);font-weight:600}
+/* Masthead — bandeau nuit */
+.mast{background:var(--navy);padding:26px 22px 22px}
+.mast .top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
+.tag{font-size:14px;color:#a9a9e4;margin-top:12px;line-height:1.5}
+.rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
+.colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--lilac);font-weight:600}
+.mast .date a{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);text-decoration:none}
+.pw{display:inline-flex;align-items:center;gap:8px;opacity:.82}
+.pw span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lilac);font-weight:600}
+.pw svg{width:78px;height:auto;color:#fff;display:block}
 
 /* Edition title + hook */
-.edtitle{font-family:var(--serif);font-size:36px;line-height:1.04;margin:22px 0 10px;font-weight:700;letter-spacing:-.4px}
+.edtitle{font-family:var(--serif);font-size:35px;line-height:1.05;margin:26px 0 10px;font-weight:700;letter-spacing:-.4px}
 .readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
 .hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--red);padding:4px 0 4px 15px;margin:0 0 26px}
-.hook .go{font-weight:700;color:var(--accent)}
+.hook .go{font-weight:700;color:var(--navy)}
 
-/* En bref */
-.brief{background:var(--accent);color:#eef2ee;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
-.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8e8ed8;font-weight:700}
+/* En 30 secondes */
+.brief{background:var(--navy);color:#eeeefa;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac);font-weight:700}
 .brief ul{margin:0;padding:0;list-style:none}
 .brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
-.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#FF1721}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--red)}
 
-/* Numbered items — generous vertical rhythm */
+/* Numbered items */
 .item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
 .item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
-.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;min-width:16px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--navy);line-height:1;min-width:16px}
 .pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
 .item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
 .item p{margin:0;font-size:15px;color:#262626}
 .item p strong{font-weight:700;color:#111}
+.bf{font-weight:800;color:var(--navy);letter-spacing:.01em}
 
-/* Inline links — the heart of the format */
+/* Inline links */
 a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #b9bfe4;font-weight:600;transition:border-color .15s,background .15s}
 a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
 
 /* Bonus */
 .bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
-.bonus .lab{display:inline-block;font-weight:800;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
-.bonus .end{font-weight:700;color:var(--accent)}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--navy)}
 
-/* Sources */
-.sources{margin-top:34px;border-top:1px solid var(--line);padding-top:20px}
-.sources h2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 11px;color:#444}
-.note{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.55}
-.foot{margin-top:22px;text-align:center;font-size:11px;color:var(--muted)}
-
-.mast{background:var(--navy);margin:-30px -22px 0;padding:26px 22px 22px;border-bottom:none}
-.wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
-.tag{font-size:14px;color:#a9a9e4;margin-top:12px;max-width:52ch;line-height:1.5}
-.rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
-.colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8e8ed8;font-weight:600}
-.mast .date a{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);text-decoration:none}
-.pw{display:inline-flex;align-items:center;gap:8px;opacity:.82}
-.pw>span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8e8ed8;font-weight:600}
-.pw svg{width:78px;height:auto;color:#fff;display:block}
-.edtitle{margin-top:26px}
-.bf{font-weight:800;color:var(--navy);letter-spacing:.01em}
-.flfoot{background:var(--navy);color:#e4e4f6;padding:24px 22px 22px;margin:38px -22px -72px}
+/* Footer Future Lab */
+.flfoot{background:var(--navy);color:#e4e4f6;padding:24px 22px 22px;margin-top:38px}
 .flfoot .top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .flfoot .pw svg{width:88px}
-.flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8e8ed8;font-weight:700}
-.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:19px 0 17px}
-.door{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;font-size:13px;color:#e9e9fb;text-decoration:none;display:block;transition:background .15s}
-.door:hover{background:rgba(255,255,255,.17)}
-.door b{display:block;font-weight:700;font-size:13.5px;color:#fff;margin-bottom:2px}
-.door span{color:#a9a9e4;font-size:11.5px}
-.legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px;margin:0}
+.flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:700}
+.legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
 .legal a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
-.legal strong{color:#fff}
+/* Header actions and session contact */
+.mast .top{align-items:center}
+.tag{max-width:none}
+.bookmark{position:relative;color:#fff;font-size:12px}
+.bookmark summary{cursor:pointer;list-style:none;border:1px solid rgba(255,255,255,.4);border-radius:7px;padding:9px 12px;min-height:40px;font-weight:600;background:rgba(255,255,255,.07)}
+.bookmark summary::-webkit-details-marker{display:none}
+.bookmark summary::before{content:"☆";margin-right:7px;font-size:16px}
+.bookmark summary:hover,.bookmark[open] summary{background:rgba(255,255,255,.16)}
+.bookmark summary:focus-visible,.archive-link:focus-visible,.session a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.bookmark-help{position:absolute;z-index:2;right:0;top:calc(100% + 8px);width:280px;max-width:calc(100vw - 44px);padding:14px 16px;background:#fff;color:var(--navy);border-radius:8px;box-shadow:0 6px 24px #0003;font-size:13px;line-height:1.6}
+.bookmark-help p{margin:0}
+.bookmark-help p+p{margin-top:8px}
+.bookmark-help kbd{font-family:inherit;font-weight:700;background:#eeeefa;border-radius:3px;padding:2px 5px}
+.archive-nav{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#a9a9e4}
+.archive-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:5px;padding:5px 9px;font-weight:600}
+.archive-link:hover{background:rgba(255,255,255,.12)}
+.session{margin:20px 0;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.07);font-size:14px;line-height:1.7}
+.session p{margin:0}
+.session p+p{margin-top:7px;color:#bdbdec;font-size:13px}
+.session a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:720px){.tag{white-space:nowrap}}
+@media(max-width:540px){.mast .top{gap:18px}.bookmark-help{left:0;right:auto}.colo{gap:12px}.archive-nav{width:100%}.wordmark{width:280px}}
+
+/* Proposition locale : salon de lecture */
+.mast{padding:0;background:#101b2a}
+.mast .hero-scene{position:relative;isolation:isolate;padding:28px 22px 22px;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.95),transparent 55%),url('/assets/salon-robot.png');background-size:cover;background-position:center 44%}
+.mast .top{align-items:flex-start;gap:12px}
+.mast .wordmark{width:320px;margin:29px 0 0;color:#fff5d9;filter:drop-shadow(0 2px 10px #0008)}
+.mast .bookmark{position:absolute;left:22px;top:145px;margin-top:0;font-size:11px}
+.mast .bookmark-help{left:0;right:auto}
+.mast .bookmark summary{background:rgba(10,20,33,.65);backdrop-filter:blur(10px);border-color:#e4cf9c66;color:#fff5dc}
+.mast .bookmark-help{color:#162236}
+.mast .tag{margin:0;color:#fff2d6;font-size:14px;line-height:1.6;position:relative;text-shadow:0 1px 5px #000}
+.mast .rule{display:none}
+.mast .colo{padding:16px 22px;background:#101b2a;border-top:1px solid #efd59b44;gap:12px}
+.mast .date,.mast .archive-nav{color:#d1c4a9}
+.mast .pw span{color:#d1c4a9}
+.mast .archive-link{border-color:#efd59b66;color:#fff3d8}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:330px;padding:20px 22px;background-position:67% center;background-image:linear-gradient(90deg,rgba(5,15,29,.52),rgba(5,15,29,.05)),linear-gradient(0deg,rgba(7,17,30,.98),transparent 65%),url('/assets/salon-robot.png')}
+ .mast .top{align-items:flex-start}
+ .mast .bookmark{top:125px}
+ .mast .wordmark{padding-top:26px}
+ .mast .wordmark{width:265px;margin:0}
+ .mast .tag{max-width:30ch;font-size:14px}
+ .mast .bookmark summary{padding:6px 10px;min-height:34px}
+ .mast .colo{padding-top:15px;padding-bottom:17px}
+}
+</style>
+<link rel="stylesheet" href="../assets/salon.css">
+<style>
+/* Proposition : la promesse et les repères de lecture réunis. */
+.mast .hero-scene{min-height:320px;padding-bottom:22px;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.98),rgba(7,17,30,.5) 25%,transparent 66%),url('/assets/salon-robot.png')}
+.mast .wordmark{margin-top:15px}
+.mast .bookmark{top:120px}
+.mast .header-promise{margin-top:90px}
+.mast .tag{font-size:17px;line-height:1.45;color:#f9edd7;white-space:normal;max-width:none;letter-spacing:-.15px}
+.mast .tag strong{font-weight:700;color:#f2d39d}
+.reading-guide{display:flex;list-style:none;margin:17px 0 0;padding:0;gap:0;color:#f2dfbd}
+.reading-guide li{display:flex;flex-direction:column;gap:2px;padding:0 22px;border-left:1px solid #d6bd954d}
+.reading-guide li:first-child{padding-left:0;border-left:0}
+.reading-guide strong{font-size:15px;font-weight:600;line-height:1.4}
+.reading-guide span{font-size:11px;color:#d3c7b5;line-height:1.5}
+.edtitle{margin-bottom:24px}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:370px;padding-bottom:22px;background-position:67% center}
+ .mast .wordmark{margin-top:0}
+ .mast .header-promise{margin-top:112px}
+ .mast .tag{max-width:28ch;font-size:16px;line-height:1.5}
+ .reading-guide{margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1.55fr}
+ .reading-guide li{padding:0 10px;gap:4px}
+ .reading-guide li:last-child{padding-right:0}
+ .reading-guide strong{font-size:13px;white-space:nowrap}
+ .reading-guide span{font-size:10.5px;line-height:1.4}
+}
 </style>
 </head>
 <body>
@@ -147,21 +204,39 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
     </g>
   </g>
 </g></symbol></svg>
-
 <div class="wrap">
-
   <header class="mast">
+    <div class="hero-scene">
+    <div class="top">
     <svg class="wordmark" viewBox="0 0 1164 193" role="img" aria-label="future.now"><use href="#fn"/></svg>
-    <div class="tag">6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain.</div>
+      <details class="bookmark">
+        <summary>Ajouter à mes favoris</summary>
+        <div class="bookmark-help">
+          <button type="button" class="bookmark-close" aria-label="Fermer l’aide aux favoris"><span aria-hidden="true">×</span></button>
+          <p id="bookmark-shortcut">Pour ajouter cette page à vos favoris, appuyez sur <kbd>Ctrl + D</kbd> (Windows) ou <kbd>⌘ + D</kbd> (Mac).</p>
+          <p>Sur mobile, ouvrez le menu de votre navigateur ou le menu de partage, puis choisissez « Ajouter aux favoris » ou l’étoile ☆.</p>
+        </div>
+      </details>
+    </div>
+    <div class="header-promise">
+      <p class="tag"><strong>6 actus</strong> pour comprendre demain, dès aujourd’hui.</p>
+      <ul class="reading-guide" aria-label="Votre rendez-vous de lecture">
+        <li><strong>3 min</strong><span>pour l’essentiel</span></li>
+        <li><strong>7 min</strong><span>pour tout lire</span></li>
+        <li><strong>Chaque matin</strong><span>mise à jour automatique</span></li>
+      </ul>
+    </div>
+    </div>
     <div class="rule"></div>
     <div class="colo">
-      <span class="date">Mercredi 19 août 2026 · <a href="index.html">archives</a></span>
+      <span class="date">Mercredi 19 août 2026</span>
+      <nav class="archive-nav" aria-label="Éditions précédentes"><span>Ce que vous avez raté :</span> <a class="archive-link" href="index.html">Nos Archives</a></nav>
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
     </div>
   </header>
+<main class="inner">
+<div class="edtitle">La BCE siffle la bulle pendant qu'un fondeur double en trente jours</div>
 
-  <div class="edtitle">La BCE siffle la bulle pendant qu'un fondeur double en trente jours</div>
-  <div class="readtime">7 min de lecture · édition recompilée automatiquement chaque matin</div>
 
   <p class="hook">
     Le téléphone est mort, ChatGPT vend des contrats – la BCE chiffre à 440 Md€ ce que la zone euro a mis dans sept actions américaines – un fabricant de puces double sa valorisation en un mois – et l'ACPR vient réécrire votre devoir de conseil. Le tour d'horizon du mercredi matin. <span class="go">C'est parti.</span>
@@ -181,42 +256,42 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
   <article class="item">
     <div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div>
     <h3>Votre plateau d'appels vient de fermer. Votre nouveau vendeur s'appelle ChatGPT.</h3>
-    <p>Le 11 août, la France a changé de régime sans que personne n'organise de cérémonie : <a class="lk" href="https://www.france-epargne.fr/news/demarchage-telephonique-le-passage-a-lopt-in-au-11-aout-2026-rebat-les-cartes-de-lassurance" target="_blank" rel="noopener">le démarchage téléphonique bascule en <strong>opt-in</strong>, et l'assurance figure au premier rang des secteurs concernés</a>. Fini Bloctel et la logique d'opposition : <a class="lk" href="https://www.legalplace.fr/actualites/demarchage-telephonique/" target="_blank" rel="noopener">l'article L.223-1 du Code de la consommation interdit désormais tout appel commercial sans accord préalable « libre, spécifique, éclairé, univoque et révocable »</a>, issu de <a class="lk" href="https://gdroit.fr/droit-des-assurances/demarchage-telephonique-assurance/" target="_blank" rel="noopener">la loi du 30 juin 2025 — avec charge de la preuve sur l'entreprise et conservation numérique du consentement pendant trois ans minimum</a>. Traduction comptable : vos fichiers achetés valent zéro, et votre coût d'acquisition vient de changer d'ordre de grandeur. La réponse du marché existe déjà, elle ne passe pas par un combiné — <a class="lk" href="https://www.argusdelassurance.com/courtiers/april/le-courtier-april-casse-les-codes-de-la-souscription-en-assurance-en-distribuant-une-offre-directement-dans-chatgpt.4QSIF3EHNVDKNC6PTUW5QWGI7A.html" target="_blank" rel="noopener">April distribue une offre directement dans ChatGPT</a>, où <a class="lk" href="https://www.april.com/fr/communique-de-presse/april-annonce-le-lancement-de-son-application-april-moto-dans-chatgpt-dopenai/" target="_blank" rel="noopener">l'application interroge les moteurs tarifaires d'April Moto en temps réel et délivre un vrai devis souscriptible</a>, <a class="lk" href="https://www.lassuranceenmouvement.com/2026/06/15/april-moto-se-souscrit-desormais-directement-dans-chatgpt/" target="_blank" rel="noopener">et non l'estimation approximative dont les chatbots nous gavent depuis dix ans</a>. <span class="bf">Pour vous, visiteurs du futur :</span> le régulateur a fermé le canal sortant le moins cher au moment précis où <strong>la conversation devient un point de vente</strong>. Ceux qui n'ont pas de présence dans les assistants n'auront bientôt ni téléphone, ni vitrine.</p>
+    <p>Le 11 août, la France a changé de régime sans que personne n'organise de cérémonie : <a class="lk" href="https://www.france-epargne.fr/news/demarchage-telephonique-le-passage-a-lopt-in-au-11-aout-2026-rebat-les-cartes-de-lassurance" target="_blank" rel="noopener">le démarchage téléphonique bascule en <strong>opt-in</strong>, et l'assurance figure au premier rang des secteurs concernés</a>. Fini Bloctel et la logique d'opposition : <a class="lk" href="https://www.legalplace.fr/actualites/demarchage-telephonique/" target="_blank" rel="noopener">l'article L.223-1 du Code de la consommation interdit désormais tout appel commercial sans accord préalable « libre, spécifique, éclairé, univoque et révocable »</a>, issu de <a class="lk" href="https://gdroit.fr/droit-des-assurances/demarchage-telephonique-assurance/" target="_blank" rel="noopener">la loi du 30 juin 2025 — avec charge de la preuve sur l'entreprise et conservation numérique du consentement pendant trois ans minimum</a>. Traduction comptable : vos fichiers achetés valent zéro, et votre coût d'acquisition vient de changer d'ordre de grandeur. La réponse du marché existe déjà, elle ne passe pas par un combiné — <a class="lk" href="https://www.argusdelassurance.com/courtiers/april/le-courtier-april-casse-les-codes-de-la-souscription-en-assurance-en-distribuant-une-offre-directement-dans-chatgpt.4QSIF3EHNVDKNC6PTUW5QWGI7A.html" target="_blank" rel="noopener">April distribue une offre directement dans ChatGPT</a>, où <a class="lk" href="https://www.april.com/fr/communique-de-presse/april-annonce-le-lancement-de-son-application-april-moto-dans-chatgpt-dopenai/" target="_blank" rel="noopener">l'application interroge les moteurs tarifaires d'April Moto en temps réel et délivre un vrai devis souscriptible</a>, <a class="lk" href="https://www.lassuranceenmouvement.com/2026/06/15/april-moto-se-souscrit-desormais-directement-dans-chatgpt/" target="_blank" rel="noopener">et non l'estimation approximative dont les chatbots nous gavent depuis dix ans</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Le régulateur a fermé le canal sortant le moins cher au moment précis où <strong>la conversation devient un point de vente</strong>. Ceux qui n'ont pas de présence dans les assistants n'auront bientôt ni téléphone, ni vitrine.</p></aside>
   </article>
 
   <!-- 2 -->
   <article class="item">
     <div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div>
     <h3>440 milliards d'euros d'épargne européenne, sept actions américaines</h3>
-    <p>Quand la banque centrale se met à parler comme un vendeur à découvert, c'est qu'on approche de quelque chose : <a class="lk" href="https://www.journaldeleconomie.fr/la-bce-sinquiete-des-risques-dune-explosion-de-la-bulle-ia/" target="_blank" rel="noopener">la BCE s'inquiète publiquement d'une explosion de la bulle IA</a>, dans <a class="lk" href="https://www.webmanagercenter.com/2026/08/17/571538/bulle-ia-la-bce-commence-a-sinquieter-du-prix-de-leuphorie/" target="_blank" rel="noopener">une note du 17 août qui met un prix sur l'euphorie</a>. Le chiffre qui doit vous intéresser directement : <a class="lk" href="https://www.cryptonomie.fr/la-bce-compare-lia-a-la-bulle-internet-440-milliards-deuros-dactions-us-exposes/" target="_blank" rel="noopener"><strong>440 Md€</strong> d'exposition des ménages, <strong>assureurs</strong> et fonds de pension de la zone euro aux sept géants technologiques américains, largement logés dans des ETF</a>. Le verdict des économistes de la BCE est sec — <a class="lk" href="https://www.francetransactions.com/actus/news-bourse/marches/bce-alerte-krach-actions-ia.html" target="_blank" rel="noopener">« une correction des valorisations boursières actuelles est probable »</a> — avec une nuance désagréable par rapport à 2000 : <a class="lk" href="https://cryptoast.fr/krach-de-lia-en-vue-la-bce-compare-leuphorie-de-lia-a-la-bulle-internet/" target="_blank" rel="noopener">à l'époque, les banques centrales pouvaient couper les taux pour amortir ; aujourd'hui l'espace budgétaire est verrouillé</a>. Verrouillé, le mot est faible côté français : <a class="lk" href="https://echosplus.com/2026/08/05/budget-de-letat-la-charge-de-la-dette-bondit-de-18-au-premier-semestre/" target="_blank" rel="noopener">la charge de la dette a bondi de <strong>18 %</strong> au premier semestre</a>, et <a class="lk" href="https://www.rexecode.fr/conjoncture-previsions/notes-d-analyse/points-d-actualite/pa-france/choc-du-refinancement-la-dette-publique-francaise-change-de-regime" target="_blank" rel="noopener">Rexecode parle d'un changement de régime : le taux apparent de la dette dépasse désormais la croissance du PIB</a>, tandis que <a class="lk" href="https://www.publicsenat.fr/actualites/economie/la-france-devra-realiser-126-milliards-deuros-deffort-budgetaire-dici-la-fin-du-prochain-quinquennat-pour-stopper-la-progression-de-la-dette" target="_blank" rel="noopener">126 Md€ d'effort budgétaire seraient nécessaires d'ici la fin du prochain quinquennat pour simplement stopper la dérive</a>. <span class="bf">Pour les visiteurs du futur :</span> ce n'est pas un débat de marché, c'est <strong>une ligne de votre actif général</strong>. Demandez à votre direction financière la part « Magnificent Seven » regardée en transparence, pas la part « actions internationales » déclarée en agrégat.</p>
+    <p>Quand la banque centrale se met à parler comme un vendeur à découvert, c'est qu'on approche de quelque chose : <a class="lk" href="https://www.journaldeleconomie.fr/la-bce-sinquiete-des-risques-dune-explosion-de-la-bulle-ia/" target="_blank" rel="noopener">la BCE s'inquiète publiquement d'une explosion de la bulle IA</a>, dans <a class="lk" href="https://www.webmanagercenter.com/2026/08/17/571538/bulle-ia-la-bce-commence-a-sinquieter-du-prix-de-leuphorie/" target="_blank" rel="noopener">une note du 17 août qui met un prix sur l'euphorie</a>. Le chiffre qui doit vous intéresser directement : <a class="lk" href="https://www.cryptonomie.fr/la-bce-compare-lia-a-la-bulle-internet-440-milliards-deuros-dactions-us-exposes/" target="_blank" rel="noopener"><strong>440 Md€</strong> d'exposition des ménages, <strong>assureurs</strong> et fonds de pension de la zone euro aux sept géants technologiques américains, largement logés dans des ETF</a>. Le verdict des économistes de la BCE est sec — <a class="lk" href="https://www.francetransactions.com/actus/news-bourse/marches/bce-alerte-krach-actions-ia.html" target="_blank" rel="noopener">« une correction des valorisations boursières actuelles est probable »</a> — avec une nuance désagréable par rapport à 2000 : <a class="lk" href="https://cryptoast.fr/krach-de-lia-en-vue-la-bce-compare-leuphorie-de-lia-a-la-bulle-internet/" target="_blank" rel="noopener">à l'époque, les banques centrales pouvaient couper les taux pour amortir ; aujourd'hui l'espace budgétaire est verrouillé</a>. Verrouillé, le mot est faible côté français : <a class="lk" href="https://echosplus.com/2026/08/05/budget-de-letat-la-charge-de-la-dette-bondit-de-18-au-premier-semestre/" target="_blank" rel="noopener">la charge de la dette a bondi de <strong>18 %</strong> au premier semestre</a>, et <a class="lk" href="https://www.rexecode.fr/conjoncture-previsions/notes-d-analyse/points-d-actualite/pa-france/choc-du-refinancement-la-dette-publique-francaise-change-de-regime" target="_blank" rel="noopener">Rexecode parle d'un changement de régime : le taux apparent de la dette dépasse désormais la croissance du PIB</a>, tandis que <a class="lk" href="https://www.publicsenat.fr/actualites/economie/la-france-devra-realiser-126-milliards-deuros-deffort-budgetaire-dici-la-fin-du-prochain-quinquennat-pour-stopper-la-progression-de-la-dette" target="_blank" rel="noopener">126 Md€ d'effort budgétaire seraient nécessaires d'ici la fin du prochain quinquennat pour simplement stopper la dérive</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Ce n'est pas un débat de marché, c'est <strong>une ligne de votre actif général</strong>. Demandez à votre direction financière la part « Magnificent Seven » regardée en transparence, pas la part « actions internationales » déclarée en agrégat.</p></aside>
   </article>
 
   <!-- 3 -->
   <article class="item">
     <div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div>
     <h3>Le client a branché le rack, puis il a mené le tour de table</h3>
-    <p>Pendant que Francfort parle de correction, la Silicon Valley change d'unité de mesure : <a class="lk" href="https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/" target="_blank" rel="noopener">Etched lève <strong>700 M$</strong> et double sa valorisation à <strong>21 Md$</strong> — en moins d'un mois</a>, alors que <a class="lk" href="https://techcrunch.com/2026/07/23/ai-chip-startup-etched-defies-skeptics-hits-10-3b-valuation-from-big-name-investors/" target="_blank" rel="noopener">la même société valait 10,3 Md$ fin juillet, ce que tout le monde jugeait déjà généreux</a>. Le détail qui distingue ce dossier de la moyenne des levées d'août : <a class="lk" href="https://siliconangle.com/2026/08/18/inference-chip-startup-etched-raises-another-700m-at-21b-valuation/" target="_blank" rel="noopener">le tour est mené par Jane Street, qui avait auparavant installé et testé le premier cluster livré dans son propre data center</a>, et <a class="lk" href="https://cryptobriefing.com/etched-valuation-21b-jane-street-funding/" target="_blank" rel="noopener">l'entreprise revendique plus d'1 Md$ de contrats clients signés</a>. Autrement dit, un acheteur exigeant a validé la machine avant de valider le prix — rareté suffisante pour être signalée dans un marché où <a class="lk" href="https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/" target="_blank" rel="noopener">Databricks voulait 1 Md$, s'est vu proposer 15, et a fini par en prendre 5 à 190 Md$ de valorisation</a>, et où <a class="lk" href="https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/" target="_blank" rel="noopener">Cognition rediscute déjà à 40 Md$ trois mois après avoir levé à 26</a>. <span class="bf">Visiteurs du futur,</span> la question n'est pas de savoir si la bulle existe, mais <strong>lesquels de vos fournisseurs IA ont un client qui a payé, mesuré et redemandé</strong>. C'est le seul indicateur qui survit à une correction.</p>
+    <p>Pendant que Francfort parle de correction, la Silicon Valley change d'unité de mesure : <a class="lk" href="https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/" target="_blank" rel="noopener">Etched lève <strong>700 M$</strong> et double sa valorisation à <strong>21 Md$</strong> — en moins d'un mois</a>, alors que <a class="lk" href="https://techcrunch.com/2026/07/23/ai-chip-startup-etched-defies-skeptics-hits-10-3b-valuation-from-big-name-investors/" target="_blank" rel="noopener">la même société valait 10,3 Md$ fin juillet, ce que tout le monde jugeait déjà généreux</a>. Le détail qui distingue ce dossier de la moyenne des levées d'août : <a class="lk" href="https://siliconangle.com/2026/08/18/inference-chip-startup-etched-raises-another-700m-at-21b-valuation/" target="_blank" rel="noopener">le tour est mené par Jane Street, qui avait auparavant installé et testé le premier cluster livré dans son propre data center</a>, et <a class="lk" href="https://cryptobriefing.com/etched-valuation-21b-jane-street-funding/" target="_blank" rel="noopener">l'entreprise revendique plus d'1 Md$ de contrats clients signés</a>. Autrement dit, un acheteur exigeant a validé la machine avant de valider le prix — rareté suffisante pour être signalée dans un marché où <a class="lk" href="https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/" target="_blank" rel="noopener">Databricks voulait 1 Md$, s'est vu proposer 15, et a fini par en prendre 5 à 190 Md$ de valorisation</a>, et où <a class="lk" href="https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/" target="_blank" rel="noopener">Cognition rediscute déjà à 40 Md$ trois mois après avoir levé à 26</a>.</p><aside class="takeaway" aria-label="À retenir"><p>La question n'est pas de savoir si la bulle existe, mais <strong>lesquels de vos fournisseurs IA ont un client qui a payé, mesuré et redemandé</strong>. C'est le seul indicateur qui survit à une correction.</p></aside>
   </article>
 
   <!-- 4 -->
   <article class="item">
     <div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div>
     <h3>L'ACPR ne vous demande plus de conseiller. Elle vous demande de le prouver.</h3>
-    <p>Le superviseur a sorti sa liste de courses pour l'année : <a class="lk" href="https://acpr.banque-france.fr/fr/communiques-de-presse/devoir-de-conseil-en-assurance-lacpr-recommande-de-nouvelles-bonnes-pratiques" target="_blank" rel="noopener">l'ACPR publie de nouvelles bonnes pratiques sur le <strong>devoir de conseil</strong> en assurance</a>, dans un contexte où <a class="lk" href="https://sequentia.fr/acpr-renforcement-des-controles-sur-les-pratiques-commerciales-des-assureurs-en-2026/" target="_blank" rel="noopener">les contrôles sur les pratiques commerciales sont explicitement renforcés en 2026</a>. Le programme officiel est plus large qu'il n'en a l'air : <a class="lk" href="https://acpr.banque-france.fr/en/press-release/autorite-de-controle-prudentiel-et-de-resolution-prudential-supervision-and-resolution-authority" target="_blank" rel="noopener">cinq axes, avec une attention appuyée sur le contrôle des fonctions externalisées, le recours aux intermédiaires et délégataires, et l'intégration de la durabilité dans la gouvernance des risques</a> — c'est-à-dire précisément les endroits où vos process ont été construits par empilement plutôt que par dessin. Côté prudentiel, le sol reste solide : <a class="lk" href="https://acpr.banque-france.fr/system/files/2026-06/20260630_AS181_assureurs_S2_2025.pdf" target="_blank" rel="noopener">l'analyse de l'ACPR sur la situation des assureurs fin 2025 confirme une solvabilité renforcée</a>, <a class="lk" href="https://www.planetecsca.fr/actualites/environnement-courtage-assurances/situation-assureurs-france-2025-acpr/" target="_blank" rel="noopener">avec des cotisations dommages en hausse de 5,6 % pour une sinistralité à +1,4 % et un ratio combiné revenu à 95,3 %</a>. Le risque, cette année, n'est pas dans le bilan mais dans le dossier client — et dans le SI : <a class="lk" href="https://cap-formation.fr/cyberattaque-france-fuites-donnees-2026/" target="_blank" rel="noopener">la CNIL enregistre une explosion des notifications de violations (+45 %), soit près de 24 fuites déclarées par jour</a>, <a class="lk" href="https://www.cyberattaque.org/" target="_blank" rel="noopener">dans un flux de revendications désormais quotidien</a>. <span class="bf">Pour vous, visiteurs du futur :</span> un devoir de conseil non tracé est un devoir de conseil non exécuté. <strong>Le contrôle de 2026 portera sur vos preuves, pas sur vos intentions</strong> — et vos délégataires signeront pour vous.</p>
+    <p>Le superviseur a sorti sa liste de courses pour l'année : <a class="lk" href="https://acpr.banque-france.fr/fr/communiques-de-presse/devoir-de-conseil-en-assurance-lacpr-recommande-de-nouvelles-bonnes-pratiques" target="_blank" rel="noopener">l'ACPR publie de nouvelles bonnes pratiques sur le <strong>devoir de conseil</strong> en assurance</a>, dans un contexte où <a class="lk" href="https://sequentia.fr/acpr-renforcement-des-controles-sur-les-pratiques-commerciales-des-assureurs-en-2026/" target="_blank" rel="noopener">les contrôles sur les pratiques commerciales sont explicitement renforcés en 2026</a>. Le programme officiel est plus large qu'il n'en a l'air : <a class="lk" href="https://acpr.banque-france.fr/en/press-release/autorite-de-controle-prudentiel-et-de-resolution-prudential-supervision-and-resolution-authority" target="_blank" rel="noopener">cinq axes, avec une attention appuyée sur le contrôle des fonctions externalisées, le recours aux intermédiaires et délégataires, et l'intégration de la durabilité dans la gouvernance des risques</a> — c'est-à-dire précisément les endroits où vos process ont été construits par empilement plutôt que par dessin. Côté prudentiel, le sol reste solide : <a class="lk" href="https://acpr.banque-france.fr/system/files/2026-06/20260630_AS181_assureurs_S2_2025.pdf" target="_blank" rel="noopener">l'analyse de l'ACPR sur la situation des assureurs fin 2025 confirme une solvabilité renforcée</a>, <a class="lk" href="https://www.planetecsca.fr/actualites/environnement-courtage-assurances/situation-assureurs-france-2025-acpr/" target="_blank" rel="noopener">avec des cotisations dommages en hausse de 5,6 % pour une sinistralité à +1,4 % et un ratio combiné revenu à 95,3 %</a>. Le risque, cette année, n'est pas dans le bilan mais dans le dossier client — et dans le SI : <a class="lk" href="https://cap-formation.fr/cyberattaque-france-fuites-donnees-2026/" target="_blank" rel="noopener">la CNIL enregistre une explosion des notifications de violations (+45 %), soit près de 24 fuites déclarées par jour</a>, <a class="lk" href="https://www.cyberattaque.org/" target="_blank" rel="noopener">dans un flux de revendications désormais quotidien</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Un devoir de conseil non tracé est un devoir de conseil non exécuté. <strong>Le contrôle de 2026 portera sur vos preuves, pas sur vos intentions</strong> — et vos délégataires signeront pour vous.</p></aside>
   </article>
 
   <!-- 5 -->
   <article class="item">
     <div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div>
     <h3>Le vrai problème n'est pas la suppression des postes, c'est la péremption des compétences</h3>
-    <p>Le débat public s'obstine sur le nombre d'emplois détruits ; les données de terrain racontent autre chose. <a class="lk" href="https://www.forbes.com/sites/bryanrobinson/2026/08/10/ai-is-making-these-jobs-irreplaceable-as-hiring-rates-plunge-24/" target="_blank" rel="noopener">Le taux d'embauche global a chuté de <strong>24 %</strong>, mais certains métiers — enseignants, juristes, architectes, sécurité — deviennent au contraire difficiles à remplacer</a>. La vraie ligne de fracture est ailleurs : <a class="lk" href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/07/28/the-real-ai-workforce-crisis-is-skills-expiration-not-job-elimination/" target="_blank" rel="noopener">Forbes la nomme « expiration des compétences » — les entreprises inondent leur infrastructure d'outils IA sans préparer les gens à s'en servir</a>, et les chiffres français lui donnent raison : <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">seuls <strong>29 %</strong> des cadres déclarent avoir été formés à l'IA en 2026, soit +5 points en un an</a>, pendant que <a class="lk" href="https://corporate.apec.fr/home/actus-medias/toutes-nos-actualites/recrutement-de-cadres-les-pratiques-evoluent-a-l'heure-de-l'ia-sur-un-marche-moins-tendu.html" target="_blank" rel="noopener">l'APEC observe des pratiques de recrutement qui évoluent sur un marché nettement moins tendu</a>. Côté management, la fiche de poste change de nature : <a class="lk" href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/08/13/the-new-leadership-challenge-managing-humans-and-machines-together/" target="_blank" rel="noopener">diriger consiste désormais à piloter humains et machines dans la même équipe</a>, et <a class="lk" href="https://www.fastcompany.com/91445660/how-ai-is-reshaping-workforce-strategy" target="_blank" rel="noopener">la planification des effectifs cesse d'être un exercice de headcount pour devenir un exercice de compétences</a>. N'oubliez pas la contrainte légale qui vient de tomber dessus : <a class="lk" href="https://hey-hr.com/ia-recrutement-cadres-conformite/" target="_blank" rel="noopener">depuis le 2 août, inventaire des systèmes, supervision humaine réelle et transparence envers les candidats</a>. <span class="bf">Pour les visiteurs du futur :</span> votre budget formation IA est probablement inférieur à votre budget licences IA. <strong>C'est l'inversion la plus coûteuse de votre P&amp;L</strong>, et elle ne se voit pas avant dix-huit mois.</p>
+    <p>Le débat public s'obstine sur le nombre d'emplois détruits ; les données de terrain racontent autre chose. <a class="lk" href="https://www.forbes.com/sites/bryanrobinson/2026/08/10/ai-is-making-these-jobs-irreplaceable-as-hiring-rates-plunge-24/" target="_blank" rel="noopener">Le taux d'embauche global a chuté de <strong>24 %</strong>, mais certains métiers — enseignants, juristes, architectes, sécurité — deviennent au contraire difficiles à remplacer</a>. La vraie ligne de fracture est ailleurs : <a class="lk" href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/07/28/the-real-ai-workforce-crisis-is-skills-expiration-not-job-elimination/" target="_blank" rel="noopener">Forbes la nomme « expiration des compétences » — les entreprises inondent leur infrastructure d'outils IA sans préparer les gens à s'en servir</a>, et les chiffres français lui donnent raison : <a class="lk" href="https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-cadres-et-l-ia-2026.html" target="_blank" rel="noopener">seuls <strong>29 %</strong> des cadres déclarent avoir été formés à l'IA en 2026, soit +5 points en un an</a>, pendant que <a class="lk" href="https://corporate.apec.fr/home/actus-medias/toutes-nos-actualites/recrutement-de-cadres-les-pratiques-evoluent-a-l'heure-de-l'ia-sur-un-marche-moins-tendu.html" target="_blank" rel="noopener">l'APEC observe des pratiques de recrutement qui évoluent sur un marché nettement moins tendu</a>. Côté management, la fiche de poste change de nature : <a class="lk" href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/08/13/the-new-leadership-challenge-managing-humans-and-machines-together/" target="_blank" rel="noopener">diriger consiste désormais à piloter humains et machines dans la même équipe</a>, et <a class="lk" href="https://www.fastcompany.com/91445660/how-ai-is-reshaping-workforce-strategy" target="_blank" rel="noopener">la planification des effectifs cesse d'être un exercice de headcount pour devenir un exercice de compétences</a>. N'oubliez pas la contrainte légale qui vient de tomber dessus : <a class="lk" href="https://hey-hr.com/ia-recrutement-cadres-conformite/" target="_blank" rel="noopener">depuis le 2 août, inventaire des systèmes, supervision humaine réelle et transparence envers les candidats</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Votre budget formation IA est probablement inférieur à votre budget licences IA. <strong>C'est l'inversion la plus coûteuse de votre P&amp;L</strong>, et elle ne se voit pas avant dix-huit mois.</p></aside>
   </article>
 
   <!-- 6 -->
   <article class="item">
     <div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; infra</span></div>
     <h3>L'Europe a retiré la souveraineté de son label cloud pour la remettre dans ses achats</h3>
-    <p>Bruxelles a trouvé une élégante pirouette : ce qu'elle a lâché sur la certification, elle le récupère sur la commande publique. <a class="lk" href="https://itsocial.fr/cybersecurite/cybersecurite-articles/eucs-et-cada-leurope-abandonne-la-souverainete-dans-son-label-cloud-et-la-reintroduit-dans-la-commande-publique/" target="_blank" rel="noopener">Le critère de souveraineté disparaît du schéma de certification EUCS, mais réapparaît dans le Cloud and AI Development Act</a>, présenté le 3 juin avec <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">un cadre à quatre niveaux allant de la simple localisation européenne à l'absence d'ingérence de pays tiers et au contrôle capitalistique européen du fournisseur</a>. L'argent suit, modestement : <a class="lk" href="https://france.representation.ec.europa.eu/informations/souverainete-numerique-la-commission-octroie-180-millions-deuros-quatre-fournisseurs-europeens-2026-04-17_fr" target="_blank" rel="noopener">la Commission a octroyé <strong>180 M€</strong> à quatre fournisseurs européens — Post Telecom avec OVHcloud et Clever Cloud, StackIT, Scaleway et Proximus</a>. Reste que la souveraineté se joue aussi sous l'eau, là où personne ne fait de communiqué : <a class="lk" href="https://datacenter-magazine.fr/cables-sous-marins-levier-de-souverainete-numerique-et-economique/" target="_blank" rel="noopener">les câbles sous-marins concentrent rivalités géopolitiques et dépendances économiques</a>, <a class="lk" href="https://www.revuepolitique.fr/les-cables-sous-marins-ce-reseau-invisible-qui-connecte-le-monde/" target="_blank" rel="noopener">Marseille en accueille désormais 17 contre 13 en 2020, ce qui la place dans le top 5 mondial</a>, et <a class="lk" href="https://www.portail-ie.fr/univers/blockchain-data-et-ia/2026/emergence-et-transformation-des-data-centers-une-souverainete-numerique-redessinee-par-linnovation-technologique/" target="_blank" rel="noopener">un territoire n'attire des câbles que s'il dispose déjà de data centers pour exploiter les flux</a>. Pendant ce temps, <a class="lk" href="https://www.solutions-numeriques.com/digital-omnibus-simplification-ou-recul-strategique-pour-la-souverainete-numerique-de-leurope/" target="_blank" rel="noopener">le Digital Omnibus se fait accuser de troquer la simplification contre un recul stratégique</a>. <span class="bf">Visiteurs du futur,</span> le jour où le critère souverain passe de la certification au marché public, <strong>votre appel d'offres devient l'instrument de politique industrielle</strong>. Relisez vos clauses de réversibilité avant que quelqu'un ne les relise pour vous.</p>
+    <p>Bruxelles a trouvé une élégante pirouette : ce qu'elle a lâché sur la certification, elle le récupère sur la commande publique. <a class="lk" href="https://itsocial.fr/cybersecurite/cybersecurite-articles/eucs-et-cada-leurope-abandonne-la-souverainete-dans-son-label-cloud-et-la-reintroduit-dans-la-commande-publique/" target="_blank" rel="noopener">Le critère de souveraineté disparaît du schéma de certification EUCS, mais réapparaît dans le Cloud and AI Development Act</a>, présenté le 3 juin avec <a class="lk" href="https://up-magazine.info/souverainete-numerique-europe-tech-sovereignty-package-2026/" target="_blank" rel="noopener">un cadre à quatre niveaux allant de la simple localisation européenne à l'absence d'ingérence de pays tiers et au contrôle capitalistique européen du fournisseur</a>. L'argent suit, modestement : <a class="lk" href="https://france.representation.ec.europa.eu/informations/souverainete-numerique-la-commission-octroie-180-millions-deuros-quatre-fournisseurs-europeens-2026-04-17_fr" target="_blank" rel="noopener">la Commission a octroyé <strong>180 M€</strong> à quatre fournisseurs européens — Post Telecom avec OVHcloud et Clever Cloud, StackIT, Scaleway et Proximus</a>. Reste que la souveraineté se joue aussi sous l'eau, là où personne ne fait de communiqué : <a class="lk" href="https://datacenter-magazine.fr/cables-sous-marins-levier-de-souverainete-numerique-et-economique/" target="_blank" rel="noopener">les câbles sous-marins concentrent rivalités géopolitiques et dépendances économiques</a>, <a class="lk" href="https://www.revuepolitique.fr/les-cables-sous-marins-ce-reseau-invisible-qui-connecte-le-monde/" target="_blank" rel="noopener">Marseille en accueille désormais 17 contre 13 en 2020, ce qui la place dans le top 5 mondial</a>, et <a class="lk" href="https://www.portail-ie.fr/univers/blockchain-data-et-ia/2026/emergence-et-transformation-des-data-centers-une-souverainete-numerique-redessinee-par-linnovation-technologique/" target="_blank" rel="noopener">un territoire n'attire des câbles que s'il dispose déjà de data centers pour exploiter les flux</a>. Pendant ce temps, <a class="lk" href="https://www.solutions-numeriques.com/digital-omnibus-simplification-ou-recul-strategique-pour-la-souverainete-numerique-de-leurope/" target="_blank" rel="noopener">le Digital Omnibus se fait accuser de troquer la simplification contre un recul stratégique</a>.</p><aside class="takeaway" aria-label="À retenir"><p>Le jour où le critère souverain passe de la certification au marché public, <strong>votre appel d'offres devient l'instrument de politique industrielle</strong>. Relisez vos clauses de réversibilité avant que quelqu'un ne les relise pour vous.</p></aside>
   </article>
 
   <!-- BONUS -->
@@ -225,19 +300,43 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
   </div>
 
   <!-- SOURCES -->
-  <footer class="flfoot">
+</main>
+<footer class="flfoot">
+    <div class="footer-scene">
+    <div class="session">
+      <p><strong>Une visite ou un workshop en équipe au Future Lab ?</strong></p>
+      <p><a class="session-cta" href="https://forms.cloud.microsoft/e/1WeVdUG4sd" target="_blank" rel="noopener">Demander une session</a> ou écrivez-nous à <a href="mailto:futurelab@axa.fr">futurelab@axa.fr</a>.</p>
+    </div>
+    </div>
+    <div class="footer-base">
     <div class="top">
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
       <span class="org">Diffusion interne</span>
     </div>
-    <div class="doors">
-      <a class="door" href="https://futurelab-axa.vercel.app/explorer" target="_blank" rel="noopener"><b>Explorer le plateau</b><span>120&nbsp;m&sup2;, huit zones &agrave; manipuler</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/parcours" target="_blank" rel="noopener"><b>Les quatre parcours</b><span>De 30&nbsp;minutes &agrave; une journ&eacute;e</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/reserver" target="_blank" rel="noopener"><b>R&eacute;server un cr&eacute;neau</b><span>Venez avec une vraie question</span></a>
+    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="index.html">Consulter les &eacute;ditions pr&eacute;c&eacute;dentes</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
     </div>
-    <p class="legal"><strong>Diffusion interne.</strong> Sélection et commentaires du Future Lab, sans valeur de position officielle. Sélection compilée chaque matin avec l'aide de l'IA sur les 24–48 dernières heures, priorité aux sources françaises et primaires ; chaque fait est lié à sa source et les chiffres non sourcés ne sont pas publiés. · <a href="index.html">Consulter les éditions précédentes</a> · <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
   </footer>
 
 </div>
+<script>
+(function () {
+  var shortcut = document.getElementById('bookmark-shortcut');
+  var platform = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+  if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !(platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    shortcut.innerHTML = 'Pour ajouter cette page à vos favoris, appuyez sur <kbd>' + (/Mac/i.test(platform) ? '⌘ + D' : 'Ctrl + D') + '</kbd>, puis confirmez dans votre navigateur.';
+  }
+  document.querySelector('.bookmark-close').addEventListener('click', function () {
+    var details = this.closest('details');
+    details.open = false;
+    details.querySelector('summary').focus();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      var details = document.querySelector('.bookmark');
+      if (details.open) { details.open = false; details.querySelector('summary').focus(); }
+    }
+  });
+}());
+</script>
 </body>
 </html>

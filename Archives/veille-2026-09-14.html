@@ -30,7 +30,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line
 .mast{background:var(--navy);padding:26px 22px 22px}
 .mast .top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
-.tag{font-size:14px;color:#a9a9e4;margin-top:12px;max-width:52ch;line-height:1.5}
+.tag{font-size:14px;color:#a9a9e4;margin-top:12px;line-height:1.5}
 .rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
 .colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--lilac);font-weight:600}
@@ -76,13 +76,83 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
 .flfoot .top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .flfoot .pw svg{width:88px}
 .flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:700}
-.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:19px 0 17px}
-.door{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;font-size:13px;color:#e9e9fb;text-decoration:none;display:block;transition:background .15s}
-.door:hover{background:rgba(255,255,255,.17)}
-.door b{display:block;font-weight:700;font-size:13.5px;color:#fff;margin-bottom:2px}
-.door span{color:#a9a9e4;font-size:11.5px}
 .legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
 .legal a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+/* Header actions and session contact */
+.mast .top{align-items:center}
+.tag{max-width:none}
+.bookmark{position:relative;color:#fff;font-size:12px}
+.bookmark summary{cursor:pointer;list-style:none;border:1px solid rgba(255,255,255,.4);border-radius:7px;padding:9px 12px;min-height:40px;font-weight:600;background:rgba(255,255,255,.07)}
+.bookmark summary::-webkit-details-marker{display:none}
+.bookmark summary::before{content:"☆";margin-right:7px;font-size:16px}
+.bookmark summary:hover,.bookmark[open] summary{background:rgba(255,255,255,.16)}
+.bookmark summary:focus-visible,.archive-link:focus-visible,.session a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.bookmark-help{position:absolute;z-index:2;right:0;top:calc(100% + 8px);width:280px;max-width:calc(100vw - 44px);padding:14px 16px;background:#fff;color:var(--navy);border-radius:8px;box-shadow:0 6px 24px #0003;font-size:13px;line-height:1.6}
+.bookmark-help p{margin:0}
+.bookmark-help p+p{margin-top:8px}
+.bookmark-help kbd{font-family:inherit;font-weight:700;background:#eeeefa;border-radius:3px;padding:2px 5px}
+.archive-nav{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#a9a9e4}
+.archive-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:5px;padding:5px 9px;font-weight:600}
+.archive-link:hover{background:rgba(255,255,255,.12)}
+.session{margin:20px 0;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.07);font-size:14px;line-height:1.7}
+.session p{margin:0}
+.session p+p{margin-top:7px;color:#bdbdec;font-size:13px}
+.session a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:720px){.tag{white-space:nowrap}}
+@media(max-width:540px){.mast .top{gap:18px}.bookmark-help{left:0;right:auto}.colo{gap:12px}.archive-nav{width:100%}.wordmark{width:280px}}
+
+/* Proposition locale : salon de lecture */
+.mast{padding:0;background:#101b2a}
+.mast .hero-scene{position:relative;isolation:isolate;padding:28px 22px 22px;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.95),transparent 55%),url('/assets/salon-robot.png');background-size:cover;background-position:center 44%}
+.mast .top{align-items:flex-start;gap:12px}
+.mast .wordmark{width:320px;margin:29px 0 0;color:#fff5d9;filter:drop-shadow(0 2px 10px #0008)}
+.mast .bookmark{position:absolute;left:22px;top:145px;margin-top:0;font-size:11px}
+.mast .bookmark-help{left:0;right:auto}
+.mast .bookmark summary{background:rgba(10,20,33,.65);backdrop-filter:blur(10px);border-color:#e4cf9c66;color:#fff5dc}
+.mast .bookmark-help{color:#162236}
+.mast .tag{margin:0;color:#fff2d6;font-size:14px;line-height:1.6;position:relative;text-shadow:0 1px 5px #000}
+.mast .rule{display:none}
+.mast .colo{padding:16px 22px;background:#101b2a;border-top:1px solid #efd59b44;gap:12px}
+.mast .date,.mast .archive-nav{color:#d1c4a9}
+.mast .pw span{color:#d1c4a9}
+.mast .archive-link{border-color:#efd59b66;color:#fff3d8}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:330px;padding:20px 22px;background-position:67% center;background-image:linear-gradient(90deg,rgba(5,15,29,.52),rgba(5,15,29,.05)),linear-gradient(0deg,rgba(7,17,30,.98),transparent 65%),url('/assets/salon-robot.png')}
+ .mast .top{align-items:flex-start}
+ .mast .bookmark{top:125px}
+ .mast .wordmark{padding-top:26px}
+ .mast .wordmark{width:265px;margin:0}
+ .mast .tag{max-width:30ch;font-size:14px}
+ .mast .bookmark summary{padding:6px 10px;min-height:34px}
+ .mast .colo{padding-top:15px;padding-bottom:17px}
+}
+</style>
+<link rel="stylesheet" href="../assets/salon.css">
+<style>
+/* Proposition : la promesse et les repères de lecture réunis. */
+.mast .hero-scene{min-height:320px;padding-bottom:22px;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.98),rgba(7,17,30,.5) 25%,transparent 66%),url('/assets/salon-robot.png')}
+.mast .wordmark{margin-top:15px}
+.mast .bookmark{top:120px}
+.mast .header-promise{margin-top:90px}
+.mast .tag{font-size:17px;line-height:1.45;color:#f9edd7;white-space:normal;max-width:none;letter-spacing:-.15px}
+.mast .tag strong{font-weight:700;color:#f2d39d}
+.reading-guide{display:flex;list-style:none;margin:17px 0 0;padding:0;gap:0;color:#f2dfbd}
+.reading-guide li{display:flex;flex-direction:column;gap:2px;padding:0 22px;border-left:1px solid #d6bd954d}
+.reading-guide li:first-child{padding-left:0;border-left:0}
+.reading-guide strong{font-size:15px;font-weight:600;line-height:1.4}
+.reading-guide span{font-size:11px;color:#d3c7b5;line-height:1.5}
+.edtitle{margin-bottom:24px}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:370px;padding-bottom:22px;background-position:67% center}
+ .mast .wordmark{margin-top:0}
+ .mast .header-promise{margin-top:112px}
+ .mast .tag{max-width:28ch;font-size:16px;line-height:1.5}
+ .reading-guide{margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1.55fr}
+ .reading-guide li{padding:0 10px;gap:4px}
+ .reading-guide li:last-child{padding-right:0}
+ .reading-guide strong{font-size:13px;white-space:nowrap}
+ .reading-guide span{font-size:10.5px;line-height:1.4}
+}
 </style>
 </head>
 <body>
@@ -136,41 +206,84 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
 </g></symbol></svg>
 <div class="wrap">
   <header class="mast">
+    <div class="hero-scene">
+    <div class="top">
     <svg class="wordmark" viewBox="0 0 1164 193" role="img" aria-label="future.now"><use href="#fn"/></svg>
-    <div class="tag">6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain.</div>
+      <details class="bookmark">
+        <summary>Ajouter à mes favoris</summary>
+        <div class="bookmark-help">
+          <button type="button" class="bookmark-close" aria-label="Fermer l’aide aux favoris"><span aria-hidden="true">×</span></button>
+          <p id="bookmark-shortcut">Pour ajouter cette page à vos favoris, appuyez sur <kbd>Ctrl + D</kbd> (Windows) ou <kbd>⌘ + D</kbd> (Mac).</p>
+          <p>Sur mobile, ouvrez le menu de votre navigateur ou le menu de partage, puis choisissez « Ajouter aux favoris » ou l’étoile ☆.</p>
+        </div>
+      </details>
+    </div>
+    <div class="header-promise">
+      <p class="tag"><strong>6 actus</strong> pour comprendre demain, dès aujourd’hui.</p>
+      <ul class="reading-guide" aria-label="Votre rendez-vous de lecture">
+        <li><strong>3 min</strong><span>pour l’essentiel</span></li>
+        <li><strong>7 min</strong><span>pour tout lire</span></li>
+        <li><strong>Chaque matin</strong><span>mise à jour automatique</span></li>
+      </ul>
+    </div>
+    </div>
     <div class="rule"></div>
     <div class="colo">
-      <span class="date">Lundi 14 septembre 2026 &middot; <a href="index.html">archives</a></span>
+      <span class="date">Lundi 14 septembre 2026</span>
+      <nav class="archive-nav" aria-label="Éditions précédentes"><span>Ce que vous avez raté :</span> <a class="archive-link" href="index.html">Nos Archives</a></nav>
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
     </div>
   </header>
+<main class="inner">
+<div class="edtitle">Le futur arrive en production. La réalité demande ses justificatifs.</div>
 
-  <div class="inner"><div class="edtitle">Le futur arrive en production. La réalité demande ses justificatifs.</div>
-<div class="readtime">3 min pour l'essentiel · 7 min en entier · recompilé automatiquement chaque matin</div>
-<div class="readtime">Édition reconstituée le 16 septembre 2026 à partir des informations disponibles au 14 septembre ; les éléments de contexte plus anciens sont datés.</div>
+
 <p class="hook">L'assurance remet ses fondations à plat – l'Europe partage ses pilotes – le climat entre dans le budget – le cloud doit compter son eau. Bonjour, visiteurs du futur : les nouveautés du jour ont un point commun, elles demandent de regarder comment les promesses tiennent sur le terrain. <span class="go">C'est parti.</span></p>
 <section class="brief"><h2>En 30 secondes</h2><ul><li>Assurance : Sapiens annonce des agents au cœur des opérations et des migrations.</li><li>Tech : trois pilotes européens cherchent des solutions publiques réutilisables.</li><li>Économie : Bercy détaille des arbitrages face aux dépenses d’urgence.</li><li>Infrastructure : le Texas demande des comptes sur les impacts des data centers.</li></ul></section>
-<article class="item"><div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div><h3>Sapiens veut installer l'agent dans le moteur de l'assurance.</h3><p>Ajouter un chatbot est facile à montrer. Toucher au système qui gère les contrats, beaucoup moins. <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/newsroom/sapiens-announces-its-ai-native-autonomous-insurance-platform-sapiensaip/"><strong>Sapiens</strong> annonce le <strong>14 septembre</strong> sa plateforme <strong>SapiensAIP</strong>, destinée à intégrer des outils agentiques dans les opérations d'assurance</a>. L'éditeur présente <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/insurance-platform/platform-for-property-and-casualty/">son socle de gestion des activités dommages</a> et <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/decision-management/">ses outils de gestion et d'automatisation des décisions</a>. Le point à regarder dans la nouveauté est la migration : <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/newsroom/sapiens-announces-its-ai-native-autonomous-insurance-platform-sapiensaip/">les modules annoncés proposent des correspondances entre anciennes données et nouveau système, avec scores de confiance, revue humaine et traçabilité ; Continental General évalue ces outils</a>. « Évalue » mérite de rester dans la phrase. Ce communiqué ne démontre pas un retour sur investissement généralisé. Notre lecture : la bataille se déplace vers les <strong>données historiques et les règles métier</strong>, là où les transformations deviennent coûteuses. <span class="bf">Pour vous, visiteurs du futur : votre démonstration idéale devrait montrer aussi une donnée mal classée et sa correction. L'agent qui reconnaît un doute vaut parfois davantage que celui qui déroule un scénario parfait.</span></p></article>
-<article class="item"><div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div><h3>L'Europe veut des services publics qui réutilisent leurs bonnes idées.</h3><p>Un assistant par administration, et autant de projets à recommencer ? <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/events/kick-new-genai-pilots-public-administration-apply-ai-stakeholder-meeting">La Commission européenne organise ce <strong>14 septembre</strong> la présentation de trois pilotes : <strong>FLOODS &amp; DROUGHTS, EUNOMIA.AI et EuropAI</strong></a>. Leur lancement administratif remonte <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/events/kick-new-genai-pilots-public-administration-apply-ai-stakeholder-meeting">au <strong>1er juillet</strong> : la réunion de rentrée sert à présenter les projets et à partager les conditions de déploiement</a>. Le plus intéressant n'est pas le nombre de démonstrations. <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/news/europai-reusable-european-generative-ai-solutions-public-administrations">EuropAI prévoit des composants, des cadres de mise en œuvre et une documentation de conformité réutilisables entre administrations</a>. La démarche prolonge <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/events/info-day-building-ecosystem-genai-public-administrations">le travail de coordination présenté en février pour faire circuler les solutions au-delà de leur premier pilote</a>. Notre lecture : l'<strong>innovation réutilisable</strong> peut peser plus lourd que l'invention isolée, dans le public comme dans les services financiers. <span class="bf">Pour les visiteurs du futur : une bonne expérimentation devrait laisser derrière elle une méthode que d'autres peuvent reprendre. Sinon, le pilote a surtout appris à son pilote à piloter.</span></p></article>
-<article class="item"><div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div><h3>Le climat abîme les récoltes. Le budget doit trouver la monnaie.</h3><p>Les chocs climatiques n'attendent pas le prochain exercice budgétaire. <a class="lk" target="_blank" rel="noopener" href="https://www.economie.gouv.fr/actualites/video-le-gouvernement-prend-des-mesures-deconomies-de-13-milliard-deuros-sur-le-budget-2026">Dans son point publié le <strong>14 septembre</strong>, Bercy présente <strong>1,3 milliard d'euros</strong> de mesures de redressement du budget 2026</a>. L'annonce remonte au vendredi précédent : <a class="lk" target="_blank" rel="noopener" href="https://presse.economie.gouv.fr/le-gouvernement-poursuit-leffort-de-maitrise-de-la-depense-en-2026/">le communiqué du 11 septembre détaille <strong>500 millions d'annulations de crédits</strong> et <strong>783 millions de surgels</strong></a>. L'arrondi ne doit pas masquer la mécanique. <a class="lk" target="_blank" rel="noopener" href="https://presse.economie.gouv.fr/le-gouvernement-poursuit-leffort-de-maitrise-de-la-depense-en-2026/">Il s'agit notamment de compenser de nouvelles dépenses d'urgence pour les filières agricoles touchées par la sécheresse</a>. En arrière-plan, <a class="lk" target="_blank" rel="noopener" href="https://www.banque-france.fr/fr/communiques-de-presse/decisions-de-politique-monetaire-27">la décision monétaire européenne du 10 septembre prévoit une hausse des taux à partir du 16 septembre</a>. Notre lecture pour l'assurance : prévention, indemnisation et soutien public sont trois réponses qui se croisent, sans être interchangeables. Le risque climatique arrive aussi par la solvabilité d'un client ou d'un fournisseur. <span class="bf">Visiteurs du futur, quand une catastrophe entre dans un budget, elle ressort souvent ailleurs sous forme d'arbitrage. C'est moins visible qu'une carte météo, mais cela change tout autant les décisions.</span></p></article>
-<article class="item"><div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div><h3>Cyber : la faille n'attend plus la prochaine réunion.</h3><p>Le calendrier réglementaire a avancé pendant que les mots de passe vieillissaient. <a class="lk" target="_blank" rel="noopener" href="https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp">Depuis le <strong>11 septembre</strong>, les fabricants concernés doivent notifier via la plateforme européenne <strong>SRP</strong> les vulnérabilités activement exploitées et les incidents graves affectant la sécurité de leurs produits numériques</a>. <a class="lk" target="_blank" rel="noopener" href="https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp/frequently-asked-questions">La FAQ de l'ENISA, mise à jour le 12 septembre, précise l'alerte initiale sous <strong>24 heures</strong> et la notification sous <strong>72 heures</strong> après prise de connaissance</a>. Il s'agit du <a class="lk" target="_blank" rel="noopener" href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng"><strong>Cyber Resilience Act</strong></a>, pas d'une obligation indistincte visant toute entreprise victime de n'importe quelle fuite. Le volet opérationnel mérite aussi lecture : <a class="lk" target="_blank" rel="noopener" href="https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp/cra-srp-guidance-ar-user-registration">l'ENISA décrit l'enregistrement des représentants chargés des déclarations</a>. Notre lecture : pour apprécier un risque cyber, la capacité à détecter, documenter et transmettre un incident devient aussi concrète que le correctif lui-même. <span class="bf">Pour vous, visiteurs du futur : votre fournisseur sait-il qui déclare, sur quelle plateforme et à partir de quelle alerte ? « Nous avons une procédure » est une réponse ; « nous l'avons exercée » en est une autre.</span></p></article>
-<article class="item"><div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div><h3>Automatiser une tâche n'explique pas encore ce que devient le travail.</h3><p>Le compteur de minutes économisées a un angle mort : le travail qui reste. <a class="lk" target="_blank" rel="noopener" href="https://www.pouchet.cnrs.fr/event/journees-du-cis/">Au CNRS, les journées du Centre Internet et Société des <strong>14 et 15 septembre</strong> mettent l'IA et le travail au programme</a>. Ce lundi, <a class="lk" target="_blank" rel="noopener" href="https://www.pouchet.cnrs.fr/event/journees-du-cis/">les communications interrogent notamment la configuration des outils et la qualité du travail en France</a>. Ce sont des sujets de recherche annoncés, pas un nouveau bilan chiffré des suppressions d'emplois. Pour le contexte, <a class="lk" target="_blank" rel="noopener" href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update">l'étude OIT de mai 2025 distingue l'exposition des professions de leur remplacement effectif</a>. Et l'apprentissage devient lui-même un chantier : <a class="lk" target="_blank" rel="noopener" href="https://www.ge.ch/document/intelligence-artificielle-ecole-dip-donne-parole-aux-eleves">Genève annonce le 14 septembre une démarche donnant la parole aux élèves sur l'IA à l'école</a>. Notre lecture : expliquer, vérifier et contester une réponse sont des compétences à construire, pas des options livrées avec un abonnement. <span class="bf">Pour les visiteurs du futur : le travail qui disparaît du tableau de bord peut réapparaître sous forme de contrôle ou de correction. Il serait dommage de supprimer le temps d'apprendre en prétendant gagner du temps.</span></p></article>
-<article class="item"><div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; Infrastructure</span></div><h3>Au Texas, le cloud doit déclarer ce qu'il boit.</h3><p>Le numérique est immatériel jusqu'au premier formulaire sur l'eau. <a class="lk" target="_blank" rel="noopener" href="https://www.ercot.com/services/comm/mkt_notices/M-B091426-01">Le <strong>14 septembre</strong>, l'opérateur électrique texan <strong>ERCOT</strong> lance une demande d'informations sur les impacts territoriaux de certains projets de centres de données</a>. <a class="lk" target="_blank" rel="noopener" href="https://gov.texas.gov/uploads/files/press/TWDB_Letter.pdf">Une lettre du gouverneur associe l'autorité de l'eau à l'examen des consommations, des sources d'approvisionnement et des technologies économes</a>. Le périmètre est précis : <a class="lk" target="_blank" rel="noopener" href="https://www.ercot.com/services/comm/mkt_notices/M-B091426-01">l'avis couvre des catégories de projets non encore raccordés et fixe la remise des réponses au <strong>12 octobre</strong></a>. Il ne s'agit ni d'un moratoire général ni d'un verdict sur tous les data centers. En France, <a class="lk" target="_blank" rel="noopener" href="https://www.pouchet.cnrs.fr/event/journees-du-cis/">le programme du CIS aborde aussi l'acceptabilité des centres de données et la réutilisation de leur chaleur</a>. Notre lecture : eau, raccordement et voisinage sont des <strong>conditions de fonctionnement</strong>, donc des sujets de risque et d'assurance. <span class="bf">Visiteurs du futur, avant de demander combien de calculs un site peut produire, regardez ce qui lui permet de fonctionner un jour de tension. Une capacité annoncée n'est pas encore une capacité disponible.</span></p></article>
+<article class="item"><div class="item-head"><span class="num">1</span><span class="pill" style="background:var(--t-assur)">Assurance &amp; Insurtech</span></div><h3>Sapiens veut installer l'agent dans le moteur de l'assurance.</h3><p>Ajouter un chatbot est facile à montrer. Toucher au système qui gère les contrats, beaucoup moins. <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/newsroom/sapiens-announces-its-ai-native-autonomous-insurance-platform-sapiensaip/"><strong>Sapiens</strong> annonce le <strong>14 septembre</strong> sa plateforme <strong>SapiensAIP</strong>, destinée à intégrer des outils agentiques dans les opérations d'assurance</a>. L'éditeur présente <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/insurance-platform/platform-for-property-and-casualty/">son socle de gestion des activités dommages</a> et <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/decision-management/">ses outils de gestion et d'automatisation des décisions</a>. Le point à regarder dans la nouveauté est la migration : <a class="lk" target="_blank" rel="noopener" href="https://sapiens.com/newsroom/sapiens-announces-its-ai-native-autonomous-insurance-platform-sapiensaip/">les modules annoncés proposent des correspondances entre anciennes données et nouveau système, avec scores de confiance, revue humaine et traçabilité ; Continental General évalue ces outils</a>. « Évalue » mérite de rester dans la phrase. Ce communiqué ne démontre pas un retour sur investissement généralisé. Notre lecture : la bataille se déplace vers les <strong>données historiques et les règles métier</strong>, là où les transformations deviennent coûteuses.</p><aside class="takeaway" aria-label="À retenir"><p>Votre démonstration idéale devrait montrer aussi une donnée mal classée et sa correction. L'agent qui reconnaît un doute vaut parfois davantage que celui qui déroule un scénario parfait.</p></aside></article>
+<article class="item"><div class="item-head"><span class="num">2</span><span class="pill" style="background:var(--t-tech)">Tech &amp; IA</span></div><h3>L'Europe veut des services publics qui réutilisent leurs bonnes idées.</h3><p>Un assistant par administration, et autant de projets à recommencer ? <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/events/kick-new-genai-pilots-public-administration-apply-ai-stakeholder-meeting">La Commission européenne organise ce <strong>14 septembre</strong> la présentation de trois pilotes : <strong>FLOODS &amp; DROUGHTS, EUNOMIA.AI et EuropAI</strong></a>. Leur lancement administratif remonte <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/events/kick-new-genai-pilots-public-administration-apply-ai-stakeholder-meeting">au <strong>1er juillet</strong> : la réunion de rentrée sert à présenter les projets et à partager les conditions de déploiement</a>. Le plus intéressant n'est pas le nombre de démonstrations. <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/news/europai-reusable-european-generative-ai-solutions-public-administrations">EuropAI prévoit des composants, des cadres de mise en œuvre et une documentation de conformité réutilisables entre administrations</a>. La démarche prolonge <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/events/info-day-building-ecosystem-genai-public-administrations">le travail de coordination présenté en février pour faire circuler les solutions au-delà de leur premier pilote</a>. Notre lecture : l'<strong>innovation réutilisable</strong> peut peser plus lourd que l'invention isolée, dans le public comme dans les services financiers.</p><aside class="takeaway" aria-label="À retenir"><p>Une bonne expérimentation devrait laisser derrière elle une méthode que d'autres peuvent reprendre. Sinon, le pilote a surtout appris à son pilote à piloter.</p></aside></article>
+<article class="item"><div class="item-head"><span class="num">3</span><span class="pill" style="background:var(--t-eco)">Économie &amp; Finance</span></div><h3>Le climat abîme les récoltes. Le budget doit trouver la monnaie.</h3><p>Les chocs climatiques n'attendent pas le prochain exercice budgétaire. <a class="lk" target="_blank" rel="noopener" href="https://www.economie.gouv.fr/actualites/video-le-gouvernement-prend-des-mesures-deconomies-de-13-milliard-deuros-sur-le-budget-2026">Dans son point publié le <strong>14 septembre</strong>, Bercy présente <strong>1,3 milliard d'euros</strong> de mesures de redressement du budget 2026</a>. L'annonce remonte au vendredi précédent : <a class="lk" target="_blank" rel="noopener" href="https://presse.economie.gouv.fr/le-gouvernement-poursuit-leffort-de-maitrise-de-la-depense-en-2026/">le communiqué du 11 septembre détaille <strong>500 millions d'annulations de crédits</strong> et <strong>783 millions de surgels</strong></a>. L'arrondi ne doit pas masquer la mécanique. <a class="lk" target="_blank" rel="noopener" href="https://presse.economie.gouv.fr/le-gouvernement-poursuit-leffort-de-maitrise-de-la-depense-en-2026/">Il s'agit notamment de compenser de nouvelles dépenses d'urgence pour les filières agricoles touchées par la sécheresse</a>. En arrière-plan, <a class="lk" target="_blank" rel="noopener" href="https://www.banque-france.fr/fr/communiques-de-presse/decisions-de-politique-monetaire-27">la décision monétaire européenne du 10 septembre prévoit une hausse des taux à partir du 16 septembre</a>. Notre lecture pour l'assurance : prévention, indemnisation et soutien public sont trois réponses qui se croisent, sans être interchangeables. Le risque climatique arrive aussi par la solvabilité d'un client ou d'un fournisseur.</p><aside class="takeaway" aria-label="À retenir"><p>Quand une catastrophe entre dans un budget, elle ressort souvent ailleurs sous forme d'arbitrage. C'est moins visible qu'une carte météo, mais cela change tout autant les décisions.</p></aside></article>
+<article class="item"><div class="item-head"><span class="num">4</span><span class="pill" style="background:var(--t-reg)">Réglementaire &amp; Risques</span></div><h3>Cyber : la faille n'attend plus la prochaine réunion.</h3><p>Le calendrier réglementaire a avancé pendant que les mots de passe vieillissaient. <a class="lk" target="_blank" rel="noopener" href="https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp">Depuis le <strong>11 septembre</strong>, les fabricants concernés doivent notifier via la plateforme européenne <strong>SRP</strong> les vulnérabilités activement exploitées et les incidents graves affectant la sécurité de leurs produits numériques</a>. <a class="lk" target="_blank" rel="noopener" href="https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp/frequently-asked-questions">La FAQ de l'ENISA, mise à jour le 12 septembre, précise l'alerte initiale sous <strong>24 heures</strong> et la notification sous <strong>72 heures</strong> après prise de connaissance</a>. Il s'agit du <a class="lk" target="_blank" rel="noopener" href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng"><strong>Cyber Resilience Act</strong></a>, pas d'une obligation indistincte visant toute entreprise victime de n'importe quelle fuite. Le volet opérationnel mérite aussi lecture : <a class="lk" target="_blank" rel="noopener" href="https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp/cra-srp-guidance-ar-user-registration">l'ENISA décrit l'enregistrement des représentants chargés des déclarations</a>. Notre lecture : pour apprécier un risque cyber, la capacité à détecter, documenter et transmettre un incident devient aussi concrète que le correctif lui-même.</p><aside class="takeaway" aria-label="À retenir"><p>Votre fournisseur sait-il qui déclare, sur quelle plateforme et à partir de quelle alerte ? « Nous avons une procédure » est une réponse ; « nous l'avons exercée » en est une autre.</p></aside></article>
+<article class="item"><div class="item-head"><span class="num">5</span><span class="pill" style="background:var(--t-rh)">Capital humain</span></div><h3>Automatiser une tâche n'explique pas encore ce que devient le travail.</h3><p>Le compteur de minutes économisées a un angle mort : le travail qui reste. <a class="lk" target="_blank" rel="noopener" href="https://www.pouchet.cnrs.fr/event/journees-du-cis/">Au CNRS, les journées du Centre Internet et Société des <strong>14 et 15 septembre</strong> mettent l'IA et le travail au programme</a>. Ce lundi, <a class="lk" target="_blank" rel="noopener" href="https://www.pouchet.cnrs.fr/event/journees-du-cis/">les communications interrogent notamment la configuration des outils et la qualité du travail en France</a>. Ce sont des sujets de recherche annoncés, pas un nouveau bilan chiffré des suppressions d'emplois. Pour le contexte, <a class="lk" target="_blank" rel="noopener" href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update">l'étude OIT de mai 2025 distingue l'exposition des professions de leur remplacement effectif</a>. Et l'apprentissage devient lui-même un chantier : <a class="lk" target="_blank" rel="noopener" href="https://www.ge.ch/document/intelligence-artificielle-ecole-dip-donne-parole-aux-eleves">Genève annonce le 14 septembre une démarche donnant la parole aux élèves sur l'IA à l'école</a>. Notre lecture : expliquer, vérifier et contester une réponse sont des compétences à construire, pas des options livrées avec un abonnement.</p><aside class="takeaway" aria-label="À retenir"><p>Le travail qui disparaît du tableau de bord peut réapparaître sous forme de contrôle ou de correction. Il serait dommage de supprimer le temps d'apprendre en prétendant gagner du temps.</p></aside></article>
+<article class="item"><div class="item-head"><span class="num">6</span><span class="pill" style="background:var(--t-souv)">Souveraineté &amp; Infrastructure</span></div><h3>Au Texas, le cloud doit déclarer ce qu'il boit.</h3><p>Le numérique est immatériel jusqu'au premier formulaire sur l'eau. <a class="lk" target="_blank" rel="noopener" href="https://www.ercot.com/services/comm/mkt_notices/M-B091426-01">Le <strong>14 septembre</strong>, l'opérateur électrique texan <strong>ERCOT</strong> lance une demande d'informations sur les impacts territoriaux de certains projets de centres de données</a>. <a class="lk" target="_blank" rel="noopener" href="https://gov.texas.gov/uploads/files/press/TWDB_Letter.pdf">Une lettre du gouverneur associe l'autorité de l'eau à l'examen des consommations, des sources d'approvisionnement et des technologies économes</a>. Le périmètre est précis : <a class="lk" target="_blank" rel="noopener" href="https://www.ercot.com/services/comm/mkt_notices/M-B091426-01">l'avis couvre des catégories de projets non encore raccordés et fixe la remise des réponses au <strong>12 octobre</strong></a>. Il ne s'agit ni d'un moratoire général ni d'un verdict sur tous les data centers. En France, <a class="lk" target="_blank" rel="noopener" href="https://www.pouchet.cnrs.fr/event/journees-du-cis/">le programme du CIS aborde aussi l'acceptabilité des centres de données et la réutilisation de leur chaleur</a>. Notre lecture : eau, raccordement et voisinage sont des <strong>conditions de fonctionnement</strong>, donc des sujets de risque et d'assurance.</p><aside class="takeaway" aria-label="À retenir"><p>Avant de demander combien de calculs un site peut produire, regardez ce qui lui permet de fonctionner un jour de tension. Une capacité annoncée n'est pas encore une capacité disponible.</p></aside></article>
 <section class="bonus"><h2>Bonus</h2><p><a class="lk" target="_blank" rel="noopener" href="https://www.un.org/fr/ia-la-course-pour-rattraper-une-technologie-sans-garde-fous">L’ONU publie le 14 septembre un point sur la course aux garde-fous de l’IA : l’encadrement tente de suivre le rythme</a> – <a class="lk" target="_blank" rel="noopener" href="https://investor.digitalrealty.com/node/30696/pdf">Digital Realty annonce le 14 septembre une coentreprise avec Rönesans pour développer des centres de données en Turquie</a> – <a class="lk" target="_blank" rel="noopener" href="https://economic-research.bnpparibas.com/Publication/24866/fr-FR">Le point économique de BNP Paribas du 14 septembre met les taux américains au menu : les arbitrages dépassent la zone euro</a> – <a class="lk" target="_blank" rel="noopener" href="https://www.fmsh.fr/agenda/sujet-et-sciences-de-lhomme-face-lintelligence-artificielle-9">La FMSH programme le 14 septembre une séance sur le sujet humain face à l’IA : le vocabulaire mérite lui aussi une mise à jour</a> – <a class="lk" target="_blank" rel="noopener" href="https://www.anthropic.com/threat-intelligence-report-september-2026">À relire depuis le 10 septembre : Anthropic décrit l’organisation de campagnes malveillantes assistées par IA</a> – <a class="lk" target="_blank" rel="noopener" href="https://www.anthropic.com/news/wellbeing-research-grants">L’appel de recherche sur le bien-être lancé par Anthropic en août reste ouvert jusqu’au 21 septembre</a> – <a class="lk" target="_blank" rel="noopener" href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-010/">L’alerte Metabase du CERT-FR du 10 septembre rappelle que corriger et rechercher une compromission sont deux opérations différentes</a> – <a class="lk" target="_blank" rel="noopener" href="https://cnil-d10.cnil.fr/fr/facturation-electronique-quels-enjeux">Facturation électronique : le rappel de la CNIL du 10 septembre remet les données personnelles dans la conversation</a> – <a class="lk" target="_blank" rel="noopener" href="https://arxiv.org/abs/2607.11999">En recul, un préprint de juillet dessine une architecture d’assurance pour les agents : mesurer les incidents avant de tarifer les promesses</a> – <a class="lk" target="_blank" rel="noopener" href="https://digital-strategy.ec.europa.eu/en/events/apply-ai-webinar-sectoral-deep-dive-public-sector">À l’agenda : la Commission annonce pour le 30 septembre un point sur le déploiement de l’IA dans le secteur public</a>. <span class="end">La suite… demain matin !</span></p></section>
-</div>
-  <footer class="flfoot">
+</main>
+<footer class="flfoot">
+    <div class="footer-scene">
+    <div class="session">
+      <p><strong>Une visite ou un workshop en équipe au Future Lab ?</strong></p>
+      <p><a class="session-cta" href="https://forms.cloud.microsoft/e/1WeVdUG4sd" target="_blank" rel="noopener">Demander une session</a> ou écrivez-nous à <a href="mailto:futurelab@axa.fr">futurelab@axa.fr</a>.</p>
+    </div>
+    </div>
+    <div class="footer-base">
     <div class="top">
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
       <span class="org">Diffusion interne</span>
     </div>
-    <div class="doors">
-      <a class="door" href="https://futurelab-axa.vercel.app/explorer" target="_blank" rel="noopener"><b>Explorer le plateau</b><span>120&nbsp;m&sup2;, huit zones &agrave; manipuler</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/parcours" target="_blank" rel="noopener"><b>Les quatre parcours</b><span>De 30&nbsp;minutes &agrave; une journ&eacute;e</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/reserver" target="_blank" rel="noopener"><b>R&eacute;server un cr&eacute;neau</b><span>Venez avec une vraie question</span></a>
+    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="index.html">Consulter les &eacute;ditions pr&eacute;c&eacute;dentes</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
     </div>
-    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="index.html">Consulter les &eacute;ditions pr&eacute;c&eacute;dentes</a> &middot; <a href="https://futurelab-axa.vercel.app" target="_blank" rel="noopener">Le Future Lab</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
   </footer>
 
 </div>
+<script>
+(function () {
+  var shortcut = document.getElementById('bookmark-shortcut');
+  var platform = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+  if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !(platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    shortcut.innerHTML = 'Pour ajouter cette page à vos favoris, appuyez sur <kbd>' + (/Mac/i.test(platform) ? '⌘ + D' : 'Ctrl + D') + '</kbd>, puis confirmez dans votre navigateur.';
+  }
+  document.querySelector('.bookmark-close').addEventListener('click', function () {
+    var details = this.closest('details');
+    details.open = false;
+    details.querySelector('summary').focus();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      var details = document.querySelector('.bookmark');
+      if (details.open) { details.open = false; details.querySelector('summary').focus(); }
+    }
+  });
+}());
+</script>
 </body>
 </html>
