@@ -1,34 +1,170 @@
-<!doctype html>
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "future.now",
+  "schemaVersion": 1,
+  "description": "future.now — 6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain. Powered by future.lab. Assurance & insurtech, tech & IA, économie, réglementaire & risques, capital humain, souveraineté. Focus France, recompilé chaque matin."
+}
+</script>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>future.now — archives</title>
+<title>future.now — Nos Archives</title>
 <style>
-:root{color-scheme:light;--bg:#f7f6f3;--ink:#1a1a1a;--muted:#6b6b6b;--line:#e7e4dd;--navy:#00005C;--red:#FF1721;--link:#1a3a9e;--lilac:#8e8ed8;
---serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+:root{
+  color-scheme: light;
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6b6b;
+  --line:#e7e4dd; --navy:#00005C; --deep:#00008F; --red:#FF1721;
+  --accent:#00005C; --link:#1a3a9e; --lilac:#8e8ed8;
+  --t-assur:#0b5cad; --t-tech:#7a3ff2; --t-eco:#c2410c; --t-reg:#0f766e; --t-rh:#b45309; --t-souv:#475569;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.64;-webkit-font-smoothing:antialiased}
 .wrap{max-width:720px;margin:0 auto;padding:0 0 72px}
 .inner{padding:0 22px}
+
+/* Masthead — bandeau nuit */
 .mast{background:var(--navy);padding:26px 22px 22px}
+.mast .top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
-.tag{font-size:14px;color:#a9a9e4;margin-top:12px;max-width:52ch;line-height:1.5}
+.tag{font-size:14px;color:#a9a9e4;margin-top:12px;line-height:1.5}
 .rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
 .colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.back{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--lilac);font-weight:600}
-.back a{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);text-decoration:none}
+.mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--lilac);font-weight:600}
+.mast .date a{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);text-decoration:none}
 .pw{display:inline-flex;align-items:center;gap:8px;opacity:.82}
 .pw span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lilac);font-weight:600}
 .pw svg{width:78px;height:auto;color:#fff;display:block}
-h1{font-family:var(--serif);font-size:32px;margin:28px 0 4px;letter-spacing:-.4px;font-weight:700}
-.sub{font-size:13px;color:var(--muted);margin:0 0 22px}
-ul{list-style:none;margin:0;padding:0}
-li{border-top:1px solid var(--line);padding:16px 0}
-li a{color:var(--link);text-decoration:none;font-weight:700;font-size:17px;border-bottom:1.5px solid #b9bfe4}
-li a:hover{background:#eceff9}
-.date{display:block;font-size:12px;color:var(--muted);margin-top:3px}
-.foot{margin-top:30px;font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+
+/* Edition title + hook */
+.edtitle{font-family:var(--serif);font-size:35px;line-height:1.05;margin:26px 0 10px;font-weight:700;letter-spacing:-.4px}
+.readtime{font-size:12px;color:var(--muted);margin-bottom:16px}
+.hook{font-size:15.5px;color:#2a2a2a;border-left:3px solid var(--red);padding:4px 0 4px 15px;margin:0 0 26px}
+.hook .go{font-weight:700;color:var(--navy)}
+
+/* En 30 secondes */
+.brief{background:var(--navy);color:#eeeefa;border-radius:14px;padding:18px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
+.brief h2{margin:0 0 10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac);font-weight:700}
+.brief ul{margin:0;padding:0;list-style:none}
+.brief li{position:relative;padding-left:16px;margin:7px 0;font-size:14px}
+.brief li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--red)}
+
+/* Numbered items */
+.item{border-top:1px solid var(--line);padding-top:30px;margin-top:30px}
+.item-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.num{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--navy);line-height:1;min-width:16px}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:20px;color:#fff}
+.item h3{font-family:var(--serif);font-size:21px;margin:0 0 16px;font-weight:700;line-height:1.22;letter-spacing:-.2px}
+.item p{margin:0;font-size:15px;color:#262626}
+.item p strong{font-weight:700;color:#111}
+.bf{font-weight:800;color:var(--navy);letter-spacing:.01em}
+
+/* Inline links */
+a.lk{color:var(--link);text-decoration:none;border-bottom:1.5px solid #b9bfe4;font-weight:600;transition:border-color .15s,background .15s}
+a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
+
+/* Bonus */
+.bonus{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:36px 0 8px;box-shadow:var(--shadow);font-size:14.5px;line-height:1.75}
+.bonus .lab{display:inline-block;font-weight:800;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;font-size:12px;margin-right:6px}
+.bonus .end{font-weight:700;color:var(--navy)}
+
+/* Footer Future Lab */
+.flfoot{background:var(--navy);color:#e4e4f6;padding:24px 22px 22px;margin-top:38px}
+.flfoot .top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.flfoot .pw svg{width:88px}
+.flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:700}
+.legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
+.legal a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+/* Header actions and session contact */
+.mast .top{align-items:center}
+.tag{max-width:none}
+.bookmark{position:relative;color:#fff;font-size:12px}
+.bookmark summary{cursor:pointer;list-style:none;border:1px solid rgba(255,255,255,.4);border-radius:7px;padding:9px 12px;min-height:40px;font-weight:600;background:rgba(255,255,255,.07)}
+.bookmark summary::-webkit-details-marker{display:none}
+.bookmark summary::before{content:"☆";margin-right:7px;font-size:16px}
+.bookmark summary:hover,.bookmark[open] summary{background:rgba(255,255,255,.16)}
+.bookmark summary:focus-visible,.archive-link:focus-visible,.session a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.bookmark-help{position:absolute;z-index:2;right:0;top:calc(100% + 8px);width:280px;max-width:calc(100vw - 44px);padding:14px 16px;background:#fff;color:var(--navy);border-radius:8px;box-shadow:0 6px 24px #0003;font-size:13px;line-height:1.6}
+.bookmark-help p{margin:0}
+.bookmark-help p+p{margin-top:8px}
+.bookmark-help kbd{font-family:inherit;font-weight:700;background:#eeeefa;border-radius:3px;padding:2px 5px}
+.archive-nav{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#a9a9e4}
+.archive-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:5px;padding:5px 9px;font-weight:600}
+.archive-link:hover{background:rgba(255,255,255,.12)}
+.session{margin:20px 0;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.07);font-size:14px;line-height:1.7}
+.session p{margin:0}
+.session p+p{margin-top:7px;color:#bdbdec;font-size:13px}
+.session a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:720px){.tag{white-space:nowrap}}
+@media(max-width:540px){.mast .top{gap:18px}.bookmark-help{left:0;right:auto}.colo{gap:12px}.archive-nav{width:100%}.wordmark{width:280px}}
+
+/* Proposition locale : salon de lecture */
+.mast{padding:0;background:#101b2a}
+.mast .hero-scene{position:relative;isolation:isolate;padding:28px 22px 22px;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.95),transparent 55%),url('/assets/salon-robot.png');background-size:cover;background-position:center 44%}
+.mast .top{align-items:flex-start;gap:12px}
+.mast .wordmark{width:320px;margin:29px 0 0;color:#fff5d9;filter:drop-shadow(0 2px 10px #0008)}
+.mast .bookmark{position:absolute;left:22px;top:145px;margin-top:0;font-size:11px}
+.mast .bookmark-help{left:0;right:auto}
+.mast .bookmark summary{background:rgba(10,20,33,.65);backdrop-filter:blur(10px);border-color:#e4cf9c66;color:#fff5dc}
+.mast .bookmark-help{color:#162236}
+.mast .tag{margin:0;color:#fff2d6;font-size:14px;line-height:1.6;position:relative;text-shadow:0 1px 5px #000}
+.mast .rule{display:none}
+.mast .colo{padding:16px 22px;background:#101b2a;border-top:1px solid #efd59b44;gap:12px}
+.mast .date,.mast .archive-nav{color:#d1c4a9}
+.mast .pw span{color:#d1c4a9}
+.mast .archive-link{border-color:#efd59b66;color:#fff3d8}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:330px;padding:20px 22px;background-position:67% center;background-image:linear-gradient(90deg,rgba(5,15,29,.52),rgba(5,15,29,.05)),linear-gradient(0deg,rgba(7,17,30,.98),transparent 65%),url('/assets/salon-robot.png')}
+ .mast .top{align-items:flex-start}
+ .mast .bookmark{top:125px}
+ .mast .wordmark{padding-top:26px}
+ .mast .wordmark{width:265px;margin:0}
+ .mast .tag{max-width:30ch;font-size:14px}
+ .mast .bookmark summary{padding:6px 10px;min-height:34px}
+ .mast .colo{padding-top:15px;padding-bottom:17px}
+}
+</style>
+<link rel="stylesheet" href="../assets/salon.css">
+<style>
+/* Proposition : la promesse et les repères de lecture réunis. */
+.mast .hero-scene{min-height:320px;padding-bottom:22px;background-image:linear-gradient(90deg,rgba(5,15,29,.48),rgba(5,15,29,.06) 75%),linear-gradient(0deg,rgba(7,17,30,.98),rgba(7,17,30,.5) 25%,transparent 66%),url('/assets/salon-robot.png')}
+.mast .wordmark{margin-top:15px}
+.mast .bookmark{top:120px}
+.mast .header-promise{margin-top:90px}
+.mast .tag{font-size:17px;line-height:1.45;color:#f9edd7;white-space:normal;max-width:none;letter-spacing:-.15px}
+.mast .tag strong{font-weight:700;color:#f2d39d}
+.reading-guide{display:flex;list-style:none;margin:17px 0 0;padding:0;gap:0;color:#f2dfbd}
+.reading-guide li{display:flex;flex-direction:column;gap:2px;padding:0 22px;border-left:1px solid #d6bd954d}
+.reading-guide li:first-child{padding-left:0;border-left:0}
+.reading-guide strong{font-size:15px;font-weight:600;line-height:1.4}
+.reading-guide span{font-size:11px;color:#d3c7b5;line-height:1.5}
+.edtitle{margin-bottom:24px}
+@media(max-width:540px){
+ .mast .hero-scene{min-height:370px;padding-bottom:22px;background-position:67% center}
+ .mast .wordmark{margin-top:0}
+ .mast .header-promise{margin-top:112px}
+ .mast .tag{max-width:28ch;font-size:16px;line-height:1.5}
+ .reading-guide{margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1.55fr}
+ .reading-guide li{padding:0 10px;gap:4px}
+ .reading-guide li:last-child{padding-right:0}
+ .reading-guide strong{font-size:13px;white-space:nowrap}
+ .reading-guide span{font-size:10.5px;line-height:1.4}
+}
+</style>
+<style>
+.archive-title{font-family:var(--serif);font-size:36px;color:var(--navy);line-height:1.15;margin:32px 0 10px;letter-spacing:-.5px}
+.archive-intro{color:var(--muted);font-size:14px;margin:0 0 27px}
+#list{list-style:none;margin:0;padding:0}
+#list li{position:relative;display:flex;flex-direction:column;gap:7px;padding:22px 28px 23px 0;border-top:1px solid var(--line)}
+#list li::after{content:'↗';position:absolute;right:3px;top:51px;color:#916537;font-size:18px;pointer-events:none}
+#list .date{order:-1;display:block;color:#786347;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;line-height:1.5}
+#list a{font-family:var(--serif);font-size:23px;line-height:1.3;color:var(--navy);font-weight:700;text-decoration:none;text-underline-offset:4px;transition:color .15s}
+#list a:hover{color:#77502e;text-decoration:underline;text-decoration-thickness:1px}
+#list a:focus-visible{outline:2px solid #916537;outline-offset:5px}
+@media(max-width:540px){.archive-title{font-size:32px}#list a{font-size:21px}#list li{padding-top:20px;padding-bottom:21px}.mast .archive-nav{width:auto}}
 </style>
 </head>
 <body>
@@ -82,17 +218,36 @@ li a:hover{background:#eceff9}
 </g></symbol></svg>
 <div class="wrap">
   <header class="mast">
+    <div class="hero-scene">
+    <div class="top">
     <svg class="wordmark" viewBox="0 0 1164 193" role="img" aria-label="future.now"><use href="#fn"/></svg>
-    <div class="tag">6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain.</div>
+      <details class="bookmark">
+        <summary>Ajouter à mes favoris</summary>
+        <div class="bookmark-help">
+          <p id="bookmark-shortcut">Pour ajouter cette page à vos favoris, appuyez sur <kbd>Ctrl + D</kbd> (Windows) ou <kbd>⌘ + D</kbd> (Mac).</p>
+          <p>Sur mobile, ouvrez le menu de votre navigateur ou le menu de partage, puis choisissez « Ajouter aux favoris » ou l’étoile ☆.</p>
+        </div>
+      </details>
+    </div>
+    <div class="header-promise">
+      <p class="tag"><strong>6 actus</strong> pour comprendre demain, dès aujourd’hui.</p>
+      <ul class="reading-guide" aria-label="Votre rendez-vous de lecture">
+        <li><strong>3 min</strong><span>pour l’essentiel</span></li>
+        <li><strong>7 min</strong><span>pour tout lire</span></li>
+        <li><strong>Chaque matin</strong><span>mise à jour automatique</span></li>
+      </ul>
+    </div>
+    </div>
     <div class="rule"></div>
     <div class="colo">
-      <span class="back"><a href="../index.html">&larr; Édition du jour</a></span>
+<nav class="archive-nav" aria-label="Navigation"><a class="archive-link" href="../index.html">← Édition du jour</a></nav>
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
     </div>
   </header>
-  <div class="inner">
-    <h1>Archives des éditions</h1>
-    <p class="sub">Toutes les parutions, de la plus récente à la plus ancienne.</p>
+
+  <main class="inner">
+    <h1 class="archive-title">Nos Archives</h1>
+    <p class="archive-intro">Retrouvez toutes les éditions, de la plus récente à la plus ancienne.</p>
     <ul id="list">
 <li><a href="veille-2026-09-19.html">On confie les cl&eacute;s &agrave; l'IA. La serrure attendra.</a><span class="date">Samedi 19 septembre 2026</span></li>
 <li><a href="veille-2026-09-18.html">Tout devient intelligent. Gardons la main.</a><span class="date">Vendredi 18 septembre 2026</span></li>
@@ -140,8 +295,37 @@ li a:hover{background:#eceff9}
     <li><a href="veille-2026-06-17.html">La troisième voie ou rien</a><span class="date">Mercredi 17 juin 2026</span></li>
     <li><a href="veille-2026-06-15.html">Impact, pas illusion</a><span class="date">Lundi 15 juin 2026</span></li>
     </ul>
-    <p class="foot">future.now · l'extension éditoriale du Future Lab · une nouvelle édition chaque matin · diffusion interne.</p>
-  </div>
+  </main>
+  <footer class="flfoot">
+    <div class="footer-scene">
+    <div class="session">
+      <p><strong>Une visite ou un workshop en équipe au Future Lab ?</strong></p>
+      <p><a class="session-cta" href="https://forms.cloud.microsoft/e/1WeVdUG4sd" target="_blank" rel="noopener">Demander une session</a> ou écrivez-nous à <a href="mailto:futurelab@axa.fr">futurelab@axa.fr</a>.</p>
+    </div>
+    </div>
+    <div class="footer-base">
+    <div class="top">
+      <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
+      <span class="org">Diffusion interne</span>
+    </div>
+    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="../index.html">Lire l’édition du jour</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
+    </div>
+  </footer>
 </div>
+<script>
+(function () {
+  var shortcut = document.getElementById('bookmark-shortcut');
+  var platform = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+  if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !(platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    shortcut.innerHTML = 'Pour ajouter cette page à vos favoris, appuyez sur <kbd>' + (/Mac/i.test(platform) ? '⌘ + D' : 'Ctrl + D') + '</kbd>, puis confirmez dans votre navigateur.';
+  }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      var details = document.querySelector('.bookmark');
+      if (details.open) { details.open = false; details.querySelector('summary').focus(); }
+    }
+  });
+}());
+</script>
 </body>
 </html>
