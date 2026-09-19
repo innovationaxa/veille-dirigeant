@@ -30,7 +30,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line
 .mast{background:var(--navy);padding:26px 22px 22px}
 .mast .top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wordmark{display:block;width:320px;max-width:100%;height:auto;color:#fff;margin:4px 0 0}
-.tag{font-size:14px;color:#a9a9e4;margin-top:12px;max-width:52ch;line-height:1.5}
+.tag{font-size:14px;color:#a9a9e4;margin-top:12px;line-height:1.5}
 .rule{height:1px;background:rgba(255,255,255,.22);margin:20px 0 14px}
 .colo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .mast .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--lilac);font-weight:600}
@@ -76,13 +76,30 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
 .flfoot .top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .flfoot .pw svg{width:88px}
 .flfoot .org{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);font-weight:700}
-.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:19px 0 17px}
-.door{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;font-size:13px;color:#e9e9fb;text-decoration:none;display:block;transition:background .15s}
-.door:hover{background:rgba(255,255,255,.17)}
-.door b{display:block;font-weight:700;font-size:13.5px;color:#fff;margin-bottom:2px}
-.door span{color:#a9a9e4;font-size:11.5px}
 .legal{font-size:11.5px;color:#9a9ad4;line-height:1.62;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
 .legal a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+/* Header actions and session contact */
+.mast .top{align-items:center}
+.tag{max-width:none}
+.bookmark{position:relative;color:#fff;font-size:12px}
+.bookmark summary{cursor:pointer;list-style:none;border:1px solid rgba(255,255,255,.4);border-radius:7px;padding:9px 12px;min-height:40px;font-weight:600;background:rgba(255,255,255,.07)}
+.bookmark summary::-webkit-details-marker{display:none}
+.bookmark summary::before{content:"☆";margin-right:7px;font-size:16px}
+.bookmark summary:hover,.bookmark[open] summary{background:rgba(255,255,255,.16)}
+.bookmark summary:focus-visible,.archive-link:focus-visible,.session a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.bookmark-help{position:absolute;z-index:2;right:0;top:calc(100% + 8px);width:280px;max-width:calc(100vw - 44px);padding:14px 16px;background:#fff;color:var(--navy);border-radius:8px;box-shadow:0 6px 24px #0003;font-size:13px;line-height:1.6}
+.bookmark-help p{margin:0}
+.bookmark-help p+p{margin-top:8px}
+.bookmark-help kbd{font-family:inherit;font-weight:700;background:#eeeefa;border-radius:3px;padding:2px 5px}
+.archive-nav{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:#a9a9e4}
+.archive-link{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:5px;padding:5px 9px;font-weight:600}
+.archive-link:hover{background:rgba(255,255,255,.12)}
+.session{margin:20px 0;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.07);font-size:14px;line-height:1.7}
+.session p{margin:0}
+.session p+p{margin-top:7px;color:#bdbdec;font-size:13px}
+.session a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:720px){.tag{white-space:nowrap}}
+@media(max-width:540px){.mast .top{gap:18px}.bookmark-help{left:0;right:auto}.colo{gap:12px}.archive-nav{width:100%}.wordmark{width:280px}}
 </style>
 </head>
 <body>
@@ -136,11 +153,21 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
 </g></symbol></svg>
 <div class="wrap">
   <header class="mast">
+    <div class="top">
     <svg class="wordmark" viewBox="0 0 1164 193" role="img" aria-label="future.now"><use href="#fn"/></svg>
+      <details class="bookmark">
+        <summary>Ajouter à mes favoris</summary>
+        <div class="bookmark-help">
+          <p id="bookmark-shortcut">Pour ajouter cette page à vos favoris, appuyez sur <kbd>Ctrl + D</kbd> (Windows) ou <kbd>⌘ + D</kbd> (Mac).</p>
+          <p>Sur mobile, ouvrez le menu de votre navigateur ou le menu de partage, puis choisissez « Ajouter aux favoris » ou l’étoile ☆.</p>
+        </div>
+      </details>
+    </div>
     <div class="tag">6 actus pour comprendre aujourd'hui ce dont tout le monde parlera demain.</div>
     <div class="rule"></div>
     <div class="colo">
-      <span class="date">Samedi 19 septembre 2026 &middot; <a href="index.html">archives</a></span>
+      <span class="date">Samedi 19 septembre 2026</span>
+      <nav class="archive-nav" aria-label="Éditions précédentes"><span>Ce que vous avez raté :</span> <a class="archive-link" href="index.html">Archives</a></nav>
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
     </div>
   </header>
@@ -162,14 +189,28 @@ a.lk:hover{border-bottom-color:var(--link);background:#eceff9}
       <span class="pw"><span>powered by</span><svg viewBox="0 0 1408.66 259" role="img" aria-label="future.lab"><use href="#fl"/></svg></span>
       <span class="org">Diffusion interne</span>
     </div>
-    <div class="doors">
-      <a class="door" href="https://futurelab-axa.vercel.app/explorer" target="_blank" rel="noopener"><b>Explorer le plateau</b><span>120&nbsp;m&sup2;, huit zones &agrave; manipuler</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/parcours" target="_blank" rel="noopener"><b>Les quatre parcours</b><span>De 30&nbsp;minutes &agrave; une journ&eacute;e</span></a>
-      <a class="door" href="https://futurelab-axa.vercel.app/reserver" target="_blank" rel="noopener"><b>R&eacute;server un cr&eacute;neau</b><span>Venez avec une vraie question</span></a>
+    <div class="session">
+      <p><strong>Une visite ou un workshop en équipe au Future Lab ?</strong></p>
+      <p>👉 <a href="https://forms.cloud.microsoft/e/1WeVdUG4sd" target="_blank" rel="noopener">Demander une session</a> ou écrivez-nous à <a href="mailto:futurelab@axa.fr">futurelab@axa.fr</a>.</p>
     </div>
-    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="index.html">Consulter les &eacute;ditions pr&eacute;c&eacute;dentes</a> &middot; <a href="https://futurelab-axa.vercel.app" target="_blank" rel="noopener">Le Future Lab</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
+    <p class="legal"><strong style="color:#fff">Diffusion interne.</strong> S&eacute;lection et commentaires du Future Lab, sans valeur de position officielle. S&eacute;lection compil&eacute;e chaque matin avec l'aide de l'IA sur les 24&ndash;48 derni&egrave;res heures, priorit&eacute; aux sources fran&ccedil;aises et primaires ; chaque fait est li&eacute; &agrave; sa source et les chiffres non sourc&eacute;s ne sont pas publi&eacute;s. &middot; <a href="index.html">Consulter les &eacute;ditions pr&eacute;c&eacute;dentes</a> &middot; <a href="mailto:futurelab@axa.fr">Proposer un sujet</a></p>
   </footer>
 
 </div>
+<script>
+(function () {
+  var shortcut = document.getElementById('bookmark-shortcut');
+  var platform = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+  if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !(platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    shortcut.innerHTML = 'Pour ajouter cette page à vos favoris, appuyez sur <kbd>' + (/Mac/i.test(platform) ? '⌘ + D' : 'Ctrl + D') + '</kbd>, puis confirmez dans votre navigateur.';
+  }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      var details = document.querySelector('.bookmark');
+      if (details.open) { details.open = false; details.querySelector('summary').focus(); }
+    }
+  });
+}());
+</script>
 </body>
 </html>
