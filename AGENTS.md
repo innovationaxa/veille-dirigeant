@@ -13,3 +13,8 @@
 - Génération : `python scripts/build-english.py . --cache translations/fr-en.json --overrides translations/en-overrides.json` (beautifulsoup4). Le script échoue si un texte manque. Ne pas publier une page à moitié traduite.
 - `scripts/translate-missing.py` complète le cache avec un modèle local Argos français-anglais (CTranslate2). Dépendances : beautifulsoup4, ctranslate2, sentencepiece. Le modèle n’est pas inclus. Les corrections vont dans en-overrides.json.
 - Vérification : `python scripts/check-languages.py .`, puis contrôle du rendu et du passage entre langues dans le navigateur.
+
+## Statistiques privées
+
+- Conserver `<script defer src="/_vercel/insights/script.js"></script>` dans chaque page publiée (FR et EN) pour Vercel Web Analytics. Les statistiques se consultent uniquement dans le tableau de bord Vercel connecté.
+- Rester sur l’offre gratuite Hobby. Ne jamais activer une option payante ni changer d’offre sans en parler à l’utilisateur et obtenir son accord.
